@@ -1,0 +1,343 @@
+/*          reset css       */
+*,
+::before,
+::after {
+  /*选择所有标签*/
+  margin: 0;
+  padding: 0;
+  /*清除移动端默认的点击高亮效果*/
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  /*设置所有的元素都是以边框开始计算宽度的 百分比*/
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+  color: #000;
+  background-color: #fff;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+.flex{
+  display: flex;
+}
+.lf {
+  float: left
+}
+.gt {
+  float: right;
+}
+.clearfix:after{
+  display: block;
+  font-size:0;
+  content: " ";
+  clear: both;
+  height:0;
+  line-height:0;
+  zoom: 1;
+  visibility: hidden;
+}
+input {
+  border: none;
+  outline: none;
+  /*清除移动端默认的表单样式*/
+  -webkit-appearance: none;
+}
+
+
+
+.flex {
+	display: flex;
+}
+
+.basis-xs {
+	flex-basis: 20%;
+}
+
+.basis-sm {
+	flex-basis: 40%;
+}
+
+.basis-df {
+	flex-basis: 50%;
+}
+
+.basis-lg {
+	flex-basis: 60%;
+}
+
+.basis-xl {
+	flex-basis: 80%;
+}
+.flex-grow-0{
+	min-width:0;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0
+}
+
+.flex-sub {
+	flex: 1;
+}
+
+.flex-twice {
+	flex: 2;
+}
+
+.flex-treble {
+	flex: 3;
+}
+
+.flex-direction {
+	flex-direction: column;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.align-start {
+	align-items: flex-start;
+}
+
+.align-end {
+	align-items: flex-end;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.align-stretch {
+	align-items: stretch;
+}
+
+.self-start {
+	align-self: flex-start;
+}
+
+.self-center {
+	align-self: flex-center;
+}
+
+.self-end {
+	align-self: flex-end;
+}
+
+.self-stretch {
+	align-self: stretch;
+}
+
+.align-stretch {
+	align-items: stretch;
+}
+
+.justify-start {
+	justify-content: flex-start;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+
+
+
+/* ==================
+          文本
+ ==================== */
+
+ .text-xs {
+	font-size: 10px;
+
+}
+.text-sxs {
+	font-size: 12px;
+}
+.text-sm {
+	font-size: 14px;
+}
+.text-nomal {
+	font-size: 16px;
+}
+.text-df {
+	font-size: 18px;
+}
+
+.text-slg {
+	font-size: 20px;
+}
+
+.text-lg {
+	font-size: 22px;
+}
+.text-34 {
+	font-size: 24px;
+}
+.text-xl {
+	font-size: 26px;
+}
+
+.text-xxl {
+	font-size: 28px;
+}
+
+.text-sl {
+	font-size: 30px;
+}
+
+.text-xsl {
+	font-size: 32px;
+}
+
+.text-Abc {
+	text-transform: Capitalize;
+}
+
+.text-ABC {
+	text-transform: Uppercase;
+}
+
+.text-abc {
+	text-transform: Lowercase;
+}
+
+.text-price::before {
+	content: "¥";
+	font-size: 80%;
+	margin-right: 4px;
+}
+
+.text-cut {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-content {
+	line-height: 1.6;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-red,
+.line-red,
+.lines-red {
+	color: #e54d42;
+}
+
+.text-orange,
+.line-orange,
+.lines-orange {
+	color: #f37b1d;
+}
+
+.text-yellow,
+.line-yellow,
+.lines-yellow {
+	color: #fbbd08;
+}
+
+.text-olive,
+.line-olive,
+.lines-olive {
+	color: #8dc63f;
+}
+
+.text-green,
+.line-green,
+.lines-green {
+	color: #46D17E;
+}
+
+.text-cyan,
+.line-cyan,
+.lines-cyan {
+	color: #1cbbb4;
+}
+
+.text-blue,
+.line-blue,
+.lines-blue {
+	color: #3FB4FF !important;
+}
+.text-blue-l {
+	color: #A6D0F9;
+}
+
+.text-purple,
+.line-purple,
+.lines-purple {
+	color: #6739b6;
+}
+
+.text-mauve,
+.line-mauve,
+.lines-mauve {
+	color: #9c26b0;
+}
+
+.text-pink,
+.line-pink,
+.lines-pink {
+	color: #e03997;
+}
+
+.text-brown,
+.line-brown,
+.lines-brown {
+	color: #a5673f;
+}
+
+.text-grey,
+.line-grey,
+.lines-grey {
+	color: #8799a3;
+}
+
+.text-gray,
+.line-gray,
+.lines-gray {
+	color: #aaaaaa;
+}
+.text-gray-6{color: #666666;}
+
+.text-black,
+.line-black,
+.lines-black {
+	color: #333333;
+}
