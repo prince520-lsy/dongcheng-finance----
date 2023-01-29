@@ -176,37 +176,77 @@ export const constantRouterMap = [
           }
         ]
       },
+      // {
+      //   path: '/financeAnaly/debt',
+      //   name: 'debt',
+      //   component: RouteView,
+      //   // component: () => import('@/views/financeAnaly'),
+      //   meta: { title: '财务分析',icon:'bar-chart'},
+      //   children: [
+      //     {
+      //       path: '/debt',
+      //       name: 'debt',
+      //       component: () => import(/* webpackChunkName: "user" */ '@/views/financeAnaly/debt'),
+      //       meta: { title: '资产负债表'}
+      //     },
+      //     {
+      //       path: '/financeAnaly/profit',
+      //       name: 'profit',
+      //       component: () => import(/* webpackChunkName: "user" */ '@/views/financeAnaly/profit'),
+      //       meta: { title: '利润表'}
+      //     },
+      //     {
+      //       path: '/financeAnaly/cashFlow',
+      //       name: 'cashFlow',
+      //       component: () => import(/* webpackChunkName: "user" */ '@/views/financeAnaly/cashFlow'),
+      //       meta: { title: '现金流量表'}
+      //     },
+      //     {
+      //       path: '/financeAnaly/report',
+      //       name: 'report',
+      //       component: () => import(/* webpackChunkName: "user" */ '@/views/financeAnaly/report'),
+      //       meta: { title: '历年报表'}
+      //     }
+      //   ]
+      // },
       {
-        path: '/financeAnaly/debt',
+        path: '/FinanceAnalysis/debt',
         name: 'debt',
         component: RouteView,
         // component: () => import('@/views/financeAnaly'),
         meta: { title: '财务分析',icon:'bar-chart'},
         children: [
           {
-            path: '/debt',
-            name: 'debt',
-            component: () => import(/* webpackChunkName: "user" */ '@/views/financeAnaly/debt'),
-            meta: { title: '资产负债表'}
+            path: '/income',
+            name: 'incom',
+            component: () => import(/* webpackChunkName: "user" */ '@/views/FinanceAnalysis/incom.vue'),
+            meta: { title: '收入承包费用分析'}
           },
           {
-            path: '/financeAnaly/profit',
-            name: 'profit',
-            component: () => import(/* webpackChunkName: "user" */ '@/views/financeAnaly/profit'),
-            meta: { title: '利润表'}
+            path: '/industry',
+            name: 'industry',
+            component: () => import(/* webpackChunkName: "user" */ '@/views/FinanceAnalysis/industry.vue'),
+            meta: { title: '行业绩效评价'}
           },
           {
-            path: '/financeAnaly/cashFlow',
-            name: 'cashFlow',
-            component: () => import(/* webpackChunkName: "user" */ '@/views/financeAnaly/cashFlow'),
-            meta: { title: '现金流量表'}
+            path: '/financePropor',
+            name: 'financePropor',
+            component: () => import(/* webpackChunkName: "user" */ '@/views/FinanceAnalysis/financePropor.vue'),
+            meta: { title: '财务比例分析'}
           },
           {
-            path: '/financeAnaly/report',
-            name: 'report',
-            component: () => import(/* webpackChunkName: "user" */ '@/views/financeAnaly/report'),
-            meta: { title: '历年报表'}
-          }
+            path: '/taxRisk',
+            name: 'taxRisk',
+            component: () => import(/* webpackChunkName: "user" */ '@/views/FinanceAnalysis/taxRisk.vue'),
+            meta: { title: '税务风险评估分析'}
+          },
+
+          {
+            path: '/incomCost',
+            name: 'incomCost',
+            component: () => import(/* webpackChunkName: "user" */ '@/views/FinanceAnalysis/incomCost.vue'),
+            meta: { title: '收入成本费用分析'}
+          },
         ]
       },
       {
