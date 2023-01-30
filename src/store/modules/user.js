@@ -5,14 +5,14 @@ import { welcome } from '@/utils/util'
 
 const user = {
   state: {
-    token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJxSnIyZmoxOENhV1JjUjVNc1RUS2E5ZnhQWmRtU2w2ZSIsImF1ZCI6IiIsImlhdCI6MTY3NDg4NTY2NSwibmJmIjoxNjc0ODg1NjY1LCJleHAiOjE2NzQ4OTI4NjUsImRhdGEiOnsiYWRtaW5faWQiOjcsImVudGVycHJpc2VfaWQiOjUsInVzZXJuYW1lIjoiMDA5In19.OT3kbWFc9X9AbJzN1ICiBgNE1DuI9nIUCrLQr0unh_s',
-    name: '中大公司',
+    token: '',
+    name: '',
     welcome: '',
-    avatar: 'https://img0.baidu.com/it/u=251289958,1860898046&fm=26&fmt=auto&gp=0.jpg',
+    avatar: '',
     roles: [],
     info: {
-      name:'009',
-      avatar:'https://img0.baidu.com/it/u=251289958,1860898046&fm=26&fmt=auto&gp=0.jpg'
+      name:'',
+      avatar:''
     },
     selectType:{
       type:'',
