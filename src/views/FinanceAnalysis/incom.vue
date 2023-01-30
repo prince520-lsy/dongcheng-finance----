@@ -43,34 +43,34 @@
       <div class="echarts1">
         <h2>xxxx同比环比</h2>
         <div class="time">
-          <span>选择时间</span>
-          <a-button class="year">
+          <span class="choseTime">选择时间</span>
+          <a-button class="acumulateBtn">
       累计
     </a-button>
-    <a-button class="year" type="primary">
+    <a-button class="MonthBtn" type="primary">
       月份
     </a-button>
         </div>
         <div class="category">
-          <span>选择类别</span>
-          <a-button class="year">
+          <span class="chooseCa">选择类别</span>
+          <a-button class="manageBtn">
       管理
     </a-button>
-    <a-button class="year" type="primary">
+    <a-button class="sellBtn" type="primary">
       营销
     </a-button>
-    <a-button class="year" >
+    <a-button class="financeBtn" >
       财务
     </a-button>
         </div>
         <div class="unit">单位/笔</div>
         <div class="ico">
           <div class="actulIcon"></div>
-          <span>实际</span>
+          <span class="actulText">实际</span>
           <div class="caculateIcon"></div>
-          <span>预算</span>
+          <span class="caculateText">预算</span>
           <div class="lastYearIcon"></div>
-          <span>去年同期</span>
+          <span class="lastYearText">去年同期</span>
         </div>
         <div id="main"></div>
       </div>
@@ -187,7 +187,8 @@ const data = [
 import * as echarts from 'echarts';
 
 
-  export default {
+export default {
+    
     mounted() {
       var app = {};
 
@@ -415,6 +416,7 @@ option && myChart.setOption(option);
   }
 
   .echartsRow{
+    margin-top: 20px;
     height: 300px;
     display: flex;
     justify-content: space-between;
@@ -426,24 +428,62 @@ option && myChart.setOption(option);
       background-color: #fff;
       .time{
         display: flex;
+        align-items: center;
+        font-weight: 700;
         height: 40px;
+        .acumulateBtn{
+          margin-left: 20px;
+        }
+        .MonthBtn{
+          margin-left: 20px;
+        }
+      }
+      .category{
+        margin-top: 15px;
+        align-items: center;
+        font-weight: 700;
+        .manageBtn{
+          margin-left: 20px;
+        }
+        .sellBtn{
+          margin-left: 20px;
+        }
+        .financeBtn{
+          margin-left: 20px;
+        }
+      }
+      .unit{
+        margin-top: 15px;
       }
       .ico{
         display: flex;
+        align-items: center;
+        margin-top: 15px;
         .actulIcon{
-          width: 20px;
-          height: 20px;
-          background-color: red;
+          width: 10px;
+          height: 10px;
+          margin-right: 15px;
+          background-color: #5470c6;
+        }
+        .actulText{
+          margin-right: 20px;
         }
         .caculateIcon{
-          width: 20px;
-          height: 20px;
-          background-color: green;
+          width: 10px;
+          height: 10px;
+          background-color: #91cc75;
+        }
+        .caculateText{
+          margin-left: 15px;
         }
         .lastYearIcon{
-          width: 20px;
-          height: 20px;
-          background-color: yellow;
+          width: 10px;
+          height: 10px;
+          margin-left: 20px;
+          background-color: #fac858;
+        }
+        .lastYearText{
+          margin-left: 15px;
         }
       }
       #main{
@@ -459,6 +499,7 @@ option && myChart.setOption(option);
       background-color: #fff;
       .time{
         display: flex;
+        align-items: center;
         height: 40px;
       }
       .ico{

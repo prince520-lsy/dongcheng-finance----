@@ -6,7 +6,7 @@
 <script>
   import * as echarts from 'echarts'
   import utils from '@/utils/utils.js'
-import { OptionCircle } from './options.js'
+  import { OptionCircle } from './options.js'
 
   export default {
     props: {
