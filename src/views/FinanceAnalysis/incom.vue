@@ -41,10 +41,73 @@
     
     <div class="echartsRow">
       <div class="echarts1">
+        <h2>xxxx同比环比</h2>
+        <div class="time">
+          <span>选择时间</span>
+          <a-button class="year">
+      累计
+    </a-button>
+    <a-button class="year" type="primary">
+      月份
+    </a-button>
+        </div>
+        <div class="category">
+          <span>选择类别</span>
+          <a-button class="year">
+      管理
+    </a-button>
+    <a-button class="year" type="primary">
+      营销
+    </a-button>
+    <a-button class="year" >
+      财务
+    </a-button>
+        </div>
+        <div class="unit">单位/笔</div>
+        <div class="ico">
+          <div class="actulIcon"></div>
+          <span>实际</span>
+          <div class="caculateIcon"></div>
+          <span>预算</span>
+          <div class="lastYearIcon"></div>
+          <span>去年同期</span>
+        </div>
         <div id="main"></div>
       </div>
+
       <div class="echarts2">
-        <div id="mian2"></div>
+        <h2>xxxx同比环比</h2>
+        <div class="time">
+          <span>选择时间</span>
+          <a-button class="year">
+      累计
+    </a-button>
+    <a-button class="year" type="primary">
+      月份
+    </a-button>
+        </div>
+        <div class="category">
+          <span>选择类别</span>
+          <a-button class="year">
+      管理
+    </a-button>
+    <a-button class="year" type="primary">
+      营销
+    </a-button>
+    <a-button class="year" >
+      财务
+    </a-button>
+        </div>
+        <div class="unit">单位/笔</div>
+        <div class="ico">
+          <div class="actulIcon"></div>
+          <span>实际</span>
+          <div class="caculateIcon"></div>
+          <span>预算</span>
+          <div class="lastYearIcon"></div>
+          <span>去年同期</span>
+        </div>
+        <div id="main"></div>
       </div>
 
     </div>
@@ -131,7 +194,6 @@ import * as echarts from 'echarts';
 var chartDom = document.getElementById('main');
 var myChart = echarts.init(chartDom);
 var option;
-
 const posList = [
   'left',
   'right',
@@ -206,7 +268,7 @@ app.config = {
   }
 };
 const labelOption = {
-  show: true,
+  show: false,
   position: app.config.position,
   distance: app.config.distance,
   align: app.config.align,
@@ -229,7 +291,7 @@ option = {
     data: ['Forest', 'Steppe', 'Desert', 'Wetland']
   },
   toolbox: {
-    show: true,
+    show: false,
     orient: 'vertical',
     left: 'right',
     top: 'center',
@@ -245,7 +307,7 @@ option = {
     {
       type: 'category',
       axisTick: { show: false },
-      data: ['2012', '2013', '2014', '2015', '2016']
+      data: ['1月', '2月', '3月', '4月', '5月', '6月']
     }
   ],
   yAxis: [
@@ -255,44 +317,36 @@ option = {
   ],
   series: [
     {
-      name: '21',
+      name: '实际',
       type: 'bar',
       barGap: 0,
       label: labelOption,
       emphasis: {
         focus: 'series'
       },
-      data: [320, 332, 301, 334, 390]
+      data: [320, 332, 301, 334, 390, 500]
     },
     {
-      name: 'Steppe',
+      name: '预算',
       type: 'bar',
       label: labelOption,
       emphasis: {
         focus: 'series'
       },
-      data: [220, 182, 191, 234, 290]
+      data: [220, 182, 191, 234, 290, 43]
     },
     {
-      name: 'Desert',
+      name: '去年同期',
       type: 'bar',
       label: labelOption,
       emphasis: {
         focus: 'series'
       },
-      data: [150, 232, 201, 154, 190]
-    },
-    {
-      name: 'Wetland',
-      type: 'bar',
-      label: labelOption,
-      emphasis: {
-        focus: 'series'
-      },
-      data: [98, 77, 101, 99, 40]
+      data: [150, 232, 201, 154, 190, 321]
     }
   ]
 };
+
 
 option && myChart.setOption(option);
     },
@@ -369,24 +423,70 @@ option && myChart.setOption(option);
       height: 300px;
       // display: flex;
       width: 670px;
-      background-color: orange;
+      background-color: #fff;
+      .time{
+        display: flex;
+        height: 40px;
+      }
+      .ico{
+        display: flex;
+        .actulIcon{
+          width: 20px;
+          height: 20px;
+          background-color: red;
+        }
+        .caculateIcon{
+          width: 20px;
+          height: 20px;
+          background-color: green;
+        }
+        .lastYearIcon{
+          width: 20px;
+          height: 20px;
+          background-color: yellow;
+        }
+      }
+      #main{
+        height: 400px;
+        background-color: #fff;
+      }
       
     }
     .echarts2{
+      height: 300px;
+      // display: flex;
       width: 670px;
-
-      background-color: red;
+      background-color: #fff;
+      .time{
+        display: flex;
+        height: 40px;
+      }
+      .ico{
+        display: flex;
+        .actulIcon{
+          width: 20px;
+          height: 20px;
+          background-color: red;
+        }
+        .caculateIcon{
+          width: 20px;
+          height: 20px;
+          background-color: green;
+        }
+        .lastYearIcon{
+          width: 20px;
+          height: 20px;
+          background-color: yellow;
+        }
+      }
+      #main2{
+        height: 400px;
+        background-color: #fff;
+      }
+      
     }
+
   }
   
-  // #main{
-  //   height: 200px;
-  //   width: 670px;
-  //   background-color: orange;
-  // }
-  // #main2{
-  //   height: 200px;
-  //   width: 670px;
-  //   background-color: red;
-  // }
+
 </style>

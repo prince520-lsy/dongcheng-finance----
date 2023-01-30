@@ -1,5 +1,5 @@
 <template>
-  <div id="main" class="radar">雷达图</div>
+  <div id="main" class="squre">柱形图</div>
 </template>
   <script>
 import * as echarts from 'echarts';
