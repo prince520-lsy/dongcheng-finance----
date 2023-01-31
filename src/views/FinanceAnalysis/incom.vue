@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <div class="title"><div class="business">财务分析</div>><div class="right">收入承包费用分析</div></div> -->
 
     <div class="navBox">
 
@@ -43,29 +42,13 @@
     
     <div class="echartsRow">
       <div class="echarts1">
-        <!-- <h2>xxxx同比环比</h2> -->
-        <div class="time">
-          <span class="choseTime">选择时间</span>
-          <a-button class="acumulateBtn">
-      累计
-    </a-button>
-    <a-button class="MonthBtn" type="primary">
-      月份
-    </a-button>
-        </div>
+
         <div class="category">
-          <span class="chooseCa">选择类别</span>
-          <a-button class="manageBtn">
-      管理
-    </a-button>
-    <a-button class="sellBtn" type="primary">
-      营销
-    </a-button>
-    <a-button class="financeBtn" >
-      财务
-    </a-button>
+          <!-- <span class="chooseCa">选择类别</span> -->
+          <!-- <a-button class="manageBtn">管理</a-button> -->
+          <!-- <a-button class="sellBtn" type="primary">营销</a-button> -->
+          <!-- <a-button class="financeBtn" >财务</a-button> -->
         </div>
-        <div class="unit">单位/笔</div>
         <div class="ico">
           <div class="actulIcon"></div>
           <span class="actulText">实际</span>
@@ -78,19 +61,12 @@
       </div>
 
       <div class="echarts2">
-        <h2>xxxx同比环比</h2>
         <div class="time">
-          <span>选择时间</span>
-          <a-button class="year">
-      累计
-    </a-button>
-    <a-button class="year" type="primary">
-      月份
-    </a-button>
+
         </div>
         <div class="category">
-          <span>选择类别</span>
-          <a-button class="year">
+          <!-- <span>选择类别</span> -->
+          <!-- <a-button class="year">
       管理
     </a-button>
     <a-button class="year" type="primary">
@@ -98,17 +74,9 @@
     </a-button>
     <a-button class="year" >
       财务
-    </a-button>
+    </a-button> -->
         </div>
-        <div class="unit">单位/笔</div>
-        <div class="ico">
-          <div class="actulIcon"></div>
-          <span>实际</span>
-          <div class="caculateIcon"></div>
-          <span>预算</span>
-          <div class="lastYearIcon"></div>
-          <span>去年同期</span>
-        </div>
+
 
         <!-- echarts2 -->
 
@@ -128,31 +96,31 @@
 
 const columns = [
   {
-    title: '文本',
+    title: '收入',
     dataIndex: 'name',
     key: 'name',
     scopedSlots: { customRender: 'name' },
   },
   {
-    title: '实际',
+    title: '当月',
     dataIndex: 'age',
     key: 'age',
     width: 80,
   },
   {
-    title: '预算',
+    title: '去年同期',
     dataIndex: 'address',
     key: 'address 1',
     ellipsis: true,
   },
   {
-    title: '实利率',
+    title: '累计',
     dataIndex: 'address',
     key: 'address 2',
     ellipsis: true,
   },
   {
-    title: '去年同期',
+    title: '去年同期累计',
     dataIndex: 'address',
     key: 'address 3',
     ellipsis: true,
@@ -163,28 +131,41 @@ const columns = [
 const data = [
   {
     key: '1',
-    name: '利润',
+    name: '成本',
     age: 32,
     address: '23',
     tags: ['nice', 'developer'],
   },
   {
     key: '2',
-    name: '管理',
+    name: '毛利',
     age: 42,
     address: '42',
     tags: ['loser'],
   },
   {
     key: '3',
-    name: '销售',
+    name: '管理费用',
     age: 32,
     address: '32',
     tags: ['cool', 'teacher'],
   },
   {
     key: '4',
-    name: '财务',
+    name: '销售费用',
+    age: 32,
+    address: '32',
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '5',
+    name: '财务费用',
+    age: 32,
+    address: '32',
+    tags: ['cool', 'teacher'],
+  },  {
+    key: '6',
+    name: '利润',
     age: 32,
     address: '32',
     tags: ['cool', 'teacher'],
