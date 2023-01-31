@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="title"><div class="business">财务分析</div>><div class="right">收入承包费用分析</div></div>
+    <!-- <div class="title"><div class="business">财务分析</div>><div class="right">收入承包费用分析</div></div> -->
 
     <div class="navBox">
 
@@ -9,6 +9,8 @@
       年
     </a-button>
     <a-button type="primary" class="month">月</a-button>
+    <a-button class="month">累计</a-button>
+
     </div>
     </div>
     
@@ -41,7 +43,7 @@
     
     <div class="echartsRow">
       <div class="echarts1">
-        <h2>xxxx同比环比</h2>
+        <!-- <h2>xxxx同比环比</h2> -->
         <div class="time">
           <span class="choseTime">选择时间</span>
           <a-button class="acumulateBtn">
@@ -107,6 +109,10 @@
           <div class="lastYearIcon"></div>
           <span>去年同期</span>
         </div>
+
+        <!-- echarts2 -->
+
+        <echatLine/>
         <div id="main"></div>
       </div>
 
@@ -186,9 +192,9 @@ const data = [
 ];
 import * as echarts from 'echarts';
 
-
+import echatLine from './components/echatLine.vue';
 export default {
-    
+    components:{echatLine},
     mounted() {
       var app = {};
 

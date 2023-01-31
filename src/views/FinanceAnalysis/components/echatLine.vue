@@ -5,7 +5,6 @@
 </template>
 <script>
 import * as echarts from 'echarts';
-
 export default {
   mounted() {
     var chartDom = document.getElementById('main2');
