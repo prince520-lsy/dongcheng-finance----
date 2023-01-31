@@ -29,8 +29,8 @@
       <div class="table2">
         <div class="tableTitle2">收入成本预算费用表</div>
         <a-table
-      :columns="columns"
-      :data-source="data"
+      :columns="columns2"
+      :data-source="data2"
       :pagination="false"
       >  
       <a slot="name" slot-scope="text">{{ text }}</a>
@@ -44,10 +44,6 @@
       <div class="echarts1">
 
         <div class="category">
-          <!-- <span class="chooseCa">选择类别</span> -->
-          <!-- <a-button class="manageBtn">管理</a-button> -->
-          <!-- <a-button class="sellBtn" type="primary">营销</a-button> -->
-          <!-- <a-button class="financeBtn" >财务</a-button> -->
         </div>
         <div class="ico">
           <div class="actulIcon"></div>
@@ -127,7 +123,50 @@ const columns = [
   },
  
 ];
-
+const columns2 = [
+  {
+    title: '月份',
+    dataIndex: 'name',
+    key: 'name',
+    scopedSlots: { customRender: 'name' },
+  },
+  {
+    title: '成本',
+    dataIndex: 'age',
+    key: 'age',
+    width: 80,
+  },
+  {
+    title: '毛利',
+    dataIndex: 'address',
+    key: 'address 1',
+    ellipsis: true,
+  },
+  {
+    title: '管理费用',
+    dataIndex: 'address',
+    key: 'address 2',
+    ellipsis: true,
+  },
+  {
+    title: '销售费用',
+    dataIndex: 'address',
+    key: 'address 3',
+    ellipsis: true,
+  },
+  {
+    title: '财务费用',
+    dataIndex: 'address',
+    key: 'address 4',
+    ellipsis: true,
+  },
+  {
+    title: '利润',
+    dataIndex: 'address',
+    key: 'address 5',
+    ellipsis: true,
+  },
+];
 const data = [
   {
     key: '1',
@@ -171,8 +210,50 @@ const data = [
     tags: ['cool', 'teacher'],
   },
 ];
+const data2 = [
+  {
+    key: '1',
+    name: '1',
+    age: 32,
+    address: '23',
+    tags: ['nice', 'developer'],
+  },
+  {
+    key: '2',
+    name: '2',
+    age: 42,
+    address: '42',
+    tags: ['loser'],
+  },
+  {
+    key: '3',
+    name: '3',
+    age: 32,
+    address: '32',
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '4',
+    name: '4',
+    age: 32,
+    address: '32',
+    tags: ['cool', 'teacher'],
+  },
+  {
+    key: '5',
+    name: '5',
+    age: 32,
+    address: '32',
+    tags: ['cool', 'teacher'],
+  },  {
+    key: '6',
+    name: '6',
+    age: 32,
+    address: '32',
+    tags: ['cool', 'teacher'],
+  },
+];
 import * as echarts from 'echarts';
-
 import echatLine from './components/echatLine.vue';
 export default {
     components:{echatLine},
@@ -342,7 +423,9 @@ option && myChart.setOption(option);
     data() {
     return {
       data,
+      data2,
       columns,
+      columns2
     };
   },
 }
