@@ -1,14 +1,27 @@
 <template>
   <div>
 
+    <!-- 盈利分析 -->
+    <div>
+    <a-table :columns="columns0" :data-source="data0" :pagination="false" bordered>
+    <template slot="name" slot-scope="text">
+      <a>{{ text }}</a>
+    </template>
+    <template slot="title" slot-scope="currentPageData">
+      <span class="title">盈利分析</span>
+    </template>
+
+  </a-table>
+    </div>
+
     <!-- 资产质量 -->
     <div>
     <a-table :columns="columns" :data-source="data" :pagination="false" bordered>
     <template slot="name" slot-scope="text">
       <a>{{ text }}</a>
     </template>
-    <template slot="title" slot-scope="currentPageData">
-      资产质量
+    <template slot="title" slot-scope="currentPageData" class="title">
+      <span class="title">资产质量</span>
     </template>
 
   </a-table>
@@ -21,58 +34,63 @@
       <a>{{ text }}</a>
     </template>
     <template slot="title" slot-scope="currentPageData">
-      债务风险
+      <span class="title">债务风险</span>
     </template>
 
   </a-table>
     </div>
+
+    <!-- 经营增长 -->
     <div>
-    <a-table :columns="columns" :data-source="data" :pagination="false" bordered>
+    <a-table :columns="columns2" :data-source="data2" :pagination="false" bordered>
     <template slot="name" slot-scope="text">
       <a>{{ text }}</a>
     </template>
     <template slot="title" slot-scope="currentPageData">
-      Header
+      <span class="title">经营增长</span>
     </template>
 
   </a-table>
     </div>
+
+    <!-- 补充 -->
     <div>
-    <a-table :columns="columns" :data-source="data" :pagination="false" bordered>
+    <a-table :columns="columns3" :data-source="data3" :pagination="false" bordered>
     <template slot="name" slot-scope="text">
       <a>{{ text }}</a>
     </template>
     <template slot="title" slot-scope="currentPageData">
-      Header
+      <span class="title">补充</span>
     </template>
 
   </a-table>
     </div>
-    <div>
-    <a-table :columns="columns" :data-source="data" :pagination="false" bordered>
-    <template slot="name" slot-scope="text">
-      <a>{{ text }}</a>
-    </template>
-    <template slot="title" slot-scope="currentPageData">
-      Header
-    </template>
 
-  </a-table>
-    </div>
-    <div>
-    <a-table :columns="columns" :data-source="data" :pagination="false" bordered>
-    <template slot="name" slot-scope="text">
-      <a>{{ text }}</a>
-    </template>
-    <template slot="title" slot-scope="currentPageData">
-      资产质量
-    </template>
 
-  </a-table>
-    </div>
   </div>
 </template>
 <script>
+const columns0 = [
+  {
+    title: '项目',
+    dataIndex: 'name',
+    scopedSlots: { customRender: 'name' },
+  },
+  {
+    title: '公式',
+    className: 'column-money',
+    dataIndex: 'money',
+  },
+  {
+    title: '实际',
+    dataIndex: 'address',
+  },
+  {
+    title: '指标评价',
+    dataIndex: 'address',
+  },
+  
+];
 const columns = [
   {
     title: '指标点',
@@ -114,6 +132,86 @@ const columns1 = [
     dataIndex: 'address',
   },
   
+];
+const columns2 = [
+  {
+    title: '指标点',
+    dataIndex: 'name',
+    scopedSlots: { customRender: 'name' },
+  },
+  {
+    title: '实际',
+    className: 'column-money',
+    dataIndex: 'money',
+  },
+  {
+    title: '行业指标',
+    dataIndex: 'address',
+  },
+  {
+    title: '说明',
+    dataIndex: 'address',
+  },
+  
+];
+const columns3 = [
+  {
+    title: '指标点',
+    dataIndex: 'name',
+    scopedSlots: { customRender: 'name' },
+  },
+  {
+    title: '实际',
+    className: 'column-money',
+    dataIndex: 'money',
+  },
+  {
+    title: '行业指标',
+    dataIndex: 'address',
+  },
+  {
+    title: '说明',
+    dataIndex: 'address',
+  },
+  
+];
+const data0 = [
+  {
+    key: '1',
+    name: '净资产收益率（%）',
+    money: '（0月属于母公司所有者的净利率-平均净资产）*100%',
+    address: '---',
+  },
+  {
+    key: '2',
+    name: '总资产报酬率（%）',
+    money: '[(利润总额+利息支出)-平均资产总额]*100%',
+    address: '---',
+  },
+  {
+    key: '3',
+    name: '主营业务利润率（%）',
+    money: '（主营业务利润-主营业收入）*100%',
+    address: '---',
+  },
+  {
+    key: '4',
+    name: '盈余现金保障倍数',
+    money: '经营现金净流量-净利润',
+    address: '---',
+  },
+  {
+    key: '5',
+    name: '成本费用利润率（%）',
+    money: '（利润总额-成本费用总额）*100%',
+    address: '---',
+  },
+  {
+    key: '6',
+    name: '资本收益率（%）',
+    money: '（归属于母公司所有者净利润-平均资本）*100%',
+    address: '---',
+  },
 ];
 const data = [
   {
@@ -179,15 +277,91 @@ const data1 = [
     address: '---',
   },
 ];
+const data2 = [
+  {
+    key: '1',
+    name: '销售（营业）增长率（%）',
+    money: '(本土主营业务收入增长额-上年主营业务收入)*100%',
+    address: '---',
+  },
+  {
+    key: '2',
+    name: '资本保值增值率（%）',
+    money: '（扣除客观因素后的年末所有者权益-年初所有者权益）*100%',
+    address: '---',
+  },
+  {
+    key: '3',
+    name: '销售（营业）利润增长率（%）',
+    money: '（本年主营业务利润增长额/上年主营业务利润）*100%',
+    address: '---',
+  },
+  {
+    key: '4',
+    name: '总额增长率（%）',
+    money: '(经营现金净流量-流动负债)*100%',
+    address: '---',
+  },
+  {
+    key: '5',
+    name: '技术投入比率（%）',
+    money: '（本年科技支出合计-主营业务收入）*100%',
+    address: '---',
+  },
+];
+const data3 = [
+  {
+    key: '1',
+    name: '存贷周转率（%）',
+    money: '主营业务成本/存货平均余额',
+    address: '---',
+  },
+  {
+    key: '2',
+    name: '三年销售平均增长率（%）',
+    money: '[(当年主营业务收入-三年前主营业务收入)开3次方-1]*100%',
+    address: '---',
+  },
+  {
+    key: '3',
+    name: '成本费用占主营收入比（%）',
+    money: '（成本费用总额-主营业务收入）*100%',
+    address: '---',
+  },
+  {
+    key: '4',
+    name: '经济增加值率（%）',
+    money: '(经济增加值-调整后资本)*100%',
+    address: '---',
+  },
+  {
+    key: '5',
+    name: 'EBITDA（%）',
+    money: '（净利润+所得税+利息支出+固定资产+无形资产）/主营业务收入*100%',
+    address: '---',
+  },
+  {
+    key: '6',
+    name: '资本累计率（%）',
+    money: '（年末所有者权益-年初所有者权益）-年初所有者权益*100%',
+    address: '---',
+  },
+];
 export default {
     data() {
-      return {
+    return {
+        data0,
         data,
         data1,
-        
 
+        data2,
+        data3,
+        columns0,
         columns,
         columns1,
+      columns2,
+        columns3
+
         
 
       }
@@ -199,3 +373,9 @@ export default {
   
 }
 </script>
+<style lang="less" scoped>
+.title{
+  font-size: 18px;
+  font-weight: 700;
+}
+</style>
