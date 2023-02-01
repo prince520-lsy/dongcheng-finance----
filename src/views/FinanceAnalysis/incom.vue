@@ -61,16 +61,7 @@
 
         </div>
         <div class="category">
-          <!-- <span>选择类别</span> -->
-          <!-- <a-button class="year">
-      管理
-    </a-button>
-    <a-button class="year" type="primary">
-      营销
-    </a-button>
-    <a-button class="year" >
-      财务
-    </a-button> -->
+
         </div>
 
 
@@ -487,14 +478,14 @@ option && myChart.setOption(option);
 
   .echartsRow{
     margin-top: 20px;
-    height: 300px;
+    height: 400px;
     display: flex;
     justify-content: space-between;
     // background-color: green;
     .echarts1{
-      height: 300px;
+      height: 500px;
       // display: flex;
-      width: 670px;
+      width: 800px;
       background-color: #fff;
       .time{
         display: flex;
@@ -563,9 +554,9 @@ option && myChart.setOption(option);
       
     }
     .echarts2{
-      height: 300px;
+      height: 500px;
       // display: flex;
-      width: 670px;
+      width: 800px;
       background-color: #fff;
       .time{
         display: flex;

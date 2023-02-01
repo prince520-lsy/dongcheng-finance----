@@ -7,6 +7,17 @@
 import * as echarts from 'echarts';
 
 export default {
+  data() {
+    return {
+      
+    }
+  },
+  methods: {
+    
+  },
+  created() {
+    
+  },
   mounted() {
     var chartDom = document.getElementById('main2');
     var myChart = echarts.init(chartDom);
@@ -59,6 +70,12 @@ export default {
 };
 
 option && myChart.setOption(option);
+  },
+  updated() {
+    
+  },
+  destroyed() {
+    
   },
 
 }
