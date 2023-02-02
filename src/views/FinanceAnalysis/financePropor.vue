@@ -14,10 +14,10 @@
 
 
     <!-- 折线图 -->
-    <testEchart class="e" />
+    <testEchart />
 
     <!-- 横柱状图 -->
-    <hengBar class="e" />
+    <hengBar />
 
   </div>
 </template>

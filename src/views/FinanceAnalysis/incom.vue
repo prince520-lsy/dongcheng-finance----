@@ -18,12 +18,12 @@
 
         <div class="tableTitle1">收入成本预算费用表</div>
         <a-table :columns="columns" :data-source="data" :pagination="false">
-          <a slot="name" slot-scope="text">{{}}</a>
+          <a slot="name" slot-scope="text">{{ text }}</a>
         </a-table>
       </div>
 
       <div class="table2">
-        <div class="tableTitle2">收入成本预算费用表</div>
+        <div class="tableTitle2">各月份营收费用表</div>
         <a-table :columns="columns2" :data-source="data2" :pagination="false">
           <a slot="name" slot-scope="text">{{ text }}</a>
         </a-table>
@@ -72,28 +72,45 @@
   </div>
 </template>
 <script>
+// const data = [
+//   { project: '收入', month: '3223', qntq: '323', lj: '3223', qntqlj: '3233' },
+//   { project: '利润', month: '3223', qntq: '323', lj: '3223', qntqlj: '3233' },
+//   { project: '成本', month: '3223', qntq: '323', lj: '3223', qntqlj: '3233' },
+//   { project: '营业费用', month: '3223', qntq: '323', lj: '3223', qntqlj: '666' },
+//   { project: '管理费用', month: '3223', qntq: '323', lj: '3223', qntqlj: '3233' },
+//   { project: '财务费用', month: '3223', qntq: '323', lj: '3223', qntqlj: '33' }
+// ]
 const data = []
-// const columns = [{ title: '项目', ellipsis: true },]
 const columns = [
   {
     title: '项目',
-
+    dataIndex: 'project',
+    key: 'project',
+    scopedSlots: { customRender: 'project' },
   },
   {
     title: '当月',
-
+    dataIndex: 'month',
+    key: 'month',
+    scopedSlots: { customRender: 'month' },
   },
   {
     title: '去年同期',
-
+    dataIndex: 'qntq',
+    key: 'qntq',
+    scopedSlots: { customRender: 'qntq' },
   },
   {
     title: '累计',
-
+    dataIndex: 'lj',
+    key: 'lj',
+    scopedSlots: { customRender: 'lj' },
   },
   {
     title: '去年同期累计',
-
+    dataIndex: 'qntqlj',
+    key: 'qntqlj',
+    scopedSlots: { customRender: 'qntqlj' },
     ellipsis: true,
   },
 
@@ -145,42 +162,7 @@ const columns2 = [
 
 
 
-//   {
-//     key: '2',
-//     name: '毛利',
-//     age: 42,
-//     address: '42',
-//     tags: ['loser'],
-//   },
-//   // {
-//   //   key: '3',
-//   //   name: '管理费用',
-//   //   age: 32,
-//   //   address: '32',
-//   //   tags: ['cool', 'teacher'],
-//   // },
-//   // {
-//   //   key: '4',
-//   //   name: '销售费用',
-//   //   age: 32,
-//   //   address: '32',
-//   //   tags: ['cool', 'teacher'],
-//   // },
-//   // {
-//   //   key: '5',
-//   //   name: '财务费用',
-//   //   age: 32,
-//   //   address: '32',
-//   //   tags: ['cool', 'teacher'],
-//   // },
-//   // {
-//   //   key: '6',
-//   //   name: '利润',
-//   //   age: 32,
-//   //   address: '32',
-//   //   tags: ['cool', 'teacher'],
-//   // },
-// ];
+
 const data2 = [
   {
     key: '1',
@@ -244,8 +226,8 @@ export default {
   },
   async created() {
     let res = await getIncomTable()
-    console.log(246, res);
-
+    console.log(246, res.data.list);
+    this.data = res.data.list
   },
   mounted() {
     var app = {};
