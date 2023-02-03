@@ -123,13 +123,13 @@ const columns2 = [
     scopedSlots: { customRender: 'name' },
   },
   {
-    title: '成本',
+    title: '收入',
     dataIndex: 'age',
     key: 'age',
     width: 80,
   },
   {
-    title: '毛利',
+    title: '成本',
     dataIndex: 'address',
     key: 'address 1',
     ellipsis: true,
@@ -348,7 +348,7 @@ export default {
         {
           type: 'category',
           axisTick: { show: false },
-          data: ['1月', '2月', '3月', '4月', '5月', '6月']
+          data: ['收入', '利润', '成本', '营业费用', '管理费用', '财务费用']
         }
       ],
       yAxis: [

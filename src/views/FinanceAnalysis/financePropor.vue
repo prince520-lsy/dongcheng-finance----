@@ -12,12 +12,19 @@
       </div>
     </div>
 
+    <div>
 
-    <!-- 折线图 -->
-    <testEchart />
+      <!-- 折线图 -->
+      <testEchart />
+    </div>
 
-    <!-- 横柱状图 -->
-    <hengBar />
+    <div>
+
+      <!-- 横柱状图 -->
+      <hengBar />
+    </div>
+
+
 
   </div>
 </template>

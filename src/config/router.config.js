@@ -220,7 +220,7 @@ export const constantRouterMap = [
             path: '/income',
             name: 'incom',
             component: () => import(/* webpackChunkName: "user" */ '@/views/FinanceAnalysis/incom.vue'),
-            meta: { title: '收入承包费用分析'}
+            meta: { title: '收入费用分析'}
           },
           {
             path: '/industry',
