@@ -3,11 +3,11 @@
 
     <div class="navBox">
       <div class="date">选择日期
-        <a-button class="year" @click="changeColor">
+        <a-button class="year" @click="changeColor(1)" :class="buttonIndex==1?'bgColor':''">
           年
         </a-button>
-        <a-button type="primary" class="month">月</a-button>
-        <a-button class="acu">累计</a-button>
+        <a-button class="month" @click="changeColor(2)" :class="buttonIndex == 2 ? 'bgColor' : ''">月</a-button>
+        <a-button class="acu" @click="changeColor(3)" :class="buttonIndex == 3 ? 'bgColor' : ''">累计</a-button>
 
       </div>
     </div>
@@ -99,7 +99,7 @@ const columns = [
     scopedSlots: { customRender: 'project' },
   },
   {
-    title: '当月',
+    title: '本期',
     dataIndex: 'month',
     key: 'month',
     scopedSlots: { customRender: 'month' },
@@ -266,7 +266,8 @@ export default {
       data,
       data2,
       columns,
-      columns2
+      columns2,
+      buttonIndex: 1
     };
   },
   methods: {
@@ -276,7 +277,8 @@ export default {
       this.data2 = res.data.list[0]
       console.log(270, res.data[0].list);
     },
-    changeColor() {
+    changeColor(buttonIndex) {
+      this.buttonIndex = buttonIndex
       // let YearBtn = document.querySelector('.year');
       // console.log(270, YearBtn);
       // YearBtn.style.backgroundColor = 'blue'
@@ -455,7 +457,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.hover {
+.bgColor {
   background-color: #448fff;
 }
 
