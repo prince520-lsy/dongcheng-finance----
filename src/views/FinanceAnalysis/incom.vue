@@ -148,6 +148,13 @@ const columns2 = [
     ellipsis: true,
   },
   {
+    title: '毛利',
+    dataIndex: 'pureprofit',
+    key: 'pureprofit',
+    scopedSlots: { customRender: 'pureprofit' },
+    ellipsis: true,
+  },
+  {
     title: '管理费用',
     dataIndex: 'manageCost',
     key: 'manageCost',
@@ -402,7 +409,7 @@ export default {
         {
           type: 'category',
           axisTick: { show: false },
-          data: ['收入', '利润', '成本', '营业费用', '管理费用', '财务费用']
+          data: ['收入', '成本', '毛利', '营业费用', '管理费用', '财务费用', '利润']
         }
       ],
       yAxis: [
@@ -491,6 +498,8 @@ export default {
   }
 }
 
+
+
 .tableRow {
   display: flex;
   justify-content: space-between;
@@ -514,6 +523,11 @@ export default {
     background-color: #fff;
     overflow: scroll;
     height: 450px;
+    box-sizing: border-box;
+
+    a-table>tr>td {
+      padding: 16px 0px;
+    }
 
     .tableTitle2 {
       margin-left: 20px;
@@ -526,7 +540,8 @@ export default {
 
 .echartsRow {
   margin-top: 20px;
-  height: 400px;
+  height: 500px;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
 
@@ -656,13 +671,5 @@ export default {
 
   }
 
-}
-
-.echart3 {
-  background-color: red;
-}
-
-.echart4 {
-  background-color: yellow;
 }
 </style>
