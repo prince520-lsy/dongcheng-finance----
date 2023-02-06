@@ -499,6 +499,8 @@ export default {
   .table1 {
     background-color: #fff;
     margin-right: 10px;
+    overflow: scroll;
+    height: 450px;
 
     .tableTitle1 {
       margin-left: 20px;
@@ -510,6 +512,8 @@ export default {
 
   .table2 {
     background-color: #fff;
+    overflow: scroll;
+    height: 450px;
 
     .tableTitle2 {
       margin-left: 20px;
