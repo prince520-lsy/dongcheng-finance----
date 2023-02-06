@@ -3,67 +3,67 @@
 
     <!-- 盈利分析 -->
     <div>
-    <a-table :columns="columns0" :data-source="data0" :pagination="false" bordered>
-    <template slot="name" slot-scope="text">
-      <a>{{ text }}</a>
-    </template>
-    <template slot="title" slot-scope="currentPageData">
-      <span class="title">盈利分析</span>
-    </template>
+      <a-table :columns="columns0" :data-source="data0" :pagination="false" bordered>
+        <template slot="name" slot-scope="text">
+          <a>{{ text }}</a>
+        </template>
+        <template slot="title" slot-scope="currentPageData">
+          <span class="title">盈利分析</span>
+        </template>
 
-  </a-table>
+      </a-table>
     </div>
 
     <!-- 资产质量 -->
     <div>
-    <a-table :columns="columns" :data-source="data" :pagination="false" bordered>
-    <template slot="name" slot-scope="text">
-      <a>{{ text }}</a>
-    </template>
-    <template slot="title" slot-scope="currentPageData" class="title">
-      <span class="title">资产质量</span>
-    </template>
+      <a-table :columns="columns" :data-source="data" :pagination="false" bordered>
+        <template slot="name" slot-scope="text">
+          <a>{{ text }}</a>
+        </template>
+        <template slot="title" slot-scope="currentPageData" class="title">
+          <span class="title">资产质量</span>
+        </template>
 
-  </a-table>
+      </a-table>
     </div>
 
     <!-- 债务风险 -->
     <div>
-    <a-table :columns="columns1" :data-source="data1" :pagination="false" bordered>
-    <template slot="name" slot-scope="text">
-      <a>{{ text }}</a>
-    </template>
-    <template slot="title" slot-scope="currentPageData">
-      <span class="title">债务风险</span>
-    </template>
+      <a-table :columns="columns1" :data-source="data1" :pagination="false" bordered>
+        <template slot="name" slot-scope="text">
+          <a>{{ text }}</a>
+        </template>
+        <template slot="title" slot-scope="currentPageData">
+          <span class="title">债务风险</span>
+        </template>
 
-  </a-table>
+      </a-table>
     </div>
 
     <!-- 经营增长 -->
     <div>
-    <a-table :columns="columns2" :data-source="data2" :pagination="false" bordered>
-    <template slot="name" slot-scope="text">
-      <a>{{ text }}</a>
-    </template>
-    <template slot="title" slot-scope="currentPageData">
-      <span class="title">经营增长</span>
-    </template>
+      <a-table :columns="columns2" :data-source="data2" :pagination="false" bordered>
+        <template slot="name" slot-scope="text">
+          <a>{{ text }}</a>
+        </template>
+        <template slot="title" slot-scope="currentPageData">
+          <span class="title">经营增长</span>
+        </template>
 
-  </a-table>
+      </a-table>
     </div>
 
     <!-- 补充 -->
     <div>
-    <a-table :columns="columns3" :data-source="data3" :pagination="false" bordered>
-    <template slot="name" slot-scope="text">
-      <a>{{ text }}</a>
-    </template>
-    <template slot="title" slot-scope="currentPageData">
-      <span class="title">补充</span>
-    </template>
+      <a-table :columns="columns3" :data-source="data3" :pagination="false" bordered>
+        <template slot="name" slot-scope="text">
+          <a>{{ text }}</a>
+        </template>
+        <template slot="title" slot-scope="currentPageData">
+          <span class="title">补充</span>
+        </template>
 
-  </a-table>
+      </a-table>
     </div>
 
 
@@ -89,7 +89,7 @@ const columns0 = [
     title: '指标评价',
     dataIndex: 'address',
   },
-  
+
 ];
 const columns = [
   {
@@ -110,7 +110,7 @@ const columns = [
     title: '说明',
     dataIndex: 'address',
   },
-  
+
 ];
 const columns1 = [
   {
@@ -131,7 +131,7 @@ const columns1 = [
     title: '说明',
     dataIndex: 'address',
   },
-  
+
 ];
 const columns2 = [
   {
@@ -152,7 +152,7 @@ const columns2 = [
     title: '说明',
     dataIndex: 'address',
   },
-  
+
 ];
 const columns3 = [
   {
@@ -173,7 +173,7 @@ const columns3 = [
     title: '说明',
     dataIndex: 'address',
   },
-  
+
 ];
 const data0 = [
   {
@@ -348,33 +348,33 @@ const data3 = [
   },
 ];
 export default {
-    data() {
+  data() {
     return {
-        data0,
-        data,
-        data1,
+      data0,
+      data,
+      data1,
 
-        data2,
-        data3,
-        columns0,
-        columns,
-        columns1,
+      data2,
+      data3,
+      columns0,
+      columns,
+      columns1,
       columns2,
-        columns3
+      columns3
 
-        
 
-      }
+
+    }
   },
-    methods: {
-      
+  methods: {
+
   },
-    
-  
+
+
 }
 </script>
 <style lang="less" scoped>
-.title{
+.title {
   font-size: 18px;
   font-weight: 700;
 }

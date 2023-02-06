@@ -2,13 +2,12 @@
   <div>
 
     <div class="navBox">
-
       <div class="date">选择日期
-        <a-button class="year">
+        <a-button class="year" @click="changeColor">
           年
         </a-button>
         <a-button type="primary" class="month">月</a-button>
-        <a-button class="month">累计</a-button>
+        <a-button class="acu">累计</a-button>
 
       </div>
     </div>
@@ -33,6 +32,9 @@
     </div>
 
     <div class="echartsRow">
+
+
+
       <div class="echarts1">
 
         <div class="category">
@@ -45,7 +47,10 @@
           <div class="lastYearIcon"></div>
           <span class="lastYearText">去年同期</span>
         </div>
-        <div id="main"></div>
+
+        <!-- echarts1 -->
+        <fareEcharts />
+        <!-- <div id="main"></div> -->
       </div>
 
       <div class="echarts2">
@@ -60,9 +65,14 @@
         <!-- echarts2 -->
 
         <echatLine />
-        <div id="main"></div>
+        <div></div>
       </div>
 
+
+      <a-row :gutter="[8, 8]" type="flex">
+        <a-col :span="12" class="echart3"></a-col>
+        <a-row :span="12" class="echart4"></a-row>
+      </a-row>
     </div>
 
 
@@ -115,102 +125,135 @@ const columns = [
   },
 
 ];
+// const data2 = []
 const columns2 = [
   {
     title: '月份',
-    dataIndex: 'name',
-    key: 'name',
-    scopedSlots: { customRender: 'name' },
+    dataIndex: 'month',
+    key: 'month',
+    scopedSlots: { customRender: 'month' },
   },
   {
     title: '收入',
-    dataIndex: 'age',
-    key: 'age',
+    dataIndex: 'incom',
+    key: 'incom',
+    scopedSlots: { customRender: 'incom' },
     width: 80,
   },
   {
     title: '成本',
-    dataIndex: 'address',
-    key: 'address 1',
+    dataIndex: 'cost',
+    key: 'cost',
+    scopedSlots: { customRender: 'cost' },
     ellipsis: true,
   },
   {
     title: '管理费用',
-    dataIndex: 'address',
-    key: 'address 2',
+    dataIndex: 'manageCost',
+    key: 'manageCost',
+    scopedSlots: { customRender: 'manageCost' },
     ellipsis: true,
   },
   {
     title: '销售费用',
-    dataIndex: 'address',
-    key: 'address 3',
+    dataIndex: 'saleCost',
+    key: 'saleCost',
+    scopedSlots: { customRender: 'saleCost' },
     ellipsis: true,
   },
   {
     title: '财务费用',
-    dataIndex: 'address',
-    key: 'address 4',
+    dataIndex: 'financeCost',
+    key: 'financeCost',
+    scopedSlots: { customRender: 'financeCost' },
     ellipsis: true,
   },
   {
     title: '利润',
-    dataIndex: 'address',
-    key: 'address 5',
+    dataIndex: 'profit',
+    key: 'profit',
+    scopedSlots: { customRender: 'profit' },
     ellipsis: true,
   },
 ];
+const data2 = []
+// const data2 = [
+//   {
+//     // key: '1',
 
+//     incom: '422324',
+//     cost: '23',
+//     manageCost: '423',
+//     saleCost: '123',
+//     financeCost: '324',
+//     profit: '424',
+//     month: '212'
+//     // tags: ['nice', 'developer'],
+//   },
+//   {
+//     // key: '2',
+//     month: '2',
+//     incom: 42,
+//     cost: '23',
+//     manageCost: '423',
+//     saleCost: '123',
+//     financeCost: '324',
+//     profit: '424',
+//     // tags: ['loser'],
+//   },
+//   {
+//     // key: '3',
+//     month: '3',
+//     incom: 32,
+//     cost: '23',
+//     manageCost: '423',
+//     saleCost: '123',
+//     financeCost: '324',
+//     profit: '424',
+//     // tags: ['cool', 'teacher'],
+//   },
+//   {
+//     // key: '4',
+//     month: '4',
+//     incom: 32,
+//     cost: '23',
+//     manageCost: '423',
+//     saleCost: '123',
+//     financeCost: '324',
+//     profit: '424',
+//     // tags: ['cool', 'teacher'],
+//   },
+//   {
+//     // key: '5',
+//     month: '5',
+//     incom: 32,
+//     cost: '23',
+//     manageCost: '423',
+//     saleCost: '123',
 
+//     financeCost: '324',
+//     profit: '424',
+//     // tags: ['cool', 'teacher'],
+//   }, {
+//     // key: '6',
+//     month: '6',
+//     incom: 32,
+//     cost: '23',
+//     manageCost: '423',
+//     saleCost: '123',
+//     financeCost: '324',
+//     profit: '424',
 
-
-const data2 = [
-  {
-    key: '1',
-    name: '1',
-    age: 32,
-    address: '23',
-    tags: ['nice', 'developer'],
-  },
-  {
-    key: '2',
-    name: '2',
-    age: 42,
-    address: '42',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    name: '3',
-    age: 32,
-    address: '32',
-    tags: ['cool', 'teacher'],
-  },
-  {
-    key: '4',
-    name: '4',
-    age: 32,
-    address: '32',
-    tags: ['cool', 'teacher'],
-  },
-  {
-    key: '5',
-    name: '5',
-    age: 32,
-    address: '32',
-    tags: ['cool', 'teacher'],
-  }, {
-    key: '6',
-    name: '6',
-    age: 32,
-    address: '32',
-    tags: ['cool', 'teacher'],
-  },
-];
+//     // tags: ['cool', 'teacher'],
+//   },
+// ];
 import * as echarts from 'echarts';
+import echartWrap from '@/components/EchartWrap/Index.vue'
+import fareEcharts from './components/fareEcharts.vue';
 import echatLine from './components/echatLine.vue';
-import { getIncomTable } from '@/api/incom'
+import { getIncomTable, getIncomMonthTable } from '@/api/incom'
 export default {
-  components: { echatLine },
+  components: { echatLine, echartWrap, fareEcharts },
   data() {
     return {
       data,
@@ -220,18 +263,29 @@ export default {
     };
   },
   methods: {
-    reder() {
-
+    async getIncomMonthTable() {
+      let res = await getIncomMonthTable()
+      console.log(225, res);
+      this.data2 = res.data.list[0]
+      console.log(270, res.data[0].list);
+    },
+    changeColor() {
+      // let YearBtn = document.querySelector('.year');
+      // console.log(270, YearBtn);
+      // YearBtn.style.backgroundColor = 'blue'
     }
   },
   async created() {
+
+    //获取收入详情信息数据
     let res = await getIncomTable()
     console.log(246, res.data.list);
     this.data = res.data.list
+    //获取月份表格数据
+    this.getIncomMonthTable()
   },
   mounted() {
     var app = {};
-
     var chartDom = document.getElementById('main');
     var myChart = echarts.init(chartDom);
     var option;
@@ -387,8 +441,6 @@ export default {
         }
       ]
     };
-
-
     option && myChart.setOption(option);
   },
 
@@ -396,6 +448,14 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+.hover {
+  background-color: #448fff;
+}
+
+.acu {
+  margin-left: 25px;
+}
+
 .title {
   display: flex;
   align-items: center;
@@ -466,12 +526,9 @@ export default {
   display: flex;
   justify-content: space-between;
 
-  // background-color: green;
   .echarts1 {
     height: 500px;
-    // display: flex;
     width: 800px;
-    background-color: #fff;
 
     .time {
       display: flex;
@@ -513,7 +570,8 @@ export default {
     .ico {
       display: flex;
       align-items: center;
-      margin-top: 15px;
+      margin-top: 60px;
+      margin-left: 13px;
 
       .actulIcon {
         width: 10px;
@@ -550,16 +608,14 @@ export default {
 
     #main {
       height: 400px;
-      background-color: #fff;
+      width: 800px;
     }
 
   }
 
   .echarts2 {
     height: 500px;
-    // display: flex;
     width: 800px;
-    background-color: #fff;
 
     .time {
       display: flex;
@@ -591,10 +647,18 @@ export default {
 
     #main2 {
       height: 400px;
-      background-color: #fff;
+      width: 600px;
     }
 
   }
 
+}
+
+.echart3 {
+  background-color: red;
+}
+
+.echart4 {
+  background-color: yellow;
 }
 </style>

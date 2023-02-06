@@ -1,35 +1,16 @@
 <template>
-  <div>
-    <div id="main" class="squre">柱形图</div>
-    <div>
-      <echatLine />
-    </div>
-    <div>
-      <hengBar />
-    </div>
-    <div>
-      <StackedEchart />
-    </div>
+  <div id="main">
+
   </div>
 </template>
 <script>
-import * as echarts from 'echarts';
-import echatLine from './components/echatLine.vue';
-import hengBar from './components/hengBar.vue';
-import StackedEchart from './components/StackedEchart.vue';
 export default {
-  components: { echatLine, hengBar, StackedEchart },
+
   mounted() {
     var app = {};
-
     var chartDom = document.getElementById('main');
     var myChart = echarts.init(chartDom);
     var option;
-
-    var chartDom = document.getElementById('main');
-    var myChart = echarts.init(chartDom);
-    var option;
-
     const posList = [
       'left',
       'right',
@@ -143,7 +124,7 @@ export default {
         {
           type: 'category',
           axisTick: { show: false },
-          data: ['1月', '2月', '3月', '4月', '5月', '6月']
+          data: ['收入', '利润', '成本', '营业费用', '管理费用', '财务费用']
         }
       ],
       yAxis: [
@@ -160,7 +141,7 @@ export default {
           emphasis: {
             focus: 'series'
           },
-          data: [320, 332, 301, 334, 390, 5000]
+          data: [320, 332, 301, 334, 390, 500]
         },
         {
           name: '预算',
@@ -182,16 +163,7 @@ export default {
         }
       ]
     };
-
     option && myChart.setOption(option);
-
   },
 }
 </script>
-<style lang="less" scoped>
-#main {
-  width: 700px;
-  height: 400px;
-
-}
-</style>
