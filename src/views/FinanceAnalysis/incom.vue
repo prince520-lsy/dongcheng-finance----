@@ -42,7 +42,6 @@
 
         <!-- echarts1 -->
         <fareEcharts />
-        <!-- <div id="main"></div> -->
       </div>
 
       <div class="echarts2">
@@ -171,6 +170,7 @@ import echartWrap from '@/components/EchartWrap/Index.vue'
 import fareEcharts from './components/fareEcharts.vue';
 import echatLine from './components/echatLine.vue';
 import { getIncomTable, getIncomMonthTable, getecharts1Data } from '@/api/incom'
+import { axios } from '@/utils/request';
 export default {
   components: { echatLine, echartWrap, fareEcharts },
   data() {
@@ -179,13 +179,111 @@ export default {
       data2,
       columns,
       columns2,
-      buttonIndex: 2
+      buttonIndex: 2,
+
     };
   },
   methods: {
+    //初始化echarts1
+    initChart1() {
+      axios.get('form/ProfitChartAnalysis').then(res => {
+        console.log(190, res.data.list[0][0]);
+        let actuData = res.data.list[0][0].data
+        console.log(actuData);
+        let lastYearPi = res.data.list[0][1].data
+        console.log(lastYearPi);
+        this.char = echarts.init(document.querySelector('#main'))
+        let option = {
+          title: {
+            text: '各月份营收费用瀑布图'
+          },
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow'
+            },
+            formatter: function (params) {
+              let tar;
+              if (params[1] && params[1].value !== '-') {
+                tar = params[1];
+              } else {
+                tar = params[2];
+              }
+              return tar && tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+            }
+          },
+          legend: {
+            data: ['实际', '预算', '去年同期']
+          },
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+          },
+          xAxis: {
+            type: 'category',
+            data: ['收入', '成本', '毛利', '营业费用', '管理费用', '财务费用', '利润']
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: [
+            {
+              name: 'Placeholder',
+              type: 'bar',
+              stack: 'Total',
+              silent: true,
+              itemStyle: {
+                borderColor: 'transparent',
+                color: 'transparent'
+              },
+              emphasis: {
+                itemStyle: {
+                  borderColor: 'transparent',
+                  color: 'transparent'
+                }
+              },
+              data: [0, 900, 1245, 1530, 1376, 1376, 1511, 1689, 1856, 1495, 1292]
+            },
+            {
+              name: '去年同期',
+              type: 'bar',
+              stack: 'Total',
+              label: {
+                show: true,
+                position: 'top'
+              },
+              data: [90430, 42345, 394233, 14235, 17248, 24286]
+            },
+            {
+              name: '预算',
+              type: 'bar',
+              stack: 'Total',
+              label: {
+                show: true,
+                position: 'top'
+              },
+              data: [313, 2323, 2330, 23223, 23230, 2330, 32330]
+            },
+            {
+              name: '实际',
+              type: 'bar',
+              stack: 'Total',
+              label: {
+                show: true,
+                position: 'bottom'
+              },
+              data: actuData
+            }
+          ]
+        }
+        this.char.setOption(option)
+      })
+    },
+
 
     async getecharts1Data() {
-
       let res = await getecharts1Data()
       console.log(198, res);
     },
@@ -210,6 +308,8 @@ export default {
     this.data = res.data.list
     //获取月份表格数据
     this.getIncomMonthTable()
+
+    this.initChart1()
   },
   mounted() {
     var chartDom = document.getElementById('main');
