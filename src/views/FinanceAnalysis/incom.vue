@@ -69,10 +69,6 @@
       </div>
 
 
-      <a-row :gutter="[8, 8]" type="flex">
-        <a-col :span="12" class="echart3"></a-col>
-        <a-row :span="12" class="echart4"></a-row>
-      </a-row>
     </div>
 
 
@@ -82,14 +78,7 @@
   </div>
 </template>
 <script>
-// const data = [
-//   { project: '收入', month: '3223', qntq: '323', lj: '3223', qntqlj: '3233' },
-//   { project: '利润', month: '3223', qntq: '323', lj: '3223', qntqlj: '3233' },
-//   { project: '成本', month: '3223', qntq: '323', lj: '3223', qntqlj: '3233' },
-//   { project: '营业费用', month: '3223', qntq: '323', lj: '3223', qntqlj: '666' },
-//   { project: '管理费用', month: '3223', qntq: '323', lj: '3223', qntqlj: '3233' },
-//   { project: '财务费用', month: '3223', qntq: '323', lj: '3223', qntqlj: '33' }
-// ]
+
 const data = []
 const columns = [
   {
@@ -125,7 +114,7 @@ const columns = [
   },
 
 ];
-// const data2 = []
+
 const columns2 = [
   {
     title: '月份',
@@ -184,81 +173,12 @@ const columns2 = [
   },
 ];
 const data2 = []
-// const data2 = [
-//   {
-//     // key: '1',
 
-//     incom: '422324',
-//     cost: '23',
-//     manageCost: '423',
-//     saleCost: '123',
-//     financeCost: '324',
-//     profit: '424',
-//     month: '212'
-//     // tags: ['nice', 'developer'],
-//   },
-//   {
-//     // key: '2',
-//     month: '2',
-//     incom: 42,
-//     cost: '23',
-//     manageCost: '423',
-//     saleCost: '123',
-//     financeCost: '324',
-//     profit: '424',
-//     // tags: ['loser'],
-//   },
-//   {
-//     // key: '3',
-//     month: '3',
-//     incom: 32,
-//     cost: '23',
-//     manageCost: '423',
-//     saleCost: '123',
-//     financeCost: '324',
-//     profit: '424',
-//     // tags: ['cool', 'teacher'],
-//   },
-//   {
-//     // key: '4',
-//     month: '4',
-//     incom: 32,
-//     cost: '23',
-//     manageCost: '423',
-//     saleCost: '123',
-//     financeCost: '324',
-//     profit: '424',
-//     // tags: ['cool', 'teacher'],
-//   },
-//   {
-//     // key: '5',
-//     month: '5',
-//     incom: 32,
-//     cost: '23',
-//     manageCost: '423',
-//     saleCost: '123',
-
-//     financeCost: '324',
-//     profit: '424',
-//     // tags: ['cool', 'teacher'],
-//   }, {
-//     // key: '6',
-//     month: '6',
-//     incom: 32,
-//     cost: '23',
-//     manageCost: '423',
-//     saleCost: '123',
-//     financeCost: '324',
-//     profit: '424',
-
-//     // tags: ['cool', 'teacher'],
-//   },
-// ];
 import * as echarts from 'echarts';
 import echartWrap from '@/components/EchartWrap/Index.vue'
 import fareEcharts from './components/fareEcharts.vue';
 import echatLine from './components/echatLine.vue';
-import { getIncomTable, getIncomMonthTable } from '@/api/incom'
+import { getIncomTable, getIncomMonthTable, getecharts1Data } from '@/api/incom'
 export default {
   components: { echatLine, echartWrap, fareEcharts },
   data() {
@@ -267,10 +187,16 @@ export default {
       data2,
       columns,
       columns2,
-      buttonIndex: 1
+      buttonIndex: 2
     };
   },
   methods: {
+
+    async getecharts1Data() {
+
+      let res = await getecharts1Data()
+      console.log(198, res);
+    },
     async getIncomMonthTable() {
       let res = await getIncomMonthTable()
       console.log(225, res);
@@ -279,12 +205,12 @@ export default {
     },
     changeColor(buttonIndex) {
       this.buttonIndex = buttonIndex
-      // let YearBtn = document.querySelector('.year');
-      // console.log(270, YearBtn);
-      // YearBtn.style.backgroundColor = 'blue'
+
     }
   },
   async created() {
+    //获取echarts1数据
+    this.getecharts1Data()
 
     //获取收入详情信息数据
     let res = await getIncomTable()

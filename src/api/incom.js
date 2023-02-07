@@ -12,3 +12,9 @@ export const getIncomMonthTable = () => request({
   url: 'form/Month',
   method: 'get'
 })
+
+//瀑布流图表数据
+export const getecharts1Data = () => request({
+  url: 'form/ProfitChartAnalysis',
+  method: 'get'
+})
