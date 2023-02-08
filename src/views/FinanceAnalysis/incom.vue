@@ -242,7 +242,7 @@ export default {
                   color: 'transparent'
                 }
               },
-              data: [0, 93200, 123245, 132530, 133276, 133276, 151231, 168329, 132856, 1495, 1292]
+              data: lastYearPi
             },
             {
               name: '去年同期',
@@ -252,7 +252,7 @@ export default {
                 show: true,
                 position: 'top'
               },
-              data: [90430, 42345, 394233, 14235, 17248, 24286]
+              data: lastYearPi
             },
             {
               name: '预算',
@@ -262,7 +262,7 @@ export default {
                 show: true,
                 position: 'top'
               },
-              data: [313, 2323, 2330, 23223, 23230, 2330, 32330]
+              data: lastYearPi
             },
             {
               name: '实际',

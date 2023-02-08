@@ -8,7 +8,7 @@
           <a>{{ text }}</a>
         </template>
         <template slot="title" slot-scope="currentPageData">
-          <span class="title">盈利分析{{ text }}</span>
+          <span class="title">盈利分析 </span>
         </template>
 
       </a-table>
@@ -77,17 +77,17 @@ const columns0 = [
     scopedSlots: { customRender: 'project' },
   },
   {
-    title: '公式',
-    className: 'column-money',
-    dataIndex: 'equation',
-  },
-  {
     title: '实际',
+    className: 'column-money',
     dataIndex: 'actually',
   },
   {
-    title: '指标评价',
-    dataIndex: 'evaluation',
+    title: '行业指标',
+    dataIndex: 'industryIndex',
+  },
+  {
+    title: '说明',
+    dataIndex: 'explain',
   },
 
 ];
@@ -175,45 +175,46 @@ const columns3 = [
   },
 
 ];
-const data0 = [
-  {
-    key: '1',
-    project: '净资产收益率（%）',
-    equation: '（0月属于母公司所有者的净利率-平均净资产）*100%',
-    actually: '---',
-    evaluation: '666',
-  },
-  {
-    key: '2',
-    name: '总资产报酬率（%）',
-    equation: '[(利润总额+利息支出)-平均资产总额]*100%',
-    actually: '---',
-  },
-  {
-    key: '3',
-    name: '主营业务利润率（%）',
-    money: '（主营业务利润-主营业收入）*100%',
-    address: '---',
-  },
-  {
-    key: '4',
-    name: '盈余现金保障倍数',
-    money: '经营现金净流量-净利润',
-    address: '---',
-  },
-  {
-    key: '5',
-    name: '成本费用利润率（%）',
-    money: '（利润总额-成本费用总额）*100%',
-    address: '---',
-  },
-  {
-    key: '6',
-    name: '资本收益率（%）',
-    money: '（归属于母公司所有者净利润-平均资本）*100%',
-    address: '---',
-  },
-];
+// const data0 = [
+//   {
+//     key: '1',
+//     project: '净资产收益率（%）',
+//     actually: '（0月属于母公司所有者的净利率-平均净资产）*100%',
+//     industryIndex: '---',
+//     explain: '666',
+//   },
+//   {
+//     key: '2',
+//     name: '总资产报酬率（%）',
+//     equation: '[(利润总额+利息支出)-平均资产总额]*100%',
+//     actually: '---',
+//   },
+//   {
+//     key: '3',
+//     name: '主营业务利润率（%）',
+//     money: '（主营业务利润-主营业收入）*100%',
+//     address: '---',
+//   },
+//   {
+//     key: '4',
+//     name: '盈余现金保障倍数',
+//     money: '经营现金净流量-净利润',
+//     address: '---',
+//   },
+//   {
+//     key: '5',
+//     name: '成本费用利润率（%）',
+//     money: '（利润总额-成本费用总额）*100%',
+//     address: '---',
+//   },
+//   {
+//     key: '6',
+//     name: '资本收益率（%）',
+//     money: '（归属于母公司所有者净利润-平均资本）*100%',
+//     address: '---',
+//   },
+// ];
+const data0 = []
 const data = [
   {
     key: '1',
@@ -348,6 +349,8 @@ const data3 = [
     address: '---',
   },
 ];
+
+import { getIndustryTable1Data } from '@/api/industry';
 export default {
   data() {
     return {
@@ -368,7 +371,17 @@ export default {
     }
   },
   methods: {
-
+    async getIndustryTable1Data() {
+      let res = await getIndustryTable1Data()
+      let firstInfo = res.data.list[0][0][0].list
+      console.log(377, res);
+      this.data0 = firstInfo
+      let title = res.data.list
+      console.log(375, res.data.list[0][0][0].list);
+    }
+  },
+  created() {
+    this.getIndustryTable1Data()
   },
 
 

@@ -35,9 +35,11 @@
     <a-row>
       <a-col :span="12">
         col-12
+        <h2 class="financeWarn" style="font-weight: 700;">财务预警</h2>
+
         <a-table :columns="columns" :data-source="data" :pagination='false'>
           <a slot="name" slot-scope="text">{{ text }}</a>
-          <span slot="customTitle"><a-icon type="smile-o" /> Name</span>
+          <span slot="customTitle">指标名称</span>
           <span slot="tags" slot-scope="tags">
             <a-tag v-for="tag in tags" :key="tag"
               :color="tag === 'loser' ? 'volcano' : tag.length > 5 ? 'geekblue' : 'green'">
@@ -73,24 +75,21 @@ import InvestmentPayback from './components/investmentPayback.vue';
 const data = [
   {
     key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
+    name: '指标名称',
+    rate: 32,
+    tag: '安全',
   },
   {
     key: '2',
     name: 'Jim Green',
     age: 42,
     address: 'London No. 1 Lake Park',
-    tags: ['loser'],
   },
   {
     key: '3',
     name: 'Joe Black',
     age: 32,
     address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
   },
 ];
 
@@ -102,26 +101,18 @@ const columns = [
     scopedSlots: { customRender: 'name' },
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
+    title: 'rate',
+    dataIndex: 'rate',
+    key: 'rate',
   },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-  },
+
   {
     title: 'Tags',
     key: 'tags',
     dataIndex: 'tags',
     scopedSlots: { customRender: 'tags' },
   },
-  {
-    title: 'Action',
-    key: 'action',
-    scopedSlots: { customRender: 'action' },
-  },
+
 ];
 export default {
   components: { shortTerm, longTerm, operationCapibilityVue, profitEchart, InvestmentPayback },
