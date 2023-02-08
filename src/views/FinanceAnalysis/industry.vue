@@ -8,7 +8,7 @@
           <a>{{ text }}</a>
         </template>
         <template slot="title" slot-scope="currentPageData">
-          <span class="title">盈利分析</span>
+          <span class="title">盈利分析{{ text }}</span>
         </template>
 
       </a-table>
@@ -73,21 +73,21 @@
 const columns0 = [
   {
     title: '项目',
-    dataIndex: 'name',
-    scopedSlots: { customRender: 'name' },
+    dataIndex: 'project',
+    scopedSlots: { customRender: 'project' },
   },
   {
     title: '公式',
     className: 'column-money',
-    dataIndex: 'money',
+    dataIndex: 'equation',
   },
   {
     title: '实际',
-    dataIndex: 'address',
+    dataIndex: 'actually',
   },
   {
     title: '指标评价',
-    dataIndex: 'address',
+    dataIndex: 'evaluation',
   },
 
 ];
@@ -178,15 +178,16 @@ const columns3 = [
 const data0 = [
   {
     key: '1',
-    name: '净资产收益率（%）',
-    money: '（0月属于母公司所有者的净利率-平均净资产）*100%',
-    address: '---',
+    project: '净资产收益率（%）',
+    equation: '（0月属于母公司所有者的净利率-平均净资产）*100%',
+    actually: '---',
+    evaluation: '666',
   },
   {
     key: '2',
     name: '总资产报酬率（%）',
-    money: '[(利润总额+利息支出)-平均资产总额]*100%',
-    address: '---',
+    equation: '[(利润总额+利息支出)-平均资产总额]*100%',
+    actually: '---',
   },
   {
     key: '3',

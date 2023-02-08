@@ -21,14 +21,40 @@
       </a-col>
     </a-row>
 
+    <a-row>
+      <a-col :span="12">
+        col-12
+        <operationCapibilityVue />
+      </a-col>
+      <a-col :span="12">
+        col-12
+        <profitEchart />
+      </a-col>
+    </a-row>
+
+    <a-row>
+      <a-col :span="12">
+        col-12
+        <operationCapibilityVue />
+      </a-col>
+      <a-col :span="12">
+        col-12
+        <InvestmentPayback />
+      </a-col>
+    </a-row>
+
 
   </div>
 </template>
 <script>
 import shortTerm from './components/shortTerm.vue';
 import longTerm from './components/longTerm.vue';
+import operationCapibilityVue from './components/operationCapibility.vue.vue';
+import profitEchart from './components/profitEchart.vue';
+import investmentPayback from './components/investmentPayback.vue';
+import InvestmentPayback from './components/investmentPayback.vue';
 export default {
-  components: { shortTerm, longTerm },
+  components: { shortTerm, longTerm, operationCapibilityVue, profitEchart, InvestmentPayback },
   data() {
     return {
       buttonIndex: 2
