@@ -33,8 +33,6 @@
 
     <div class="echartsRow">
 
-
-
       <div class="echarts1">
 
         <div class="category">
@@ -244,7 +242,7 @@ export default {
                   color: 'transparent'
                 }
               },
-              data: [0, 900, 1245, 1530, 1376, 1376, 1511, 1689, 1856, 1495, 1292]
+              data: [0, 93200, 123245, 132530, 133276, 133276, 151231, 168329, 132856, 1495, 1292]
             },
             {
               name: '去年同期',
@@ -312,97 +310,97 @@ export default {
     this.initChart1()
   },
   mounted() {
-    var chartDom = document.getElementById('main');
-    var myChart = echarts.init(chartDom);
-    var option;
+    // var chartDom = document.getElementById('main');
+    // var myChart = echarts.init(chartDom);
+    // var option;
 
-    option = {
-      title: {
-        text: '各月份营收费用瀑布图'
-      },
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow'
-        },
-        formatter: function (params) {
-          let tar;
-          if (params[1] && params[1].value !== '-') {
-            tar = params[1];
-          } else {
-            tar = params[2];
-          }
-          return tar && tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
-        }
-      },
-      legend: {
-        data: ['实际', '预算', '去年同期']
-      },
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-      },
-      xAxis: {
-        type: 'category',
-        data: ['收入', '成本', '毛利', '营业费用', '管理费用', '财务费用', '利润']
-      },
-      yAxis: {
-        type: 'value'
-      },
-      series: [
-        {
-          name: 'Placeholder',
-          type: 'bar',
-          stack: 'Total',
-          silent: true,
-          itemStyle: {
-            borderColor: 'transparent',
-            color: 'transparent'
-          },
-          emphasis: {
-            itemStyle: {
-              borderColor: 'transparent',
-              color: 'transparent'
-            }
-          },
-          data: [0, 900, 1245, 1530, 1376, 1376, 1511, 1689, 1856, 1495, 1292]
-        },
-        {
-          name: '去年同期',
-          type: 'bar',
-          stack: 'Total',
-          label: {
-            show: true,
-            position: 'top'
-          },
-          data: [900, 345, 393, 135, 178, 286]
-        },
-        {
-          name: '预算',
-          type: 'bar',
-          stack: 'Total',
-          label: {
-            show: true,
-            position: 'top'
-          },
-          data: [900, 345, 393, '-', '-', 135, 178, 286, '-', '-', '-']
-        },
-        {
-          name: '实际',
-          type: 'bar',
-          stack: 'Total',
-          label: {
-            show: true,
-            position: 'bottom'
-          },
-          data: [108, 154, 119, 361, 203]
-        }
-      ]
-    };
+    // option = {
+    //   title: {
+    //     text: '各月份营收费用瀑布图'
+    //   },
+    //   tooltip: {
+    //     trigger: 'axis',
+    //     axisPointer: {
+    //       type: 'shadow'
+    //     },
+    //     formatter: function (params) {
+    //       let tar;
+    //       if (params[1] && params[1].value !== '-') {
+    //         tar = params[1];
+    //       } else {
+    //         tar = params[2];
+    //       }
+    //       return tar && tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+    //     }
+    //   },
+    //   legend: {
+    //     data: ['实际', '预算', '去年同期']
+    //   },
+    //   grid: {
+    //     left: '3%',
+    //     right: '4%',
+    //     bottom: '3%',
+    //     containLabel: true
+    //   },
+    //   xAxis: {
+    //     type: 'category',
+    //     data: ['收入', '成本', '毛利', '营业费用', '管理费用', '财务费用', '利润']
+    //   },
+    //   yAxis: {
+    //     type: 'value'
+    //   },
+    //   series: [
+    //     {
+    //       name: 'Placeholder',
+    //       type: 'bar',
+    //       stack: 'Total',
+    //       silent: true,
+    //       itemStyle: {
+    //         borderColor: 'transparent',
+    //         color: 'transparent'
+    //       },
+    //       emphasis: {
+    //         itemStyle: {
+    //           borderColor: 'transparent',
+    //           color: 'transparent'
+    //         }
+    //       },
+    //       data: [0, 900, 1245, 1530, 1376, 1376, 1511, 1689, 1856, 1495, 1292]
+    //     },
+    //     {
+    //       name: '去年同期',
+    //       type: 'bar',
+    //       stack: 'Total',
+    //       label: {
+    //         show: true,
+    //         position: 'top'
+    //       },
+    //       data: [900, 345, 393, 135, 178, 286]
+    //     },
+    //     {
+    //       name: '预算',
+    //       type: 'bar',
+    //       stack: 'Total',
+    //       label: {
+    //         show: true,
+    //         position: 'top'
+    //       },
+    //       data: [900, 345, 393, '-', '-', 135, 178, 286, '-', '-', '-']
+    //     },
+    //     {
+    //       name: '实际',
+    //       type: 'bar',
+    //       stack: 'Total',
+    //       label: {
+    //         show: true,
+    //         position: 'bottom'
+    //       },
+    //       data: [108, 154, 119, 361, 203]
+    //     }
+    //   ]
+    // };
 
-    option && myChart.setOption(option);
+    // option && myChart.setOption(option);
   },
 
 
@@ -582,6 +580,7 @@ export default {
     #main {
       height: 400px;
       width: 800px;
+      margin-top: 40px;
     }
 
   }
