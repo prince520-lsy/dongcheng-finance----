@@ -1,24 +1,46 @@
 <template>
   <div>
-    <div id="main" class="squre">柱形图</div>
-    <div>
-      <echatLine />
-    </div>
-    <div>
-      <hengBar />
-    </div>
-    <div>
-      <StackedEchart />
-    </div>
+
+    <a-table :columns="columns" :data-source="data" :pagination="true">
+      <a slot="name" slot-scope="text">{{ text }}</a>
+      <template #title>收入成本费用表</template>
+    </a-table>
+
+    <a-row>
+      <a-col :span="12">col-12
+        <echartPie1 />
+      </a-col>
+      <a-col :span="12">col-12
+        <echartPie2 />
+      </a-col>
+    </a-row>
+
+    <a-row>
+      <a-col :span="12">col-12
+        <echartPie3 />
+      </a-col>
+      <a-col :span="12">col-12
+        <echartPie4 />
+      </a-col>
+    </a-row>
+
+    <a-row>
+      <a-col :span="24">col-24
+        <echartPie5 />
+      </a-col>
+    </a-row>
   </div>
 </template>
 <script>
 import * as echarts from 'echarts';
-import echatLine from './components/echatLine.vue';
-import hengBar from './components/hengBar.vue';
-import StackedEchart from './components/StackedEchart.vue';
+import echartPie1 from './components/echartPie1.vue';
+import echartPie2 from './components/echartPie2.vue';
+import echartPie3 from './components/echartPie3.vue';
+import echartPie4 from './components/echartPie4.vue';
+import echartPie5 from './components/echartPie5.vue';
+
 export default {
-  components: { echatLine, hengBar, StackedEchart },
+  components: { echartPie1, echartPie2, echartPie3, echartPie4, echartPie5 },
   mounted() {
     var app = {};
 
