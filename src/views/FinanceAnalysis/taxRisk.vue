@@ -1,7 +1,7 @@
 <template>
   <div>
     <a-table :columns="columns" :data-source="data" :pagination="{ pageSize: 6 }">
-      <template #title>税员监控表</template>
+      <template #title><span style="font-size: 18px; font-weight: 800;">税员监控表</span></template>
     </a-table>
 
     <!-- stackedEcherts -->
@@ -117,7 +117,7 @@ const data = [];
 for (let i = 0; i < 100; i++) {
   data.push({
     key: i,
-    name: `Edward King ${i}`,
+    name: `   ${i + 1}`,
     age: 32,
     address: `London, Park Lane no. ${i}`,
   });

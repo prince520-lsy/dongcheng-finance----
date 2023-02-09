@@ -33,11 +33,13 @@
     </a-row>
 
     <a-row>
+
       <a-col :span="12">
         col-12
-        <h2 class="financeWarn" style="font-weight: 700;">财务预警</h2>
+        <!-- <h2 class="financeWarn" style="font-weight: 700;">财务预警</h2> -->
 
-        <a-table :columns="columns" :data-source="data" :pagination='false'>
+        <a-table :columns="columns" :data-source="data" :pagination='false' class="NameIndex">
+          <template #title><span style="font-weight: 700; font-size: 18px;">财务预警</span></template>
           <a slot="name" slot-scope="text">{{ text }}</a>
           <span slot="customTitle">指标名称</span>
           <span slot="tags" slot-scope="tags">
@@ -48,10 +50,14 @@
 
         </a-table>
       </a-col>
+
+
       <a-col :span="12">
         col-12
         <InvestmentPayback />
       </a-col>
+
+
     </a-row>
 
 
@@ -138,6 +144,14 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+.NameIndex {
+  width: 800px;
+  height: 400px;
+  background-color: #fff;
+}
+
+
+
 .term {
   display: flex;
   justify-content: space-between;

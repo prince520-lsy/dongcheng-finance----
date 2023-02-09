@@ -65,3 +65,8 @@ export default {
   },
 }
 </script>
+<style lang="less" scoped>
+#main2 {
+  background-color: #fff;
+}
+</style>
