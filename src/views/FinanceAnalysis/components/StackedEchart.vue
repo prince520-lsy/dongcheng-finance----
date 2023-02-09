@@ -8,121 +8,124 @@ import * as echarts from 'echarts';
 export default {
   mounted() {
     var chartDom = document.getElementById('main');
-    console.log(11, chartDom);
     var myChart = echarts.init(chartDom);
     var option;
 
     option = {
+      title: {
+        text: '分析图',
+        subtext: '单位/万元'
+      },
       tooltip: {
         trigger: 'axis',
         axisPointer: {
-          type: 'shadow'
+          type: 'cross',
+          crossStyle: {
+            color: '#999'
+          }
         }
       },
-      legend: {},
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
+      // toolbox: {
+      //   feature: {
+      //     dataView: { show: true, readOnly: false },
+      //     magicType: { show: true, type: ['line', 'bar'] },
+      //     restore: { show: true },
+      //     saveAsImage: { show: true }
+      //   }
+      // },
+      legend: {
+        data: ['收入', '材料成本', '税负率', '行业税率']
       },
       xAxis: [
         {
           type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+          data: [
+            '1月',
+            '2月',
+            '3月',
+            '4月',
+            '5月',
+            '6月',
+            '7月',
+            '8月',
+            '9月',
+            '10月',
+            '11月',
+            '12月'
+          ],
+          axisPointer: {
+            type: 'shadow'
+          }
         }
       ],
       yAxis: [
         {
-          type: 'value'
+          type: 'value',
+          name: '',
+          min: 0,
+          max: 1000,
+          interval: 250,
+          axisLabel: {
+            formatter: '{value}'
+          }
+        },
+        {
+          type: 'value',
+          // name: 'Temperature',
+          min: 0,
+          max: 25,
+          interval: 5,
+          axisLabel: {
+            formatter: ''
+          }
         }
       ],
       series: [
         {
-          name: 'Direct',
+          name: '收入',
           type: 'bar',
-          emphasis: {
-            focus: 'series'
+          tooltip: {
+            valueFormatter: function (value) {
+              return value + ' ml';
+            }
           },
-          data: [320, 332, 301, 334, 390, 330, 320]
+          data: [
+            680, 693, 370, 670, 660, 760, 490, 700, 900, 230, 760, 260
+          ]
         },
         {
-          name: 'Email',
+          name: '材料成本',
           type: 'bar',
-          stack: 'Ad',
-          emphasis: {
-            focus: 'series'
+          tooltip: {
+            valueFormatter: function (value) {
+              return value + ' ml';
+            }
           },
-          data: [120, 132, 101, 134, 90, 230, 210]
+          data: [
+            2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
+          ]
         },
         {
-          name: 'Union Ads',
-          type: 'bar',
-          stack: 'Ad',
-          emphasis: {
-            focus: 'series'
+          name: '税负率',
+          type: 'line',
+          yAxisIndex: 1,
+          tooltip: {
+            valueFormatter: function (value) {
+              return value + ' °C';
+            }
           },
-          data: [220, 182, 191, 234, 290, 330, 310]
+          data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
         },
         {
-          name: 'Video Ads',
-          type: 'bar',
-          stack: 'Ad',
-          emphasis: {
-            focus: 'series'
+          name: '行业税率',
+          type: 'line',
+          yAxisIndex: 1,
+          tooltip: {
+            valueFormatter: function (value) {
+              return value + ' °C';
+            }
           },
-          data: [150, 232, 201, 154, 190, 330, 410]
-        },
-        {
-          name: 'Search Engine',
-          type: 'bar',
-          data: [862, 1018, 964, 1026, 1679, 1600, 1570],
-          emphasis: {
-            focus: 'series'
-          },
-          markLine: {
-            lineStyle: {
-              type: 'dashed'
-            },
-            data: [[{ type: 'min' }, { type: 'max' }]]
-          }
-        },
-        {
-          name: 'Baidu',
-          type: 'bar',
-          barWidth: 5,
-          stack: 'Search Engine',
-          emphasis: {
-            focus: 'series'
-          },
-          data: [620, 732, 701, 734, 1090, 1130, 1120]
-        },
-        {
-          name: 'Google',
-          type: 'bar',
-          stack: 'Search Engine',
-          emphasis: {
-            focus: 'series'
-          },
-          data: [120, 132, 101, 134, 290, 230, 220]
-        },
-        {
-          name: 'Bing',
-          type: 'bar',
-          stack: 'Search Engine',
-          emphasis: {
-            focus: 'series'
-          },
-          data: [60, 72, 71, 74, 190, 130, 110]
-        },
-        {
-          name: 'Others',
-          type: 'bar',
-          stack: 'Search Engine',
-          emphasis: {
-            focus: 'series'
-          },
-          data: [62, 82, 91, 84, 109, 110, 120]
+          data: [2.0, 0.2, 3.3, 0.5, 6.3, 0.2, 2.3, 23.4, 23.0, 16.5, 12.0, 6.2]
         }
       ]
     };
@@ -134,6 +137,6 @@ export default {
 <style lang="less" scoped>
 #main {
   width: 1240px;
-  height: 300px;
+  height: 500px;
 }
 </style>
