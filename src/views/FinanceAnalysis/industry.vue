@@ -373,7 +373,7 @@ export default {
   methods: {
     async getIndustryTable1Data() {
       let res = await getIndustryTable1Data()
-      let firstInfo = res.data.list[0][0][0].list
+      let firstInfo = res.data.list[0]
       console.log(377, res);
       this.data0 = firstInfo
       let title = res.data.list

@@ -41,18 +41,11 @@
           <a slot="name" slot-scope="text">{{ text }}</a>
           <span slot="customTitle">指标名称</span>
           <span slot="tags" slot-scope="tags">
-            <a-tag v-for="tag in tags" :key="tag"
-              :color="tag === 'loser' ? 'volcano' : tag.length > 5 ? 'geekblue' : 'green'">
-              {{ tag.toUpperCase() }}
+            <a-tag v-for="tag in tags" :key="tag" :color="tag === '安全' ? 'green' : 'red'">
+              {{ tag }}
             </a-tag>
           </span>
-          <span slot="action" slot-scope="text, record">
-            <a>Invite 一 {{ record.name }}</a>
-            <a-divider type="vertical" />
-            <a>Delete</a>
-            <a-divider type="vertical" />
-            <a class="ant-dropdown-link"> More actions <a-icon type="down" /> </a>
-          </span>
+
         </a-table>
       </a-col>
       <a-col :span="12">
@@ -75,21 +68,33 @@ import InvestmentPayback from './components/investmentPayback.vue';
 const data = [
   {
     key: '1',
-    name: '指标名称',
-    rate: 32,
-    tag: '安全',
+    name: '运营资本比例',
+    rate: '81.00%',
+    tags: ['安全'],
   },
   {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
+    key: '1',
+    name: '留档收益比例',
+    rate: '44.00%',
+    tags: ['危险'],
   },
   {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
+    key: '1',
+    name: '息税前收益资产',
+    rate: '53.00%',
+    tags: ['危险'],
+  },
+  {
+    key: '1',
+    name: '权益收入资产比',
+    rate: '86.00%',
+    tags: ['安全'],
+  },
+  {
+    key: '1',
+    name: '销售收入资产比',
+    rate: '52.00%',
+    tags: ['安全'],
   },
 ];
 
@@ -101,13 +106,13 @@ const columns = [
     scopedSlots: { customRender: 'name' },
   },
   {
-    title: 'rate',
+    title: '数值',
     dataIndex: 'rate',
     key: 'rate',
   },
 
   {
-    title: 'Tags',
+    title: '标签',
     key: 'tags',
     dataIndex: 'tags',
     scopedSlots: { customRender: 'tags' },
