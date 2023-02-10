@@ -21,7 +21,7 @@
           <a>{{ text }}</a>
         </template>
         <template slot="title" slot-scope="currentPageData" class="title">
-          <span class="title">资产质量</span>
+          <span class="title">资产质量分析</span>
         </template>
 
       </a-table>
@@ -34,7 +34,7 @@
           <a>{{ text }}</a>
         </template>
         <template slot="title" slot-scope="currentPageData">
-          <span class="title">债务风险</span>
+          <span class="title">债务风险状况</span>
         </template>
 
       </a-table>
@@ -91,27 +91,49 @@ const columns0 = [
   },
 
 ];
+
 const columns = [
   {
-    title: '指标点',
-    dataIndex: 'name',
-    scopedSlots: { customRender: 'name' },
+    title: '项目',
+    dataIndex: 'project',
+    scopedSlots: { customRender: 'project' },
   },
   {
     title: '实际',
     className: 'column-money',
-    dataIndex: 'money',
+    dataIndex: 'actually',
   },
   {
     title: '行业指标',
-    dataIndex: 'address',
+    dataIndex: 'industryIndex',
   },
   {
     title: '说明',
-    dataIndex: 'address',
+    dataIndex: 'explain',
   },
 
 ];
+// const columns = [
+//   {
+//     title: '指标点',
+//     dataIndex: 'name',
+//     scopedSlots: { customRender: 'name' },
+//   },
+//   {
+//     title: '实际',
+//     className: 'column-money',
+//     dataIndex: 'money',
+//   },
+//   {
+//     title: '行业指标',
+//     dataIndex: 'address',
+//   },
+//   {
+//     title: '说明',
+//     dataIndex: 'address',
+//   },
+
+// ];
 const columns1 = [
   {
     title: '指标点',
@@ -215,38 +237,42 @@ const columns3 = [
 //   },
 // ];
 const data0 = []
-const data = [
-  {
-    key: '1',
-    name: '总资产周转率（%）',
-    money: '主营业务收入，平均资产总额',
-    address: '---',
-  },
-  {
-    key: '2',
-    name: '应收账周转率（%）',
-    money: '主营业务收入=应收帐平均余额',
-    address: '---',
-  },
-  {
-    key: '3',
-    name: '不良资产比率（%）',
-    money: '[年末不良资产总额-（资产总额+资产减值准备余额）]*100%',
-    address: '---',
-  },
-  {
-    key: '4',
-    name: '流动资产周转率（%）',
-    money: '主营业务-平均流动资产总额',
-    address: '---',
-  },
-  {
-    key: '5',
-    name: '不良资产比率（%）',
-    money: '经营现金净流量，平均资产总额*100%',
-    address: '---',
-  },
-];
+
+
+// const data = [
+//   {
+//     key: '1',
+//     name: '总资产周转率（%）',
+//     money: '主营业务收入，平均资产总额',
+//     address: '---',
+//   },
+//   {
+//     key: '2',
+//     name: '应收账周转率（%）',
+//     money: '主营业务收入=应收帐平均余额',
+//     address: '---',
+//   },
+//   {
+//     key: '3',
+//     name: '不良资产比率（%）',
+//     money: '[年末不良资产总额-（资产总额+资产减值准备余额）]*100%',
+//     address: '---',
+//   },
+//   {
+//     key: '4',
+//     name: '流动资产周转率（%）',
+//     money: '主营业务-平均流动资产总额',
+//     address: '---',
+//   },
+//   {
+//     key: '5',
+//     name: '不良资产比率（%）',
+//     money: '经营现金净流量，平均资产总额*100%',
+//     address: '---',
+//   },
+// ];
+
+const data = []
 const data1 = [
   {
     key: '1',
@@ -373,9 +399,17 @@ export default {
   methods: {
     async getIndustryTable1Data() {
       let res = await getIndustryTable1Data()
-      let firstInfo = res.data.list[0]
-      console.log(377, res);
+      let firstInfo = res.data.data[0].list
+      console.log(377, firstInfo);
+
+      //盈利分析
       this.data0 = firstInfo
+
+      //assets quality
+      let assetsQuality = res.data.data[1].list
+      console.log(388, assetsQuality);
+      this.data = assetsQuality
+
       let title = res.data.list
       console.log(375, res.data.list[0][0][0].list);
     }

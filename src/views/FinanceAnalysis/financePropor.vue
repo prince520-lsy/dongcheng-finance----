@@ -12,22 +12,22 @@
 
     <a-row>
       <a-col :span="12">
-        col-12
+        <span style="visibility: hidden;">col-12</span>
         <shortTerm />
       </a-col>
       <a-col :span="12">
-        col-12
+        <span style="visibility: hidden;">col-12</span>
         <longTerm />
       </a-col>
     </a-row>
 
     <a-row>
       <a-col :span="12">
-        col-12
+        <span style="visibility: hidden;">col-12</span>
         <operationCapibilityVue />
       </a-col>
       <a-col :span="12">
-        col-12
+        <span style="visibility: hidden;">col-12</span>
         <profitEchart />
       </a-col>
     </a-row>
@@ -35,8 +35,7 @@
     <a-row>
 
       <a-col :span="12">
-        col-12
-        <!-- <h2 class="financeWarn" style="font-weight: 700;">财务预警</h2> -->
+        <span style="visibility: hidden;">col-12</span>
 
         <a-table :columns="columns" :data-source="data" :pagination='false' class="NameIndex">
           <template #title><span style="font-weight: 700; font-size: 18px;">财务预警</span></template>
@@ -53,7 +52,7 @@
 
 
       <a-col :span="12">
-        col-12
+        <span style="visibility: hidden;">col-12</span>
         <InvestmentPayback />
       </a-col>
 

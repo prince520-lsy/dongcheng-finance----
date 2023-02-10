@@ -118,8 +118,8 @@ for (let i = 0; i < 100; i++) {
   data.push({
     key: i,
     name: `   ${i + 1}`,
-    age: 32,
-    address: `London, Park Lane no. ${i}`,
+    age: '￥5143',
+    address: ` ${i}`,
   });
 }
 const data2 = [
