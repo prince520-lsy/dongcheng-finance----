@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
 
     <!-- 盈利分析 -->
     <div>
@@ -250,5 +250,11 @@ export default {
 .title {
   font-size: 18px;
   font-weight: 700;
+}
+
+.ant-table-tbody>tr>td {
+
+  width: 585px;
+
 }
 </style>
