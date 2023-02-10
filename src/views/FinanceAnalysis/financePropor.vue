@@ -144,7 +144,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .NameIndex {
-  width: 800px;
+  width: 850px;
   height: 400px;
   background-color: #fff;
 }

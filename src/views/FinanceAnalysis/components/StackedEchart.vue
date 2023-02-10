@@ -136,7 +136,7 @@ export default {
 </script>
 <style lang="less" scoped>
 #main {
-  width: 1240px;
+  width: 1730px;
   height: 500px;
 }
 </style>

@@ -11,7 +11,7 @@
 
     <a-table :columns="columns2" :data-source="data2" :pagination='true' class="incomTax">
       <a slot="name" slot-scope="text">{{ text }}</a>
-      <template #title>所得税</template>
+      <template #title><span style="font-size: 18px; font-weight: 700;">所得税</span></template>
       <span slot="customTitle">序号</span>
       <span slot="tags" slot-scope="tags">
         <a-tag v-for="tag in tags" :key="tag" :color="tag === '安全' ? 'green' : 'red'">

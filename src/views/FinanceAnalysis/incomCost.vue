@@ -3,29 +3,34 @@
 
     <a-table :columns="columns" :data-source="data" :pagination="true">
       <a slot="name" slot-scope="text">{{ text }}</a>
-      <template #title>收入成本费用表</template>
+      <template #title><span style="font-size: 18px; font-weight: 700;">收入成本费用表{{ text }}</span></template>
     </a-table>
 
     <a-row>
-      <a-col :span="12">col-12
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
         <echartPie1 />
       </a-col>
-      <a-col :span="12">col-12
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
         <echartPie2 />
       </a-col>
     </a-row>
 
     <a-row>
-      <a-col :span="12">col-12
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
         <echartPie3 />
       </a-col>
-      <a-col :span="12">col-12
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
         <echartPie4 />
       </a-col>
     </a-row>
 
     <a-row>
-      <a-col :span="24">col-24
+      <a-col :span="24">
+        <span style="visibility: hidden;">col-12</span>
         <echartPie5 />
       </a-col>
     </a-row>
