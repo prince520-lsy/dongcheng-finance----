@@ -3,7 +3,7 @@
 
     <!-- 盈利分析 -->
     <div>
-      <a-table :columns="columns0" :data-source="data0" :pagination="false" bordered>
+      <a-table :columns="columns" :data-source="data0" :pagination="false" bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>
@@ -29,7 +29,7 @@
 
     <!-- 债务风险 -->
     <div>
-      <a-table :columns="columns1" :data-source="data1" :pagination="false" bordered>
+      <a-table :columns="columns" :data-source="data1" :pagination="false" bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>
@@ -42,12 +42,12 @@
 
     <!-- 经营增长 -->
     <div>
-      <a-table :columns="columns2" :data-source="data2" :pagination="false" bordered>
+      <a-table :columns="columns" :data-source="data2" :pagination="false" bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>
         <template slot="title" slot-scope="currentPageData">
-          <span class="title">经营增长</span>
+          <span class="title">经营增长状况</span>
         </template>
 
       </a-table>
@@ -55,12 +55,12 @@
 
     <!-- 补充 -->
     <div>
-      <a-table :columns="columns3" :data-source="data3" :pagination="false" bordered>
+      <a-table :columns="columns" :data-source="data3" :pagination="false" bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>
         <template slot="title" slot-scope="currentPageData">
-          <span class="title">补充</span>
+          <span class="title">补充资料</span>
         </template>
 
       </a-table>
@@ -70,27 +70,7 @@
   </div>
 </template>
 <script>
-const columns0 = [
-  {
-    title: '项目',
-    dataIndex: 'project',
-    scopedSlots: { customRender: 'project' },
-  },
-  {
-    title: '实际',
-    className: 'column-money',
-    dataIndex: 'actually',
-  },
-  {
-    title: '行业指标',
-    dataIndex: 'industryIndex',
-  },
-  {
-    title: '说明',
-    dataIndex: 'explain',
-  },
 
-];
 
 const columns = [
   {
@@ -113,165 +93,9 @@ const columns = [
   },
 
 ];
-// const columns = [
-//   {
-//     title: '指标点',
-//     dataIndex: 'name',
-//     scopedSlots: { customRender: 'name' },
-//   },
-//   {
-//     title: '实际',
-//     className: 'column-money',
-//     dataIndex: 'money',
-//   },
-//   {
-//     title: '行业指标',
-//     dataIndex: 'address',
-//   },
-//   {
-//     title: '说明',
-//     dataIndex: 'address',
-//   },
 
-// ];
-const columns1 = [
-  {
-    title: '指标点',
-    dataIndex: 'name',
-    scopedSlots: { customRender: 'name' },
-  },
-  {
-    title: '实际',
-    className: 'column-money',
-    dataIndex: 'money',
-  },
-  {
-    title: '行业指标',
-    dataIndex: 'address',
-  },
-  {
-    title: '说明',
-    dataIndex: 'address',
-  },
 
-];
-const columns2 = [
-  {
-    title: '指标点',
-    dataIndex: 'name',
-    scopedSlots: { customRender: 'name' },
-  },
-  {
-    title: '实际',
-    className: 'column-money',
-    dataIndex: 'money',
-  },
-  {
-    title: '行业指标',
-    dataIndex: 'address',
-  },
-  {
-    title: '说明',
-    dataIndex: 'address',
-  },
-
-];
-const columns3 = [
-  {
-    title: '指标点',
-    dataIndex: 'name',
-    scopedSlots: { customRender: 'name' },
-  },
-  {
-    title: '实际',
-    className: 'column-money',
-    dataIndex: 'money',
-  },
-  {
-    title: '行业指标',
-    dataIndex: 'address',
-  },
-  {
-    title: '说明',
-    dataIndex: 'address',
-  },
-
-];
-// const data0 = [
-//   {
-//     key: '1',
-//     project: '净资产收益率（%）',
-//     actually: '（0月属于母公司所有者的净利率-平均净资产）*100%',
-//     industryIndex: '---',
-//     explain: '666',
-//   },
-//   {
-//     key: '2',
-//     name: '总资产报酬率（%）',
-//     equation: '[(利润总额+利息支出)-平均资产总额]*100%',
-//     actually: '---',
-//   },
-//   {
-//     key: '3',
-//     name: '主营业务利润率（%）',
-//     money: '（主营业务利润-主营业收入）*100%',
-//     address: '---',
-//   },
-//   {
-//     key: '4',
-//     name: '盈余现金保障倍数',
-//     money: '经营现金净流量-净利润',
-//     address: '---',
-//   },
-//   {
-//     key: '5',
-//     name: '成本费用利润率（%）',
-//     money: '（利润总额-成本费用总额）*100%',
-//     address: '---',
-//   },
-//   {
-//     key: '6',
-//     name: '资本收益率（%）',
-//     money: '（归属于母公司所有者净利润-平均资本）*100%',
-//     address: '---',
-//   },
-// ];
 const data0 = []
-
-
-// const data = [
-//   {
-//     key: '1',
-//     name: '总资产周转率（%）',
-//     money: '主营业务收入，平均资产总额',
-//     address: '---',
-//   },
-//   {
-//     key: '2',
-//     name: '应收账周转率（%）',
-//     money: '主营业务收入=应收帐平均余额',
-//     address: '---',
-//   },
-//   {
-//     key: '3',
-//     name: '不良资产比率（%）',
-//     money: '[年末不良资产总额-（资产总额+资产减值准备余额）]*100%',
-//     address: '---',
-//   },
-//   {
-//     key: '4',
-//     name: '流动资产周转率（%）',
-//     money: '主营业务-平均流动资产总额',
-//     address: '---',
-//   },
-//   {
-//     key: '5',
-//     name: '不良资产比率（%）',
-//     money: '经营现金净流量，平均资产总额*100%',
-//     address: '---',
-//   },
-// ];
-
 const data = []
 const data1 = [
   {
@@ -383,24 +207,16 @@ export default {
       data0,
       data,
       data1,
-
       data2,
       data3,
-      columns0,
       columns,
-      columns1,
-      columns2,
-      columns3
-
-
-
     }
   },
   methods: {
     async getIndustryTable1Data() {
       let res = await getIndustryTable1Data()
       let firstInfo = res.data.data[0].list
-      console.log(377, firstInfo);
+      console.log(377, res.data.data);
 
       //盈利分析
       this.data0 = firstInfo
@@ -410,8 +226,17 @@ export default {
       console.log(388, assetsQuality);
       this.data = assetsQuality
 
-      let title = res.data.list
-      console.log(375, res.data.list[0][0][0].list);
+      //debt risk
+      let debtRisk = res.data.data[2].list
+      this.data1 = debtRisk
+
+      //经营增长状况
+      let operationIncrease = res.data.data[3].list
+      this.data2 = operationIncrease
+
+      //further infomation
+      let furtherInfo = res.data.data[4].list
+      this.data3 = firstInfo
     }
   },
   created() {
