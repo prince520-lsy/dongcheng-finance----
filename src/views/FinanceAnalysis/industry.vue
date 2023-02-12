@@ -2,8 +2,9 @@
   <div class="box">
 
     <!-- 盈利分析 -->
-    <div>
-      <a-table :columns="columns" :data-source="data0" :pagination="false" bordered>
+    <div class="profit">
+      <a-table :columns="columns" :data-source="data0" :pagination="false"
+        :scroll="{ x: `${columns.length}0%`, y: 400 }" bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>
@@ -15,8 +16,9 @@
     </div>
 
     <!-- 资产质量 -->
-    <div>
-      <a-table :columns="columns" :data-source="data" :pagination="false" bordered>
+    <div class="assets">
+      <a-table :columns="columns" :data-source="data" :pagination="false" :scroll="{ x: `${columns.length}0%`, y: 400 }"
+        bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>
@@ -29,7 +31,8 @@
 
     <!-- 债务风险 -->
     <div>
-      <a-table :columns="columns" :data-source="data1" :pagination="false" bordered>
+      <a-table :columns="columns" :data-source="data1" :pagination="false"
+        :scroll="{ x: `${columns.length}0%`, y: 400 }" bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>
@@ -42,7 +45,8 @@
 
     <!-- 经营增长 -->
     <div>
-      <a-table :columns="columns" :data-source="data2" :pagination="false" bordered>
+      <a-table :columns="columns" :data-source="data2" :pagination="false"
+        :scroll="{ x: `${columns.length}0%`, y: 400 }" bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>
@@ -55,7 +59,8 @@
 
     <!-- 补充 -->
     <div>
-      <a-table :columns="columns" :data-source="data3" :pagination="false" bordered>
+      <a-table :columns="columns" :data-source="data3" :pagination="false"
+        :scroll="{ x: `${columns.length}0%`, y: 400 }" bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>
@@ -248,13 +253,15 @@ export default {
 </script>
 <style lang="less" scoped>
 .title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
 }
 
-.ant-table-tbody>tr>td {
-
+.profift a-table>tr>th {
   width: 585px;
+}
 
+.assets a-table>tr>th {
+  width: 585px;
 }
 </style>
