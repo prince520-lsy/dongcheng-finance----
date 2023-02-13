@@ -18,3 +18,8 @@ export const getecharts1Data = () => request({
   url: 'form/ProfitChartAnalysis',
   method: 'get'
 })
+
+export const getecharts2Data = () => request({
+  url: 'form/monthlyreport',
+  method: 'get'
+})
