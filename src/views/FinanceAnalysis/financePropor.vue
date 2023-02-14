@@ -13,22 +13,70 @@
     <a-row>
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
-        <shortTerm />
+
+
+        <a-tabs defaultActiveKey="1" @change='callback'>
+          <a-tab-pane key="1" tab="营运资本">Content of Tab Pane 1</a-tab-pane>
+
+          <a-tab-pane key="2" tab="流动比率" force-render>
+            <shortTerm />
+          </a-tab-pane>
+          <a-tab-pane key="3" tab="速动比率">Content of Tab Pane 3</a-tab-pane>
+          <a-tab-pane key="4" tab="现金比率">Content of Tab Pane 4</a-tab-pane>
+          <a-tab-pane key="5" tab="现金流量比率">Content of Tab Pane 5</a-tab-pane>
+
+        </a-tabs>
       </a-col>
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
-        <longTerm />
+        <a-tabs defaultActiveKey="1" @change='callback1'>
+          <a-tab-pane key="1" tab="资产负债率">Content of Tab Pane 1</a-tab-pane>
+
+          <a-tab-pane key="2" tab="产权比率" force-render>
+            <longTerm />
+          </a-tab-pane>
+          <a-tab-pane key="3" tab="权益乘数">Content of Tab Pane 3</a-tab-pane>
+          <a-tab-pane key="4" tab="长期资本负债率">Content of Tab Pane 4</a-tab-pane>
+          <a-tab-pane key="5" tab="利息保障倍数">Content of Tab Pane 5</a-tab-pane>
+
+        </a-tabs>
+
+
       </a-col>
     </a-row>
 
     <a-row>
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
-        <operationCapibilityVue />
+
+        <a-tabs defaultActiveKey="1" @change='callback2'>
+          <a-tab-pane key="1" tab="应收账款周转率">Content of Tab Pane 1</a-tab-pane>
+
+          <a-tab-pane key="2" tab="存货周转率" force-render>
+            <operationCapibilityVue />
+          </a-tab-pane>
+          <a-tab-pane key="3" tab="流动资产周转率">Content of Tab Pane 3</a-tab-pane>
+          <a-tab-pane key="4" tab="营运资本周转率">Content of Tab Pane 4</a-tab-pane>
+          <a-tab-pane key="5" tab="非流动资产周转率">Content of Tab Pane 5</a-tab-pane>
+
+        </a-tabs>
+
       </a-col>
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
-        <profitEchart />
+
+        <a-tabs defaultActiveKey="1" @change='callback3'>
+          <a-tab-pane key="1" tab="销售净利率">Content of Tab Pane 1</a-tab-pane>
+
+          <a-tab-pane key="2" tab="总资产净利率ROA" force-render>
+            <profitEchart />
+
+          </a-tab-pane>
+          <a-tab-pane key="3" tab="权益净利率">Content of Tab Pane 3</a-tab-pane>
+          <!-- <a-tab-pane key="4" tab="现金比率">Content of Tab Pane 4</a-tab-pane>
+          <a-tab-pane key="5" tab="现金流量比率">Content of Tab Pane 5</a-tab-pane> -->
+
+        </a-tabs>
       </a-col>
     </a-row>
 
@@ -124,6 +172,7 @@ const columns = [
   },
 
 ];
+
 export default {
   components: { shortTerm, longTerm, operationCapibilityVue, profitEchart, InvestmentPayback },
   data() {
@@ -136,6 +185,19 @@ export default {
     }
   },
   methods: {
+    callback(key) {
+      console.log('key', key);
+    },
+    callback1(key) {
+      console.log('key1', key);
+    },
+    callback2(key) {
+      console.log('key2', key);
+    },
+    callback3(key) {
+      console.log('key3', key);
+    },
+
     changeColor(buttonIndex) {
       this.buttonIndex = buttonIndex
     }
