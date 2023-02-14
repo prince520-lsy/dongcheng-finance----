@@ -15,7 +15,7 @@
         <span style="visibility: hidden;">col-12</span>
 
 
-        <a-tabs defaultActiveKey="1" @change='callback'>
+        <a-tabs defaultActiveKey="2" @change='callback'>
           <a-tab-pane key="1" tab="营运资本">Content of Tab Pane 1</a-tab-pane>
 
           <a-tab-pane key="2" tab="流动比率" force-render>
@@ -29,7 +29,7 @@
       </a-col>
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
-        <a-tabs defaultActiveKey="1" @change='callback1'>
+        <a-tabs defaultActiveKey="2" @change='callback1'>
           <a-tab-pane key="1" tab="资产负债率">Content of Tab Pane 1</a-tab-pane>
 
           <a-tab-pane key="2" tab="产权比率" force-render>
@@ -49,7 +49,7 @@
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
 
-        <a-tabs defaultActiveKey="1" @change='callback2'>
+        <a-tabs defaultActiveKey="2" @change='callback2'>
           <a-tab-pane key="1" tab="应收账款周转率">Content of Tab Pane 1</a-tab-pane>
 
           <a-tab-pane key="2" tab="存货周转率" force-render>
@@ -65,7 +65,7 @@
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
 
-        <a-tabs defaultActiveKey="1" @change='callback3'>
+        <a-tabs defaultActiveKey="2" @change='callback3'>
           <a-tab-pane key="1" tab="销售净利率">Content of Tab Pane 1</a-tab-pane>
 
           <a-tab-pane key="2" tab="总资产净利率ROA" force-render>
