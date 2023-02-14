@@ -185,11 +185,19 @@ export default {
     //初始化echarts1
     initChart1() {
       axios.get('form/ProfitChartAnalysis').then(res => {
-        console.log(190, res.data.list[0][0]);
+        console.log(190, res.data.list);
+
+        //实际数
         let actuData = res.data.list[0][0].data
-        console.log(actuData);
-        let lastYearPi = res.data.list[0][1].data
-        console.log(lastYearPi);
+        console.log('actuData', actuData);
+
+        let budget = res.data.list[0][1].data
+
+        //去年同期数
+        let lastYearPi = res.data.list[0][2].data
+        console.log('lastYearPis', lastYearPi);
+
+
         this.char = echarts.init(document.querySelector('#main'))
         // let option = {
         //   title: {
@@ -501,7 +509,7 @@ export default {
               emphasis: {
                 focus: 'series'
               },
-              data: [320, 332, 301, 334, 390]
+              data: actuData
             },
             {
               name: '上年数',
@@ -510,7 +518,7 @@ export default {
               emphasis: {
                 focus: 'series'
               },
-              data: [220, 182, 191, 234, 290]
+              data: lastYearPi
             },
             {
               name: '预算数',
@@ -519,7 +527,7 @@ export default {
               emphasis: {
                 focus: 'series'
               },
-              data: [150, 232, 201, 154, 190]
+              data: budget
             }
           ]
         };
