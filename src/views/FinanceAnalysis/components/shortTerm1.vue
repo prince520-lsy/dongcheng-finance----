@@ -18,10 +18,11 @@ export default {
         let option = {
           title: {
             text: '短期偿债能力',
-            subtext: '单位/万元'
+            subtext: '单位/%'
           },
           tooltip: {
-            trigger: 'axis'
+            trigger: 'axis',
+            formatter: '{c}%'
           },
           legend: {
             data: ['去年', '今年']
@@ -40,7 +41,7 @@ export default {
             {
               type: 'category',
               // prettier-ignore
-              data: ['1月', '2月', '3月', '4月', '5月', '6月']
+              data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
             }
           ],
           yAxis: [
@@ -53,7 +54,7 @@ export default {
               name: '去年',
               type: 'bar',
               data: [
-                2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
+                // 2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
               ]
             },
             {
