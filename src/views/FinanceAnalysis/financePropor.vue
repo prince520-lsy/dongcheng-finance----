@@ -16,14 +16,22 @@
 
 
         <a-tabs defaultActiveKey="2" @change='callback'>
-          <a-tab-pane key="1" tab="营运资本">Content of Tab Pane 1</a-tab-pane>
-
-          <a-tab-pane key="2" tab="流动比率" force-render>
+          <a-tab-pane key="1" tab="营运资本">
             <shortTerm />
           </a-tab-pane>
-          <a-tab-pane key="3" tab="速动比率">Content of Tab Pane 3</a-tab-pane>
-          <a-tab-pane key="4" tab="现金比率">Content of Tab Pane 4</a-tab-pane>
-          <a-tab-pane key="5" tab="现金流量比率">Content of Tab Pane 5</a-tab-pane>
+
+          <a-tab-pane key="2" tab="流动比率" force-render>
+            <shortTerm1 />
+          </a-tab-pane>
+          <a-tab-pane key="3" tab="速动比率">
+            <shortTerm2 />
+          </a-tab-pane>
+          <a-tab-pane key="4" tab="现金比率">
+            <shortTerm3 />
+          </a-tab-pane>
+          <a-tab-pane key="5" tab="现金流量比率">
+            <shortTerm4 />
+          </a-tab-pane>
 
         </a-tabs>
       </a-col>
@@ -112,6 +120,11 @@
 </template>
 <script>
 import shortTerm from './components/shortTerm.vue';
+import shortTerm2 from './components/shortTerm2.vue';
+import shortTerm3 from './components/shortTerm3.vue';
+import shortTerm1 from './components/shortTerm1.vue';
+import shortTerm4 from './components/shortTerm4.vue';
+
 import longTerm from './components/longTerm.vue';
 import operationCapibilityVue from './components/operationCapibility.vue.vue';
 import profitEchart from './components/profitEchart.vue';
@@ -174,7 +187,13 @@ const columns = [
 ];
 
 export default {
-  components: { shortTerm, longTerm, operationCapibilityVue, profitEchart, InvestmentPayback },
+  components: {
+    shortTerm,
+    shortTerm1,
+    shortTerm2,
+    shortTerm3, shortTerm4,
+    longTerm, operationCapibilityVue, profitEchart, InvestmentPayback
+  },
   data() {
     return {
 
