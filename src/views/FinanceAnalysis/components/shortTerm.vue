@@ -11,9 +11,12 @@ export default {
   methods: {
     initShortTerm() {
       axios.get('form/financialanalysis').then(res => {
-        console.log(14, res.data.list.capital);
-        //营运资本
-        let capital = res.data.list.capital
+        console.log(14, res.data.list.lastyear.capital);
+        //营运资本去年
+        let Lastcapital = res.data.list.lastyear.capital
+
+        //今年
+        let capital = res.data.list.thisyear.capital
         this.char = echarts.init(document.querySelector('#main'))
 
         let option = {
@@ -53,9 +56,8 @@ export default {
             {
               name: '去年',
               type: 'bar',
-              data: [
-                // 2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
-              ]
+              data: Lastcapital
+
             },
             {
               name: '今年',

@@ -12,6 +12,61 @@ export default {
     initShortTerm() {
       axios.get('form/financialanalysis').then(res => {
         console.log(14, res);
+        //去年
+        let Lastcashratio = res.data.list.lastyear.cashratio
+        //今年
+        let cashratio = res.data.list.thisyear.cashratio
+        this.char = echarts.init(document.querySelector('#main3'))
+        let option = {
+          title: {
+            text: '短期偿债能力',
+            subtext: ''
+          },
+          tooltip: {
+            trigger: 'axis'
+          },
+          legend: {
+            data: ['去年', '今年']
+          },
+          toolbox: {
+            show: true,
+            feature: {
+              dataView: { show: false, readOnly: false },
+              magicType: { show: false, type: ['line', 'bar'] },
+              restore: { show: false },
+              saveAsImage: { show: false }
+            }
+          },
+          calculable: true,
+          xAxis: [
+            {
+              type: 'category',
+              // prettier-ignore
+              data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月',]
+
+            }
+          ],
+          yAxis: [
+            {
+              type: 'value'
+            }
+          ],
+          series: [
+            {
+              name: '去年',
+              type: 'bar',
+              data: Lastcashratio
+
+            },
+            {
+              name: '今年',
+              type: 'bar',
+              data: cashratio
+
+            }
+          ]
+        };
+        this.char.setOption(option)
       })
     }
   },

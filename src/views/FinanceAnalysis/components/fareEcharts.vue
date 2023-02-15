@@ -134,6 +134,23 @@ export default {
       ],
       series: [
         {
+          name: 'Placeholder',
+          type: 'bar',
+          stack: 'Total',
+          silent: true,
+          itemStyle: {
+            borderColor: 'transparent',
+            color: 'transparent'
+          },
+          emphasis: {
+            itemStyle: {
+              borderColor: 'transparent',
+              color: 'transparent'
+            }
+          },
+          data: [0, 900, 1245, 1530, 1376,]
+        },
+        {
           name: '实际',
           type: 'bar',
           barGap: 0,

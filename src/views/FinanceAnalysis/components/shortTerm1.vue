@@ -12,7 +12,10 @@ export default {
     initShortTerm() {
       axios.get('form/financialanalysis').then(res => {
         console.log(14, res);
-        let currentratio = res.data.list.currentratio
+        //去年
+        let Lastcurrentratio = res.data.list.lastyear.currentratio
+        //今年
+        let currentratio = res.data.list.thisyear.currentratio
         this.char = echarts.init(document.querySelector('#main1'))
 
         let option = {
@@ -53,9 +56,8 @@ export default {
             {
               name: '去年',
               type: 'bar',
-              data: [
-                // 2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
-              ]
+              data: Lastcurrentratio
+
             },
             {
               name: '今年',
