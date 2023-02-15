@@ -38,16 +38,34 @@
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
         <a-tabs defaultActiveKey="2" @change='callback1'>
-          <a-tab-pane key="1" tab="资产负债率">Content of Tab Pane 1</a-tab-pane>
+          <a-tab-pane key="1" tab="资产负债率">
+            <longTerm />
+
+          </a-tab-pane>
 
           <a-tab-pane key="2" tab="产权比率" force-render>
-            <longTerm />
+            <longTerm1 />
           </a-tab-pane>
-          <a-tab-pane key="3" tab="权益乘数">Content of Tab Pane 3</a-tab-pane>
-          <a-tab-pane key="4" tab="长期资本负债率">Content of Tab Pane 4</a-tab-pane>
-          <a-tab-pane key="5" tab="利息保障倍数">Content of Tab Pane 5</a-tab-pane>
-          <a-tab-pane key="6" tab="现金流量利息保障倍数">现金流量利息保障倍数</a-tab-pane>
-          <a-tab-pane key="7" tab="现金流量债务比">现金流量债务比</a-tab-pane>
+          <a-tab-pane key="3" tab="权益乘数">
+            <longTerm2 />
+
+          </a-tab-pane>
+          <a-tab-pane key="4" tab="长期资本负债率">
+            <longTerm3 />
+
+          </a-tab-pane>
+          <a-tab-pane key="5" tab="利息保障倍数">
+            <longTerm4 />
+
+          </a-tab-pane>
+          <a-tab-pane key="6" tab="现金流量利息保障倍数">
+            <longTerm5 />
+
+          </a-tab-pane>
+          <a-tab-pane key="7" tab="现金流量债务比">
+            <longTerm6 />
+
+          </a-tab-pane>
 
 
         </a-tabs>
@@ -132,6 +150,14 @@ import shortTerm1 from './components/shortTerm1.vue';
 import shortTerm4 from './components/shortTerm4.vue';
 
 import longTerm from './components/longTerm.vue';
+import longTerm1 from './components/longTerm1.vue';
+import longTerm2 from './components/longTerm2.vue';
+import longTerm3 from './components/longTerm3.vue';
+import longTerm4 from './components/longTerm4.vue';
+import longTerm5 from './components/longTerm5.vue';
+import longTerm6 from './components/longTerm6.vue';
+
+
 import operationCapibilityVue from './components/operationCapibility.vue.vue';
 import profitEchart from './components/profitEchart.vue';
 import investmentPayback from './components/investmentPayback.vue';
@@ -198,7 +224,15 @@ export default {
     shortTerm1,
     shortTerm2,
     shortTerm3, shortTerm4,
-    longTerm, operationCapibilityVue, profitEchart, InvestmentPayback
+    longTerm,
+    longTerm1,
+    longTerm2,
+    longTerm3,
+    longTerm4,
+    longTerm5,
+    longTerm6,
+
+    operationCapibilityVue, profitEchart, InvestmentPayback
   },
   data() {
     return {

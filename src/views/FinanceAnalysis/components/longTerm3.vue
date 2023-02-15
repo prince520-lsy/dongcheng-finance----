@@ -1,5 +1,5 @@
 <template>
-  <div id="main21" style="width: 865px; height: 400px;">
+  <div id="main41" style="width: 865px; height: 400px;">
 
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
         //今年
         let assetliabilityratio = res.data.list.thisyear.assetliabilityratio
         console.log(20, assetliabilityratio);
-        this.char = echarts.init(document.querySelector('#main21'))
+        this.char = echarts.init(document.querySelector('#main41'))
         let option = {
           title: {
             text: '长期偿债能力'
@@ -135,7 +135,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-#main21 {
+#main41 {
   background-color: #fff;
 }
 </style>

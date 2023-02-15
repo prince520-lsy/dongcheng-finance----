@@ -1,5 +1,5 @@
 <template>
-  <div id="main21" style="width: 865px; height: 400px;">
+  <div id="main125" style="width: 865px; height: 400px;">
 
   </div>
 </template>
@@ -12,13 +12,13 @@ export default {
       axios.get('form/financialanalysis').then(res => {
         console.log(13, res);
         //前年
-        let Preassetliabilityratio = res.data.list.previousyear.assetliabilityratio
+        let Preequityratio = res.data.list.previousyear.equityratio
         //去年
-        let Lastassetliabilityratio = res.data.list.lastyear.assetliabilityratio
+        let Lastequityratio = res.data.list.lastyear.equityratio
         //今年
-        let assetliabilityratio = res.data.list.thisyear.assetliabilityratio
-        console.log(20, assetliabilityratio);
-        this.char = echarts.init(document.querySelector('#main21'))
+        let equityratio = res.data.list.thisyear.equityratio
+        console.log('equityratio', equityratio);
+        this.char = echarts.init(document.querySelector('#main125'))
         let option = {
           title: {
             text: '长期偿债能力'
@@ -52,19 +52,19 @@ export default {
               name: '前年',
               type: 'line',
               stack: 'Total',
-              data: Preassetliabilityratio
+              data: Preequityratio
             },
             {
               name: '去年',
               type: 'line',
               stack: 'Total',
-              data: Lastassetliabilityratio
+              data: Lastequityratio
             },
             {
               name: '今年',
               type: 'line',
               stack: 'Total',
-              data: assetliabilityratio
+              data: equityratio
             }
           ]
         };
@@ -135,7 +135,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-#main21 {
+#main125 {
   background-color: #fff;
 }
 </style>
