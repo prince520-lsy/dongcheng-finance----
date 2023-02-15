@@ -12,12 +12,12 @@ export default {
       axios.get('form/financialanalysis').then(res => {
         console.log(13, res);
         //前年
-        let Preassetliabilityratio = res.data.list.previousyear.assetliabilityratio
+        let Precashflowdebt = res.data.list.previousyear.cashflowdebt
         //去年
-        let Lastassetliabilityratio = res.data.list.lastyear.assetliabilityratio
+        let Lastcashflowdebt = res.data.list.lastyear.cashflowdebt
         //今年
-        let assetliabilityratio = res.data.list.thisyear.assetliabilityratio
-        console.log(20, assetliabilityratio);
+        let cashflowdebt = res.data.list.thisyear.cashflowdebt
+        console.log('cashflowdebt', cashflowdebt);
         this.char = echarts.init(document.querySelector('#main71'))
         let option = {
           title: {
@@ -52,19 +52,19 @@ export default {
               name: '前年',
               type: 'line',
               stack: 'Total',
-              data: Preassetliabilityratio
+              data: Precashflowdebt
             },
             {
               name: '去年',
               type: 'line',
               stack: 'Total',
-              data: Lastassetliabilityratio
+              data: Lastcashflowdebt
             },
             {
               name: '今年',
               type: 'line',
               stack: 'Total',
-              data: assetliabilityratio
+              data: cashflowdebt
             }
           ]
         };

@@ -12,12 +12,12 @@ export default {
       axios.get('form/financialanalysis').then(res => {
         console.log(13, res);
         //前年
-        let Preassetliabilityratio = res.data.list.previousyear.assetliabilityratio
+        let Precapitalliabilityratio = res.data.list.previousyear.capitalliabilityratio
         //去年
-        let Lastassetliabilityratio = res.data.list.lastyear.assetliabilityratio
+        let Lastcapitalliabilityratio = res.data.list.lastyear.capitalliabilityratio
         //今年
-        let assetliabilityratio = res.data.list.thisyear.assetliabilityratio
-        console.log(20, assetliabilityratio);
+        let capitalliabilityratio = res.data.list.thisyear.capitalliabilityratio
+        console.log('capitalliabilityratio', capitalliabilityratio);
         this.char = echarts.init(document.querySelector('#main41'))
         let option = {
           title: {
@@ -52,19 +52,19 @@ export default {
               name: '前年',
               type: 'line',
               stack: 'Total',
-              data: Preassetliabilityratio
+              data: Precapitalliabilityratio
             },
             {
               name: '去年',
               type: 'line',
               stack: 'Total',
-              data: Lastassetliabilityratio
+              data: Lastcapitalliabilityratio
             },
             {
               name: '今年',
               type: 'line',
               stack: 'Total',
-              data: assetliabilityratio
+              data: capitalliabilityratio
             }
           ]
         };
