@@ -19,7 +19,7 @@ export default {
         let option = {
           title: {
             text: '短期偿债能力',
-            subtext: '单位/万元'
+            subtext: '单位/元'
           },
           tooltip: {
             trigger: 'axis'

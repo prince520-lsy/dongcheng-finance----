@@ -46,6 +46,9 @@
           <a-tab-pane key="3" tab="权益乘数">Content of Tab Pane 3</a-tab-pane>
           <a-tab-pane key="4" tab="长期资本负债率">Content of Tab Pane 4</a-tab-pane>
           <a-tab-pane key="5" tab="利息保障倍数">Content of Tab Pane 5</a-tab-pane>
+          <a-tab-pane key="6" tab="现金流量利息保障倍数">现金流量利息保障倍数</a-tab-pane>
+          <a-tab-pane key="7" tab="现金流量债务比">现金流量债务比</a-tab-pane>
+
 
         </a-tabs>
 
@@ -66,6 +69,9 @@
           <a-tab-pane key="3" tab="流动资产周转率">Content of Tab Pane 3</a-tab-pane>
           <a-tab-pane key="4" tab="营运资本周转率">Content of Tab Pane 4</a-tab-pane>
           <a-tab-pane key="5" tab="非流动资产周转率">Content of Tab Pane 5</a-tab-pane>
+          <a-tab-pane key="6" tab="总资产周转率">总资产周转率</a-tab-pane>
+          <a-tab-pane key="7" tab="现金流量资产比">现金流量资产比</a-tab-pane>
+
 
         </a-tabs>
 
