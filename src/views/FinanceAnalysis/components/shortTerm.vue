@@ -1,7 +1,7 @@
 <template>
   <div id="main" style="width: 850px; height: 400px;">
 
-  </div>
+</div>
 </template>
 <script>
 import * as echarts from 'echarts';
@@ -17,6 +17,8 @@ export default {
 
         //今年
         let capital = res.data.list.thisyear.capital
+        //前年
+        let Precapital = res.data.list.previousyear.capital
         this.char = echarts.init(document.querySelector('#main'))
 
         let option = {
@@ -28,7 +30,7 @@ export default {
             trigger: 'axis'
           },
           legend: {
-            data: ['去年', '今年']
+            data: ['前年', '去年', '今年']
           },
           toolbox: {
             show: true,
@@ -53,6 +55,12 @@ export default {
             }
           ],
           series: [
+            {
+              name: '前年',
+              type: 'bar',
+              data: Precapital
+
+            },
             {
               name: '去年',
               type: 'bar',

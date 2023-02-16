@@ -1,7 +1,7 @@
 <template>
   <div id="main2" style="width: 850px; height: 400px;">
 
-  </div>
+</div>
 </template>
 <script>
 import * as echarts from 'echarts';
@@ -12,6 +12,8 @@ export default {
     initShortTerm() {
       axios.get('form/financialanalysis').then(res => {
         console.log(14, res);
+        //前年
+        let Prequickratio = res.data.list.previousyear.quickratio
         //去年
         let Lastquickratio = res.data.list.lastyear.quickratio
         console.log(17, Lastquickratio);
@@ -27,7 +29,7 @@ export default {
             trigger: 'axis'
           },
           legend: {
-            data: ['去年', '今年']
+            data: ['前年', '去年', '今年']
           },
           toolbox: {
             show: true,
@@ -52,6 +54,12 @@ export default {
             }
           ],
           series: [
+            {
+              name: '前年',
+              type: 'bar',
+              data: Prequickratio
+
+            },
             {
               name: '去年',
               type: 'bar',

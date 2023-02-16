@@ -1,7 +1,7 @@
 <template>
   <div id="main1" style="width: 850px; height: 400px;">
 
-  </div>
+</div>
 </template>
 <script>
 import * as echarts from 'echarts';
@@ -12,6 +12,9 @@ export default {
     initShortTerm() {
       axios.get('form/financialanalysis').then(res => {
         console.log(14, res);
+        //前年
+        let Precurrentratio = res.data.list.previousyear.currentratio
+
         //去年
         let Lastcurrentratio = res.data.list.lastyear.currentratio
         //今年
@@ -28,7 +31,7 @@ export default {
             formatter: '{c}%'
           },
           legend: {
-            data: ['去年', '今年']
+            data: ['前年', '去年', '今年']
           },
           toolbox: {
             show: true,
@@ -53,6 +56,12 @@ export default {
             }
           ],
           series: [
+            {
+              name: '前年',
+              type: 'bar',
+              data: Precurrentratio
+
+            },
             {
               name: '去年',
               type: 'bar',

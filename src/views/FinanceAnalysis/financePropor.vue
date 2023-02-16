@@ -2,7 +2,7 @@
   <div>
     <div class="navBox">
       <div class="date">选择日期
-        <a-button class="year" @click="changeColor(1)" :class="buttonIndex==1?'bgColor':''">
+        <a-button class="year" @click="changeColor(1)" :class="buttonIndex == 1 ? 'bgColor' : ''">
           年
         </a-button>
         <a-button class="month" @click="changeColor(2)" :class="buttonIndex == 2 ? 'bgColor' : ''">月</a-button>
@@ -79,16 +79,34 @@
         <span style="visibility: hidden;">col-12</span>
 
         <a-tabs defaultActiveKey="2" @change='callback2'>
-          <a-tab-pane key="1" tab="应收账款周转率">Content of Tab Pane 1</a-tab-pane>
+          <a-tab-pane key="1" tab="应收账款周转率">
+            <operationCapibility />
+
+          </a-tab-pane>
 
           <a-tab-pane key="2" tab="存货周转率" force-render>
-            <operationCapibilityVue />
+            <operationCapibility1 />
           </a-tab-pane>
-          <a-tab-pane key="3" tab="流动资产周转率">Content of Tab Pane 3</a-tab-pane>
-          <a-tab-pane key="4" tab="营运资本周转率">Content of Tab Pane 4</a-tab-pane>
-          <a-tab-pane key="5" tab="非流动资产周转率">Content of Tab Pane 5</a-tab-pane>
-          <a-tab-pane key="6" tab="总资产周转率">总资产周转率</a-tab-pane>
-          <a-tab-pane key="7" tab="现金流量资产比">现金流量资产比</a-tab-pane>
+          <a-tab-pane key="3" tab="流动资产周转率">
+            <operationCapibility2 />
+
+          </a-tab-pane>
+          <a-tab-pane key="4" tab="营运资本周转率">
+            <operationCapibility3 />
+
+          </a-tab-pane>
+          <a-tab-pane key="5" tab="非流动资产周转率">
+            <operationCapibility4 />
+
+          </a-tab-pane>
+          <a-tab-pane key="6" tab="总资产周转率">
+            <operationCapibility5 />
+
+          </a-tab-pane>
+          <a-tab-pane key="7" tab="现金流量资产比">
+            <operationCapibility6 />
+
+          </a-tab-pane>
 
 
         </a-tabs>
@@ -106,7 +124,7 @@
           </a-tab-pane>
           <a-tab-pane key="3" tab="权益净利率">Content of Tab Pane 3</a-tab-pane>
           <!-- <a-tab-pane key="4" tab="现金比率">Content of Tab Pane 4</a-tab-pane>
-          <a-tab-pane key="5" tab="现金流量比率">Content of Tab Pane 5</a-tab-pane> -->
+              <a-tab-pane key="5" tab="现金流量比率">Content of Tab Pane 5</a-tab-pane> -->
 
         </a-tabs>
       </a-col>
@@ -140,7 +158,7 @@
     </a-row>
 
 
-  </div>
+</div>
 </template>
 <script>
 import shortTerm from './components/shortTerm.vue';
@@ -158,7 +176,14 @@ import longTerm5 from './components/longTerm5.vue';
 import longTerm6 from './components/longTerm6.vue';
 
 
-import operationCapibilityVue from './components/operationCapibility.vue.vue';
+import operationCapibility from './components/operationCapibility.vue';
+import operationCapibility1 from './components/operationCapibility1.vue';
+import operationCapibility2 from './components/operationCapibility2.vue';
+import operationCapibility3 from './components/operationCapibility3.vue';
+import operationCapibility4 from './components/operationCapibility4.vue';
+import operationCapibility5 from './components/operationCapibility5.vue';
+import operationCapibility6 from './components/operationCapibility6.vue';
+
 import profitEchart from './components/profitEchart.vue';
 import investmentPayback from './components/investmentPayback.vue';
 import InvestmentPayback from './components/investmentPayback.vue';
@@ -232,7 +257,15 @@ export default {
     longTerm5,
     longTerm6,
 
-    operationCapibilityVue, profitEchart, InvestmentPayback
+    operationCapibility,
+    operationCapibility1,
+    operationCapibility2,
+    operationCapibility3,
+    operationCapibility4,
+    operationCapibility5,
+    operationCapibility6,
+
+    profitEchart, InvestmentPayback
   },
   data() {
     return {
