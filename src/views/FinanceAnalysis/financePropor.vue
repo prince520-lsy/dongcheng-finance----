@@ -116,15 +116,18 @@
         <span style="visibility: hidden;">col-12</span>
 
         <a-tabs defaultActiveKey="2" @change='callback3'>
-          <a-tab-pane key="1" tab="销售净利率">Content of Tab Pane 1</a-tab-pane>
+          <a-tab-pane key="1" tab="销售净利率">
+            <profitEchart />
+          </a-tab-pane>
 
           <a-tab-pane key="2" tab="总资产净利率ROA" force-render>
-            <profitEchart />
+            <profitEchart2 />
 
           </a-tab-pane>
-          <a-tab-pane key="3" tab="权益净利率">Content of Tab Pane 3</a-tab-pane>
-          <!-- <a-tab-pane key="4" tab="现金比率">Content of Tab Pane 4</a-tab-pane>
-              <a-tab-pane key="5" tab="现金流量比率">Content of Tab Pane 5</a-tab-pane> -->
+          <a-tab-pane key="3" tab="权益净利率">
+            <profitEchart3 />
+          </a-tab-pane>
+
 
         </a-tabs>
       </a-col>
@@ -185,7 +188,9 @@ import operationCapibility5 from './components/operationCapibility5.vue';
 import operationCapibility6 from './components/operationCapibility6.vue';
 
 import profitEchart from './components/profitEchart.vue';
-import investmentPayback from './components/investmentPayback.vue';
+import profitEchart2 from './components/profitEchart2.vue';
+import profitEchart3 from './components/profitEchart3.vue';
+
 import InvestmentPayback from './components/investmentPayback.vue';
 
 const data = [
@@ -265,7 +270,9 @@ export default {
     operationCapibility5,
     operationCapibility6,
 
-    profitEchart, InvestmentPayback
+    profitEchart,
+    profitEchart2,
+    profitEchart3, InvestmentPayback
   },
   data() {
     return {

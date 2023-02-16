@@ -1,5 +1,5 @@
 <template>
-  <div id="main412" style="width: 865px; height: 400px;">
+  <div id="main415" style="width: 865px; height: 400px;">
 
 </div>
 </template>
@@ -10,10 +10,10 @@ export default {
   methods: {
     initProfit() {
       axios.get('form/financialanalysis').then(res => {
-        let Prenetsalesrate = res.data.list.previousyear.netsalesrate
-        let Lastnetsalesrate = res.data.list.lastyear.netsalesrate
-        let netsalesrate = res.data.list.thisyear.netsalesrate
-        this.char = echarts.init(document.querySelector('#main412'))
+        let Prerateofequity = res.data.list.previousyear.rateofequity
+        let Lastrateofequity = res.data.list.lastyear.rateofequity
+        let rateofequity = res.data.list.thisyear.rateofequity
+        this.char = echarts.init(document.querySelector('#main415'))
         let option = {
           color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
           title: {
@@ -80,7 +80,7 @@ export default {
               emphasis: {
                 focus: 'series'
               },
-              data: Prenetsalesrate
+              data: Prerateofequity
             },
             {
               name: '去年',
@@ -107,7 +107,7 @@ export default {
               emphasis: {
                 focus: 'series'
               },
-              data: Lastnetsalesrate
+              data: Lastrateofequity
             },
             {
               name: '今年',
@@ -134,7 +134,7 @@ export default {
               emphasis: {
                 focus: 'series'
               },
-              data: netsalesrate
+              data: rateofequity
             }
           ]
         };
@@ -146,7 +146,7 @@ export default {
     this.initProfit()
   },
   mounted() {
-    var chartDom = document.getElementById('main412');
+    var chartDom = document.getElementById('main415');
     var myChart = echarts.init(chartDom);
     var option;
 
@@ -280,7 +280,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-#main412 {
+#main415 {
   background-color: #fff;
 }
 </style>

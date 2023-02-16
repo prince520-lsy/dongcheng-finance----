@@ -1,7 +1,7 @@
 <template>
   <div id="main5" style="width: 865px; height: 400px;">
 
-  </div>
+</div>
 </template>
 <script>
 import * as echarts from 'echarts';
@@ -29,7 +29,7 @@ export default {
         {
           name: 'Access From',
           type: 'pie',
-          radius: '50%',
+          radius: '80%',
           data: [
             { value: 1048, name: '今年' },
             { value: 735, name: '去年' },
