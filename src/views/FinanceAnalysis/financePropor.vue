@@ -193,57 +193,58 @@ import profitEchart3 from './components/profitEchart3.vue';
 
 import InvestmentPayback from './components/investmentPayback.vue';
 import { getFinanceEarlyWarning } from '@/api/financePropor';
-const data = [
-  {
-    key: '1',
-    name: '运营资本比例',
-    rate: '81.00%',
-    tags: ['安全'],
-  },
-  {
-    key: '2',
-    name: '留档收益比例',
-    rate: '44.00%',
-    tags: ['危险'],
-  },
-  {
-    key: '3',
-    name: '息税前收益资产',
-    rate: '53.00%',
-    tags: ['危险'],
-  },
-  {
-    key: '4',
-    name: '权益收入资产比',
-    rate: '86.00%',
-    tags: ['安全'],
-  },
-  {
-    key: '5',
-    name: '销售收入资产比',
-    rate: '52.00%',
-    tags: ['安全'],
-  },
-];
+// const data = [
+//   {
+//     key: '1',
+//     name: '运营资本比例',
+//     rate: '81.00%',
+//     tags: ['安全'],
+//   },
+//   {
+//     key: '2',
+//     name: '留档收益比例',
+//     rate: '44.00%',
+//     tags: ['危险'],
+//   },
+//   {
+//     key: '3',
+//     name: '息税前收益资产',
+//     rate: '53.00%',
+//     tags: ['危险'],
+//   },
+//   {
+//     key: '4',
+//     name: '权益收入资产比',
+//     rate: '86.00%',
+//     tags: ['安全'],
+//   },
+//   {
+//     key: '5',
+//     name: '销售收入资产比',
+//     rate: '52.00%',
+//     tags: ['安全'],
+//   },
+// ];
+const data = []
 
 const columns = [
   {
-    dataIndex: 'name',
-    key: 'name',
+    dataIndex: 'project',
+    key: 'project',
     slots: { title: 'customTitle' },
-    scopedSlots: { customRender: 'name' },
+    scopedSlots: { customRender: 'project' },
   },
   {
     title: '数值',
-    dataIndex: 'rate',
-    key: 'rate',
+    dataIndex: 'value',
+    key: 'value',
   },
 
   {
     title: '标签',
-    key: 'tags',
-    dataIndex: 'tags',
-    scopedSlots: { customRender: 'tags' },
+    key: 'explain',
+    dataIndex: 'explain',
+    scopedSlots: { customRender: 'explain' },
   },
 
 ];
@@ -290,6 +291,10 @@ export default {
     async getFinanceEarlyWarning() {
       let res = await getFinanceEarlyWarning()
       console.log("financeWarning", res);
+      this.data = res.data.list
+      console.log('data', data);
+      data.forEach(obj => console.log('obj', obj))
+
     },
     callback(key) {
       console.log('key', key);

@@ -1,7 +1,7 @@
 <template>
   <div>
     <a-table :columns="columns" :data-source="data" :pagination="{ pageSize: 6 }">
-      <template #title><span style="font-size: 18px; font-weight: 800;">税员监控表</span></template>
+      <template #title><span style="font-size: 18px; font-weight: 800;">综合税负率</span></template>
     </a-table>
 
     <!-- stackedEcherts -->
@@ -9,7 +9,7 @@
       <StackedEchart />
     </div>
 
-    <a-table :columns="columns2" :data-source="data2" :pagination='true' class="incomTax">
+    <a-table :columns="columns2" :data-source="data2" class="incomTax">
       <a slot="name" slot-scope="text">{{ text }}</a>
       <template #title><span style="font-size: 18px; font-weight: 700;">所得税</span></template>
       <span slot="customTitle">序号</span>
@@ -22,10 +22,10 @@
     </a-table>
 
 
-  </div>
+</div>
 </template>
 <script>
-
+import { getTaskRisk } from '@/api/task';
 import StackedEchart from './components/StackedEchart.vue';
 const columns = [
   {
@@ -39,23 +39,23 @@ const columns = [
     width: 150,
   },
   {
-    title: '材料成本',
+    title: '本期缴纳增值税',
     dataIndex: 'address',
   },
   {
-    title: '本期进项',
+    title: '本期缴纳消费税',
     dataIndex: 'address',
   },
   {
-    title: '本期销项',
+    title: '本期缴纳企业所得税',
     dataIndex: 'address',
   },
   {
-    title: '本期纳税',
+    title: '增值税税负率',
     dataIndex: 'address',
   },
   {
-    title: '行业平均',
+    title: '费税税负率',
     dataIndex: 'address',
   },
   {
@@ -163,6 +163,15 @@ export default {
       columns2,
       columns,
     };
+  },
+  methods: {
+    async getTaskRisk() {
+      let res = await getTaskRisk()
+      console.log("taskTax", res);
+    }
+  },
+  created() {
+    this.getTaskRisk()
   },
 };
 
