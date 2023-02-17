@@ -16,7 +16,16 @@ export default {
     initInvestment() {
       axios.get('form/financialanalysis').then(res => {
         console.log('roi', res.data.list.thisyear.roi.roi);
+        //今年
         let arr = res.data.list.thisyear.roi.roi
+        let total = res.data.list.thisyear.roi.yearcount
+        console.log('total', total);
+        //前年
+        let Prearr = res.data.list.previousyear.roi.roi
+        let Pretotal = res.data.list.previousyear.roi.yearcount
+        //去年
+        let Lastarr = res.data.list.lastyear.roi.roi
+        let lasttotal = res.data.list.lastyear.roi.yearcount
         this.char = echarts.init(document.querySelector('#main58'))
 
         let option = {
@@ -55,9 +64,9 @@ export default {
                 show: false
               },
               data: [
-                { value: 1548, name: '去年', selected: true },
-                { value: 775, name: '今年', selected: true },
-                { value: 679, name: '前年', selected: true }
+                { value: lasttotal, name: '去年', },
+                { value: total, name: '今年', selected: true },
+                { value: Pretotal, name: '前年', }
               ]
             },
             {
@@ -99,21 +108,8 @@ export default {
                   }
                 }
               },
-              data: [
-                { value: 1048, name: '1月' },
-                { value: 335, name: '2月' },
-                { value: 310, name: '3月' },
-                { value: 251, name: '4月' },
-                { value: 234, name: '5月' },
-                { value: 147, name: '6月' },
-                { value: 135, name: '7月' },
-                { value: 102, name: '8月' },
-                { value: 102, name: '9月' },
-                { value: 102, name: '10月' },
-                { value: 102, name: '11月' },
-                { value: 102, name: '12月' },
+              data: arr
 
-              ]
             }
           ]
         };

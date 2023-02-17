@@ -192,7 +192,7 @@ import profitEchart2 from './components/profitEchart2.vue';
 import profitEchart3 from './components/profitEchart3.vue';
 
 import InvestmentPayback from './components/investmentPayback.vue';
-
+import { getFinanceEarlyWarning } from '@/api/financePropor';
 const data = [
   {
     key: '1',
@@ -283,7 +283,14 @@ export default {
 
     }
   },
+  created() {
+    this.getFinanceEarlyWarning()
+  },
   methods: {
+    async getFinanceEarlyWarning() {
+      let res = await getFinanceEarlyWarning()
+      console.log("financeWarning", res);
+    },
     callback(key) {
       console.log('key', key);
     },
