@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <a-table :columns="columns" :data-source="data" :pagination="{ pageSize: 6 }">
+  <div id="app">
+    <a-table :columns="columns" :data-source="data" :pagination='false'>
       <template #title><span style="font-size: 18px; font-weight: 800;">综合税负率</span></template>
     </a-table>
 
@@ -30,41 +30,53 @@ import StackedEchart from './components/StackedEchart.vue';
 const columns = [
   {
     title: '月份',
-    dataIndex: 'name',
+    dataIndex: 'time',
     width: 150,
   },
   {
     title: '收入',
-    dataIndex: 'age',
+    dataIndex: 'income',
     width: 150,
   },
   {
     title: '本期缴纳增值税',
-    dataIndex: 'address',
+    dataIndex: 'currentperiod',
   },
   {
     title: '本期缴纳消费税',
-    dataIndex: 'address',
+    dataIndex: 'consumption',
   },
   {
     title: '本期缴纳企业所得税',
-    dataIndex: 'address',
+    dataIndex: 'corporate',
   },
   {
     title: '增值税税负率',
-    dataIndex: 'address',
+    dataIndex: 'vatrate',
   },
   {
     title: '费税税负率',
-    dataIndex: 'address',
+    dataIndex: 'taxrate',
+  },
+  {
+    title: '费税税负率',
+    dataIndex: 'burdenrate',
+  },
+  {
+    title: '费税税负率',
+    dataIndex: 'Comprehensivetaxrate',
+  },
+  {
+    title: '费税税负率',
+    dataIndex: 'industryaverage',
   },
   {
     title: '附加',
-    dataIndex: 'address',
+    dataIndex: 'additional',
   },
   {
     title: '其他',
-    dataIndex: 'address',
+    dataIndex: 'other',
   },
 ];
 const columns2 = [
@@ -114,14 +126,7 @@ const columns2 = [
 
 ];
 const data = [];
-for (let i = 0; i < 100; i++) {
-  data.push({
-    key: i,
-    name: `   ${i + 1}`,
-    age: '￥5143',
-    address: ` ${i}`,
-  });
-}
+
 const data2 = [
   {
     key: '1',
@@ -168,6 +173,8 @@ export default {
     async getTaskRisk() {
       let res = await getTaskRisk()
       console.log("taskTax", res);
+      let Feb = res.data.list[0]
+      this.data = Feb
     }
   },
   created() {
@@ -177,9 +184,14 @@ export default {
 
 </script>
 <style lang="less" scoped>
+#app {
+  background-color: #fff;
+}
+
 .stackedEcherts {
   width: 1240px;
   height: 340px;
+  margin-top: 80px;
 }
 
 .incomTax {
