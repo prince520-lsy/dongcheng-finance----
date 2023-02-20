@@ -161,7 +161,7 @@
     </a-row>
 
 
-</div>
+  </div>
 </template>
 <script>
 import shortTerm from './components/shortTerm.vue';
@@ -193,38 +193,7 @@ import profitEchart3 from './components/profitEchart3.vue';
 
 import InvestmentPayback from './components/investmentPayback.vue';
 import { getFinanceEarlyWarning } from '@/api/financePropor';
-// const data = [
-//   {
-//     key: '1',
-//     name: '运营资本比例',
-//     rate: '81.00%',
-//     tags: ['安全'],
-//   },
-//   {
-//     key: '2',
-//     name: '留档收益比例',
-//     rate: '44.00%',
-//     tags: ['危险'],
-//   },
-//   {
-//     key: '3',
-//     name: '息税前收益资产',
-//     rate: '53.00%',
-//     tags: ['危险'],
-//   },
-//   {
-//     key: '4',
-//     name: '权益收入资产比',
-//     rate: '86.00%',
-//     tags: ['安全'],
-//   },
-//   {
-//     key: '5',
-//     name: '销售收入资产比',
-//     rate: '52.00%',
-//     tags: ['安全'],
-//   },
-// ];
+
 const data = []
 
 const columns = [
@@ -242,9 +211,9 @@ const columns = [
 
   {
     title: '标签',
-    key: 'explain',
-    dataIndex: 'explain',
-    scopedSlots: { customRender: 'explain' },
+    key: 'tags',
+    dataIndex: 'tags',
+    scopedSlots: { customRender: 'tags' },
   },
 
 ];
@@ -291,9 +260,10 @@ export default {
     async getFinanceEarlyWarning() {
       let res = await getFinanceEarlyWarning()
       console.log("financeWarning", res);
-      this.data = res.data.list
-      console.log('data', data);
-      data.forEach(obj => console.log('obj', obj))
+      let arr = res.data.list
+
+      this.data = arr
+
 
     },
     callback(key) {
