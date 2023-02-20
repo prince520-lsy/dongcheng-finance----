@@ -1,7 +1,7 @@
 <template>
   <div id="main58" style="width: 865px; height: 400px;">
 
-</div>
+  </div>
 </template>
 <script>
 import * as echarts from 'echarts';
@@ -34,25 +34,16 @@ export default {
           },
           tooltip: {
             trigger: 'item',
-            formatter: '{a} <br/>{b}: {c} ({d}%)'
+            formatter: '{a} <br/>{b}: {c} '
           },
           legend: {
             data: [
-              // 'Direct',
-              // 'Marketing',
-              // 'Search Engine',
-              // 'Email',
-              // 'Union Ads',
-              // 'Video Ads',
-              // 'Baidu',
-              // 'Google',
-              // 'Bing',
-              // 'Others'
+
             ]
           },
           series: [
             {
-              name: 'Access From',
+              name: '投资回报率',
               type: 'pie',
               selectedMode: 'single',
               radius: [0, '30%'],
@@ -70,14 +61,14 @@ export default {
               ]
             },
             {
-              name: 'Access From',
+              name: '',
               type: 'pie',
               radius: ['40%', '60%'],
               labelLine: {
                 length: 30
               },
               label: {
-                formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                formatter: '  {b|{b}：}{c}   ',
                 backgroundColor: '#F6F8FC',
                 borderColor: '#8C8D8E',
                 borderWidth: 1,
