@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <a-table :columns="columns" :data-source="data" :pagination='false'>
-      <template #title><span style="font-size: 18px; font-weight: 800;">综合税负率</span></template>
+      <template #title><span
+          style="font-size: 18px; font-weight: 800; text-align: center;">税负风险控制表（行业分析）</span></template>
     </a-table>
 
     <!-- stackedEcherts -->
@@ -22,111 +23,86 @@
     </a-table>
 
 
-</div>
+  </div>
 </template>
 <script>
 import { getTaskRisk } from '@/api/task';
+import { ref, reactive } from '@vue/composition-api'
 import StackedEchart from './components/StackedEchart.vue';
+import { defineComponent } from '@vue/composition-api'
 const columns = [
   {
-    title: '月份',
-    dataIndex: 'time',
-    width: 150,
-  },
-  {
-    title: '收入',
-    dataIndex: 'income',
-    width: 150,
-  },
-  {
-    title: '本期缴纳增值税',
-    dataIndex: 'currentperiod',
-  },
-  {
-    title: '本期缴纳消费税',
-    dataIndex: 'consumption',
-  },
-  {
-    title: '本期缴纳企业所得税',
-    dataIndex: 'corporate',
-  },
-  {
     title: '增值税税负率',
-    dataIndex: 'vatrate',
-  },
-  {
-    title: '费税税负率',
-    dataIndex: 'taxrate',
-  },
-  {
-    title: '费税税负率',
-    dataIndex: 'burdenrate',
-  },
-  {
-    title: '费税税负率',
-    dataIndex: 'Comprehensivetaxrate',
-  },
-  {
-    title: '费税税负率',
-    dataIndex: 'industryaverage',
-  },
-  {
-    title: '附加',
-    dataIndex: 'additional',
-  },
-  {
-    title: '其他',
-    dataIndex: 'other',
-  },
-];
-const columns2 = [
-  {
-    dataIndex: 'name',
-    key: 'name',
-    slots: { title: 'customTitle' },
-    scopedSlots: { customRender: 'name' },
-  },
-  {
-    title: '收入',
-    dataIndex: 'rate',
-    key: 'rate',
+    dataIndex: 'time',
+    width: 400,
+    children: [
+      {
+        title: '公司实际（%）',
+        dataIndex: 'companyActully4',
+        key: 'companyActully4',
+        width: 200,
+      },
+
+      {
+        title: '行业平均（%）',
+        dataIndex: 'companyActully5',
+        key: 'companyActully5',
+        width: 200,
+      },
+
+      {
+        title: '税负率小于同行业税负率30%预警',
+        dataIndex: 'companyActully6',
+        key: 'companyActully6',
+        width: 200,
+      },
+
+    ]
   },
 
   {
-    title: '成本',
-    dataIndex: 'rate',
-    key: 'rate',
-  },
-  {
-    title: '费用',
-    dataIndex: 'rate',
-    key: 'rate',
-  },
-  {
-    title: '所得税',
-    dataIndex: 'rate',
-    key: 'rate',
-  },
-  {
-    title: '税负率',
-    dataIndex: 'rate',
-    key: 'rate',
-  },
-  {
-    title: '行业参考值',
-    dataIndex: 'rate',
-    key: 'rate',
-  },
-  {
-    title: '风险评判',
-    key: 'tags',
-    dataIndex: 'tags',
-    scopedSlots: { customRender: 'tags' },
+    title: '企业所得税',
+    dataIndex: 'time',
+    width: 400,
+    children: [
+      {
+        title: '公司实际（%）',
+        dataIndex: 'companyActully3',
+        key: 'companyActully3',
+        width: 200,
+      },
+
+      {
+        title: '行业平均（%）',
+        dataIndex: 'companyActully1',
+        key: 'companyActully1',
+        width: 200,
+      },
+
+      {
+        title: '税负率小于同行业税负率30%预警',
+        dataIndex: 'companyActully2',
+        key: 'companyActully2',
+        width: 200,
+      },
+
+    ]
   },
 
 ];
-const data = [];
 
+
+const data = [
+  {
+    key: Date.now(),
+    companyActully1: '32',
+    companyActully2: '32',
+    companyActully3: '32',
+    companyActully4: '32',
+    companyActully5: '32',
+    companyActully6: '32',
+  }
+]
 const data2 = [
   {
     key: '1',
@@ -159,28 +135,14 @@ const data2 = [
     tags: ['安全'],
   },
 ];
-export default {
-  components: { StackedEchart },
-  data() {
+export default defineComponent({
+  setup() {
     return {
       data,
-      data2,
-      columns2,
-      columns,
-    };
-  },
-  methods: {
-    async getTaskRisk() {
-      let res = await getTaskRisk()
-      console.log("taskTax", res);
-      let Feb = res.data.list[0]
-      this.data = Feb
+      columns
     }
-  },
-  created() {
-    this.getTaskRisk()
-  },
-};
+  }
+})
 
 </script>
 <style lang="less" scoped>

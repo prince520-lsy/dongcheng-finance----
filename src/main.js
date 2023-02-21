@@ -3,6 +3,7 @@ import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 
 import Vue from 'vue'
+import VueCompositionApi from '@vue/composition-api'
 import App from './App.vue'
 import router from './router'
 import store from './store/'
@@ -15,7 +16,7 @@ import * as echarts from 'echarts';
 import EventBus from "@/utils/eventBus"
 
 Vue.use(VueAMap);
-
+Vue.use(VueCompositionApi)
 VueAMap.initAMapApiLoader({
   key: '2c89c54bff6c27a39666a7632ef5196c',
   plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor','AMap.Geocoder','AMap.Geolocation'],
