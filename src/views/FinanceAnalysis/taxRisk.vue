@@ -5,21 +5,14 @@
           style="font-size: 18px; font-weight: 800; text-align: center;">税负风险控制表（行业分析）</span></template>
     </a-table>
 
-    <!-- stackedEcherts -->
-    <div class="stackedEcherts">
-      <StackedEchart />
-    </div>
+    <a-table :columns="columns1" :data-source="data1" :pagination='false'>
+      <template #title><span
+          style="font-size: 18px; font-weight: 800; text-align: center;">税负风险控制表（比较分析）</span></template>
+    </a-table>
 
-    <a-table :columns="columns2" :data-source="data2" class="incomTax">
-      <a slot="name" slot-scope="text">{{ text }}</a>
-      <template #title><span style="font-size: 18px; font-weight: 700;">所得税</span></template>
-      <span slot="customTitle">序号</span>
-      <span slot="tags" slot-scope="tags">
-        <a-tag v-for="tag in tags" :key="tag" :color="tag === '安全' ? 'green' : 'red'">
-          {{ tag }}
-        </a-tag>
-      </span>
 
+    <a-table :columns="columns2" :data-source="data2" :pagination='false'>
+      <template #title><span style="font-size: 18px; font-weight: 800; text-align: center;">小税种纳税比较表</span></template>
     </a-table>
 
 
@@ -90,8 +83,6 @@ const columns = [
   },
 
 ];
-
-
 const data = [
   {
     key: Date.now(),
@@ -103,43 +94,149 @@ const data = [
     companyActully6: '32',
   }
 ]
+
+const columns1 = [
+  {
+    title: '收入',
+    dataIndex: 'income',
+    width: 150,
+    children: [
+      {
+        title: '本期',
+        dataIndex: 'bq',
+        width: 75
+      },
+      {
+        title: '上期',
+        dataIndex: 'sq',
+        width: 75
+      },
+
+    ]
+  },
+
+  {
+    title: '实缴增值税',
+    dataIndex: 'income',
+    width: 300,
+    children: [
+      {
+        title: '本期',
+        dataIndex: 'bq',
+        width: 75
+      },
+      {
+        title: '上期',
+        dataIndex: 'sq',
+        width: 75
+      },
+      {
+        title: '增值税税负变动率',
+        dataIndex: 'sql',
+        width: 75
+      },
+      {
+        title: '纳税人同期税负变动率小于-30%预警',
+        dataIndex: 'sqle',
+        width: 75
+      },
+
+    ]
+  },
+
+  {
+    title: '实缴企业所得税',
+    dataIndex: 'income',
+    width: 300,
+    children: [
+      {
+        title: '本期',
+        dataIndex: 'bq',
+        width: 75
+      },
+      {
+        title: '上期',
+        dataIndex: 'sq',
+        width: 75
+      },
+      {
+        title: '所得税税额变动率',
+        dataIndex: 'sql',
+        width: 75
+      },
+
+      {
+        title: '所得税税额变动率>50%或<-50%预警',
+        dataIndex: 'sqle',
+        width: 75
+      },
+
+    ]
+  },
+
+]
+const data1 = [
+  {
+    bq: '21',
+    sq: '21',
+    sql: '21',
+    sqle: '21',
+
+
+  }
+]
+
+const columns2 = [
+  {
+    title: '名称',
+    dataIndex: 'income',
+    width: 150,
+  },
+  {
+    title: '收入',
+    dataIndex: 'income',
+    width: 150,
+  },
+  {
+    title: '本期纳税额',
+    dataIndex: 'income',
+    width: 150,
+  },
+  {
+    title: '上期纳税额',
+    dataIndex: 'income',
+    width: 150,
+  },
+  {
+    title: '本期占收入比',
+    dataIndex: 'income',
+    width: 150,
+  },
+  {
+    title: '本期比上期增减额',
+    dataIndex: 'income',
+    width: 150,
+  },
+  {
+    title: '增减比率',
+    dataIndex: 'income',
+    width: 150,
+  },
+]
 const data2 = [
   {
-    key: '1',
-    name: '运营资本比例',
-    rate: '81.00%',
-    tags: ['安全'],
-  },
-  {
-    key: '1',
-    name: '留档收益比例',
-    rate: '44.00%',
-    tags: ['危险'],
-  },
-  {
-    key: '1',
-    name: '息税前收益资产',
-    rate: '53.00%',
-    tags: ['危险'],
-  },
-  {
-    key: '1',
-    name: '权益收入资产比',
-    rate: '86.00%',
-    tags: ['安全'],
-  },
-  {
-    key: '1',
-    name: '销售收入资产比',
-    rate: '52.00%',
-    tags: ['安全'],
-  },
-];
+    income: '10000'
+  }
+]
 export default defineComponent({
   setup() {
     return {
       data,
-      columns
+      columns,
+      data1,
+      columns1,
+      data2,
+      columns2
     }
   }
 })
@@ -148,6 +245,7 @@ export default defineComponent({
 <style lang="less" scoped>
 #app {
   background-color: #fff;
+  text-align: center;
 }
 
 .stackedEcherts {
