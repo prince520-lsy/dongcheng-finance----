@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <a-table :columns="columns" :data-source="data" :pagination='false'>
+    <a-table :columns="columns" :data-source="data" :pagination='false' bordered="true">
       <template #title><span
           style="font-size: 18px; font-weight: 800; text-align: center;">税负风险控制表（行业分析）</span></template>
     </a-table>
 
-    <a-table :columns="columns1" :data-source="data1" :pagination='false'>
+    <a-table :columns="columns1" :data-source="data1" :pagination='false' bordered="true">
       <template #title><span
           style="font-size: 18px; font-weight: 800; text-align: center;">税负风险控制表（比较分析）</span></template>
     </a-table>
 
 
-    <a-table :columns="columns2" :data-source="data2" :pagination='false'>
+    <a-table :columns="columns2" :data-source="data2" :pagination='false' bordered="true">
       <template #title><span style="font-size: 18px; font-weight: 800; text-align: center;">小税种纳税比较表</span></template>
     </a-table>
 
@@ -44,7 +44,7 @@ const columns = [
       },
 
       {
-        title: '税负率小于同行业税负率30%预警',
+        title: '增值税负率小于同行业的30%预警',
         dataIndex: 'companyActully6',
         key: 'companyActully6',
         width: 200,
@@ -54,7 +54,7 @@ const columns = [
   },
 
   {
-    title: '企业所得税',
+    title: '企业所得税贡献率',
     dataIndex: 'time',
     width: 400,
     children: [
@@ -73,7 +73,7 @@ const columns = [
       },
 
       {
-        title: '税负率小于同行业税负率30%预警',
+        title: '所得税贡献率小于同行业的-20%预警',
         dataIndex: 'companyActully2',
         key: 'companyActully2',
         width: 200,
