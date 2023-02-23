@@ -31,22 +31,22 @@ const columns = [
     children: [
       {
         title: '公司实际（%）',
-        dataIndex: 'companyActully4',
-        key: 'companyActully4',
+        dataIndex: 'reality',
+        key: 'reality',
         width: 200,
       },
 
       {
         title: '行业平均（%）',
-        dataIndex: 'companyActully5',
-        key: 'companyActully5',
+        dataIndex: 'actualvat',
+        key: 'actualvat',
         width: 200,
       },
 
       {
         title: '增值税负率小于同行业的30%预警',
-        dataIndex: 'companyActully6',
-        key: 'companyActully6',
+        dataIndex: 'tags',
+        key: 'tags',
         width: 200,
       },
 
@@ -60,22 +60,22 @@ const columns = [
     children: [
       {
         title: '公司实际（%）',
-        dataIndex: 'companyActully3',
-        key: 'companyActully3',
+        dataIndex: 'taxreality',
+        key: 'taxreality',
         width: 200,
       },
 
       {
         title: '行业平均（%）',
-        dataIndex: 'companyActully1',
-        key: 'companyActully1',
+        dataIndex: 'actualtax',
+        key: 'actualtax',
         width: 200,
       },
 
       {
         title: '所得税贡献率小于同行业的-20%预警',
-        dataIndex: 'companyActully2',
-        key: 'companyActully2',
+        dataIndex: 'tag',
+        key: 'tag',
         width: 200,
       },
 
@@ -85,13 +85,13 @@ const columns = [
 ];
 const data = [
   {
-    key: Date.now(),
-    companyActully1: '32',
-    companyActully2: '32',
-    companyActully3: '32',
-    companyActully4: '32',
-    companyActully5: '32',
-    companyActully6: '32',
+    // key: Date.now(),
+    reality: '32',
+    actualvat: '32',
+    tags: '32',
+    taxreality: '32',
+    actualtax: '32',
+    tag: '32',
   }
 ]
 
@@ -189,7 +189,7 @@ const data1 = [
 const columns2 = [
   {
     title: '名称',
-    dataIndex: 'income',
+    dataIndex: 'name',
     width: 150,
   },
   {
@@ -199,27 +199,27 @@ const columns2 = [
   },
   {
     title: '本期纳税额',
-    dataIndex: 'income',
+    dataIndex: 'taxamount',
     width: 150,
   },
   {
     title: '上期纳税额',
-    dataIndex: 'income',
+    dataIndex: 'periodamount',
     width: 150,
   },
   {
     title: '本期占收入比',
-    dataIndex: 'income',
+    dataIndex: 'proportion',
     width: 150,
   },
   {
     title: '本期比上期增减额',
-    dataIndex: 'income',
+    dataIndex: 'decrease',
     width: 150,
   },
   {
     title: '增减比率',
-    dataIndex: 'income',
+    dataIndex: 'decreaseratio',
     width: 150,
   },
 ]
@@ -238,7 +238,34 @@ export default defineComponent({
       data2,
       columns2
     }
-  }
+  },
+  data() {
+    return {
+      data,
+      columns,
+      data1,
+      columns1,
+      data2,
+      columns2
+    }
+  },
+  methods: {
+    async getTaskRisk() {
+      let res = await getTaskRisk()
+      console.log('res', res);
+      let table1 = res.data.list.analysis
+      console.log('table1', table1);
+      this.data = [table1]
+
+      //smallTax
+      let smalltaxes = res.data.list.smalltaxes
+      console.log('smalltaxes', smalltaxes);
+      this.data2 = smalltaxes
+    }
+  },
+  created() {
+    this.getTaskRisk()
+  },
 })
 
 </script>
