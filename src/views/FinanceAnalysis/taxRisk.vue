@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <a-table :columns="columns" :data-source="data" :pagination='false' bordered="true">
+    <a-table :columns="columns" :data-source="data" :pagination='false' bordered="{true}">
       <template #title><span
           style="font-size: 18px; font-weight: 800; text-align: center;">税负风险控制表（行业分析）</span></template>
     </a-table>
 
-    <a-table :columns="columns1" :data-source="data1" :pagination='false' bordered="true">
+    <a-table :columns="columns1" :data-source="data1" :pagination='false' bordered="{true}">
       <template #title><span
           style="font-size: 18px; font-weight: 800; text-align: center;">税负风险控制表（比较分析）</span></template>
     </a-table>
@@ -26,7 +26,7 @@ import { defineComponent } from '@vue/composition-api'
 const columns = [
   {
     title: '增值税税负率',
-    dataIndex: 'time',
+    // dataIndex: 'time',
     width: 400,
     children: [
       {
@@ -55,7 +55,7 @@ const columns = [
 
   {
     title: '企业所得税贡献率',
-    dataIndex: 'time',
+    // dataIndex: 'time',
     width: 400,
     children: [
       {
@@ -84,15 +84,15 @@ const columns = [
 
 ];
 const data = [
-  {
-    // key: Date.now(),
-    reality: '32',
-    actualvat: '32',
-    tags: '32',
-    taxreality: '32',
-    actualtax: '32',
-    tag: '32',
-  }
+  // {
+  //   // key: Date.now(),
+  //   reality: '32',
+  //   actualvat: '32',
+  //   tags: '32',
+  //   taxreality: '32',
+  //   actualtax: '32',
+  //   tag: '32',
+  // }
 ]
 
 const columns1 = [
@@ -103,12 +103,12 @@ const columns1 = [
     children: [
       {
         title: '本期',
-        dataIndex: 'bq',
+        dataIndex: 'income',
         width: 75
       },
       {
         title: '上期',
-        dataIndex: 'sq',
+        dataIndex: 'lastincome',
         width: 75
       },
 
@@ -117,27 +117,27 @@ const columns1 = [
 
   {
     title: '实缴增值税',
-    dataIndex: 'income',
+    dataIndex: 'unpaidvat',
     width: 300,
     children: [
       {
         title: '本期',
-        dataIndex: 'bq',
+        dataIndex: 'unpaidvat',
         width: 75
       },
       {
         title: '上期',
-        dataIndex: 'sq',
+        dataIndex: 'lastunpaidvat',
         width: 75
       },
       {
         title: '增值税税负变动率',
-        dataIndex: 'sql',
+        dataIndex: 'vatburden',
         width: 75
       },
       {
         title: '纳税人同期税负变动率小于-30%预警',
-        dataIndex: 'sqle',
+        dataIndex: 'text',
         width: 75
       },
 
@@ -151,23 +151,23 @@ const columns1 = [
     children: [
       {
         title: '本期',
-        dataIndex: 'bq',
+        dataIndex: 'money',
         width: 75
       },
       {
         title: '上期',
-        dataIndex: 'sq',
+        dataIndex: 'lastmoney',
         width: 75
       },
       {
         title: '所得税税额变动率',
-        dataIndex: 'sql',
+        dataIndex: 'rateofincome',
         width: 75
       },
 
       {
         title: '所得税税额变动率>50%或<-50%预警',
-        dataIndex: 'sqle',
+        dataIndex: 'tags',
         width: 75
       },
 
@@ -224,9 +224,9 @@ const columns2 = [
   },
 ]
 const data2 = [
-  {
-    income: '10000'
-  }
+  // {
+  //   income: '10000'
+  // }
 ]
 export default defineComponent({
   setup() {
@@ -261,6 +261,11 @@ export default defineComponent({
       let smalltaxes = res.data.list.smalltaxes
       console.log('smalltaxes', smalltaxes);
       this.data2 = smalltaxes
+
+      //taxrisk
+      let taxrisk = res.data.list.taxrisk
+      console.log("taxrisk", taxrisk);
+      this.data1 = [taxrisk]
     }
   },
   created() {
