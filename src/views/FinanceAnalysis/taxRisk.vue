@@ -50,7 +50,7 @@
 
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
-        <lastPeriodPayment />
+        <currentIncomeRatio />
       </a-col>
     </a-row>
 
@@ -65,6 +65,7 @@ import percentBarChart from './components/percentBarChart.vue'
 import currentTaxPayment from './components/currentTaxPayment.vue'
 import lastPeriodPayment from './components/lastPeriodPayment.vue'
 import increaseRatio from './components/increaseRatio.vue'
+import currentIncomeRatio from './components/currentIncomeRatio.vue'
 const columns = [
   {
     title: '增值税税负率',
@@ -273,7 +274,7 @@ export default defineComponent({
   components: {
     StackedEchart, percentBarChart,
     currentTaxPayment, lastPeriodPayment,
-    increaseRatio
+    increaseRatio, currentIncomeRatio
   },
 
 
