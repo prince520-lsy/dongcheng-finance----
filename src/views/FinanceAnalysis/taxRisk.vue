@@ -41,6 +41,19 @@
       </a-col>
     </a-row>
 
+
+    <a-row>
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <increaseRatio />
+      </a-col>
+
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <lastPeriodPayment />
+      </a-col>
+    </a-row>
+
   </div>
 </template>
 <script>
@@ -51,6 +64,7 @@ import { defineComponent, defineAsyncComponent } from '@vue/composition-api'
 import percentBarChart from './components/percentBarChart.vue'
 import currentTaxPayment from './components/currentTaxPayment.vue'
 import lastPeriodPayment from './components/lastPeriodPayment.vue'
+import increaseRatio from './components/increaseRatio.vue'
 const columns = [
   {
     title: '增值税税负率',
@@ -256,7 +270,11 @@ const data2 = [
 ]
 
 export default defineComponent({
-  components: { StackedEchart, percentBarChart, currentTaxPayment, lastPeriodPayment },
+  components: {
+    StackedEchart, percentBarChart,
+    currentTaxPayment, lastPeriodPayment,
+    increaseRatio
+  },
 
 
   setup() {
