@@ -19,7 +19,9 @@ export default {
         let tax5 = res.data.list.smalltaxes[4].periodamount
         let tax6 = res.data.list.smalltaxes[5].periodamount
         let tax7 = res.data.list.smalltaxes[6].periodamount
-        let tax9 = res.data.list.smalltaxes[9].periodamount
+        let tax8 = res.data.list.smalltaxes[7].periodamount
+        let tax9 = res.data.list.smalltaxes[8].periodamount
+        let tax10 = res.data.list.smalltaxes[9].periodamount
         this.char = echarts.init(document.querySelector('#main102'))
         let option = {
           title: {
@@ -34,7 +36,7 @@ export default {
           legend: {
             bottom: 10,
             left: 'center',
-            data: ['房产税', '土地税', '环保税', '教育费附加', '印花税', '工会经费', '残保']
+            data: ['房产税', '土地税', '环保税', '个税', '城建税', '教育费附加', '地方教育费附加', '印花税', '工会经费', '残保']
           },
           series: [
             {
@@ -47,11 +49,13 @@ export default {
                 { value: tax1, name: '房产税' },
                 { value: tax2, name: '土地税' },
                 { value: tax3, name: '环保税' },
-                { value: tax4, name: '教育费附加' },
-                { value: tax5, name: '地方教育费附加' },
-                { value: tax6, name: '印花税' },
-                { value: tax7, name: '工会经费' },
-                { value: tax9, name: '残保' },
+                { value: tax4, name: '个税' },
+                { value: tax5, name: '城建税' },
+                { value: tax6, name: '教育费附加' },
+                { value: tax7, name: '地方教育费附加' },
+                { value: tax8, name: '印花税' },
+                { value: tax9, name: '工会经费' },
+                { value: tax10, name: '残保' },
               ],
               emphasis: {
                 itemStyle: {

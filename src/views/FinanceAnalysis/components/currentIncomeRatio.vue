@@ -36,6 +36,14 @@ export default {
         let proportion7 = res.data.list.smalltaxes[7].proportion
         let newProportion7 = proportion7.replace('%', '')
 
+        let proportion8 = res.data.list.smalltaxes[8].proportion
+        let newProportion8 = proportion8.replace('%', '')
+
+        let proportion9 = res.data.list.smalltaxes[9].proportion
+        let newProportion9 = proportion9.replace('%', '')
+
+
+
         this.char = echarts.init(document.querySelector('#main104'))
         let option = {
           title: {
@@ -86,7 +94,7 @@ export default {
               }
             },
 
-            data: ['房产税', '土地税', '环保税', '教育费附加', '地方教育费附加', '印花税', '工会经费', '残保']
+            data: ['房产税', '土地税', '环保税', '个税', '城建税', '教育费附加', '地方教育费附加', '印花税', '工会经费', '残保']
           },
           yAxis: {
 
@@ -105,7 +113,7 @@ export default {
               name: '',
               type: 'line',
               stack: 'Total',
-              data: [newProportion, newProportion1, newProportion2, newProportion3, newProportion4, newProportion5, newProportion6, newProportion7],
+              data: [newProportion, newProportion1, newProportion2, newProportion3, newProportion4, newProportion5, newProportion6, newProportion7, newProportion8, newProportion9],
 
               itemStyle: {
                 normal: {

@@ -35,15 +35,15 @@ export default {
 
         let decreaseratio7 = res.data.list.smalltaxes[7].decreaseratio
         let newDecrease7 = decreaseratio7.replace('%', '')
+
+        let decreaseratio8 = res.data.list.smalltaxes[8].decreaseratio
+        let newDecrease8 = decreaseratio8.replace('%', '')
+
+        let decreaseratio9 = res.data.list.smalltaxes[9].decreaseratio
+        let newDecrease9 = decreaseratio7.replace('%', '')
         console.log('newDecrease', newDecrease);
         console.log('decreaseratio', typeof decreaseratio);
-        // let tax2 = res.data.list.smalltaxes[1].decreaseratio
-        // let tax3 = res.data.list.smalltaxes[2].decreaseratio
-        // let tax4 = res.data.list.smalltaxes[3].decreaseratio
-        // let tax5 = res.data.list.smalltaxes[4].decreaseratio
-        // let tax6 = res.data.list.smalltaxes[5].decreaseratio
-        // let tax7 = res.data.list.smalltaxes[6].decreaseratio
-        // let tax9 = res.data.list.smalltaxes[9].decreaseratio
+
         this.char = echarts.init(document.querySelector('#main103'))
         let option = {
           title: {
@@ -94,7 +94,7 @@ export default {
               }
             },
 
-            data: ['房产税', '土地税', '环保税', '教育费附加', '地方教育费附加', '印花税', '工会经费', '残保']
+            data: ['房产税', '土地税', '环保税', '个税', '城建税', '教育费附加', '地方教育费附加', '印花税', '工会经费', '残保']
           },
           yAxis: {
 
@@ -113,7 +113,7 @@ export default {
               name: '',
               type: 'line',
               stack: 'Total',
-              data: [newDecrease, newDecrease1, newDecrease2, newDecrease3, newDecrease4, newDecrease5, newDecrease6, newDecrease7],
+              data: [newDecrease, newDecrease1, newDecrease2, newDecrease3, newDecrease4, newDecrease5, newDecrease6, newDecrease7, newDecrease8, newDecrease9],
 
               itemStyle: {
                 normal: {
