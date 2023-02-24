@@ -25,7 +25,7 @@ export default {
           title: {
             text: '本期纳税额',
 
-            left: 'center'
+            // left: 'center'
           },
           tooltip: {
             trigger: 'item',
