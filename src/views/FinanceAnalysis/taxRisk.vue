@@ -19,15 +19,25 @@
     <a-row>
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
-
-
         <percentBarChart />
       </a-col>
+
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
         <StackedEchart />
+      </a-col>
+    </a-row>
 
 
+    <a-row>
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <currentTaxPayment />
+      </a-col>
+
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <StackedEchart />
       </a-col>
     </a-row>
 
@@ -39,7 +49,7 @@ import { getTaskRisk } from '@/api/task';
 import StackedEchart from './components/StackedEchart.vue';
 import { defineComponent, defineAsyncComponent } from '@vue/composition-api'
 import percentBarChart from './components/percentBarChart.vue'
-
+import currentTaxPayment from './components/currentTaxPayment.vue'
 const columns = [
   {
     title: '增值税税负率',
@@ -245,7 +255,7 @@ const data2 = [
 ]
 
 export default defineComponent({
-  components: { StackedEchart, percentBarChart },
+  components: { StackedEchart, percentBarChart, currentTaxPayment },
 
 
   setup() {
