@@ -16,13 +16,30 @@
     </a-table>
 
 
+    <a-row>
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+
+
+        <percentBarChart />
+      </a-col>
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <percentBarChart />
+
+
+      </a-col>
+    </a-row>
+
   </div>
 </template>
 <script>
 import { getTaskRisk } from '@/api/task';
-import { ref, reactive } from '@vue/composition-api'
+
 import StackedEchart from './components/StackedEchart.vue';
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, defineAsyncComponent } from '@vue/composition-api'
+
+
 const columns = [
   {
     title: '增值税税负率',
@@ -224,11 +241,13 @@ const columns2 = [
   },
 ]
 const data2 = [
-  // {
-  //   income: '10000'
-  // }
+
 ]
+
 export default defineComponent({
+
+
+
   setup() {
     return {
       data,

@@ -3,7 +3,7 @@
 
     <div class="navBox">
       <div class="date">选择日期
-        <a-button class="year" @click="changeColor(1)" :class="buttonIndex==1?'bgColor':''">
+        <a-button class="year" @click="changeColor(1)" :class="buttonIndex == 1 ? 'bgColor' : ''">
           年
         </a-button>
         <a-button class="month" @click="changeColor(2)" :class="buttonIndex == 2 ? 'bgColor' : ''">月</a-button>
@@ -54,6 +54,7 @@
         <!-- echarts2 -->
 
         <echatLine />
+        <!-- <percentBarChart /> -->
         <div></div>
       </div>
 
@@ -167,10 +168,11 @@ import * as echarts from 'echarts';
 import echartWrap from '@/components/EchartWrap/Index.vue'
 import fareEcharts from './components/fareEcharts.vue';
 import echatLine from './components/echatLine.vue';
+import percentBarChart from './components/percentBarChart.vue'
 import { getIncomTable, getIncomMonthTable, getecharts1Data, getecharts2Data } from '@/api/incom'
 import { axios } from '@/utils/request';
 export default {
-  components: { echatLine, echartWrap, fareEcharts },
+  components: { echatLine, echartWrap, fareEcharts, percentBarChart },
   data() {
     return {
       data,
