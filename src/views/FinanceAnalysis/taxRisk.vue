@@ -5,10 +5,35 @@
           style="font-size: 18px; font-weight: 800; text-align: center;">税负风险控制表（行业分析）</span></template>
     </a-table>
 
+
+
+    <a-row>
+      <a-col :span="24">
+        <span style="visibility: hidden;">col-12</span>
+        <percentBarChart />
+      </a-col>
+    </a-row>
+
     <a-table :columns="columns1" :data-source="data1" :pagination='false' bordered="{true}">
       <template #title><span
           style="font-size: 18px; font-weight: 800; text-align: center;">税负风险控制表（比较分析）</span></template>
     </a-table>
+
+
+    <a-row>
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <yiBiaoPan />
+      </a-col>
+
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <yiBiaoPan2 />
+      </a-col>
+    </a-row>
+
+
+
 
 
     <a-table :columns="columns2" :data-source="data2" :pagination='false' bordered="true">
@@ -16,17 +41,7 @@
     </a-table>
 
 
-    <a-row>
-      <a-col :span="12">
-        <span style="visibility: hidden;">col-12</span>
-        <percentBarChart />
-      </a-col>
 
-      <a-col :span="12">
-        <span style="visibility: hidden;">col-12</span>
-        <StackedEchart />
-      </a-col>
-    </a-row>
 
 
     <a-row>
@@ -66,6 +81,9 @@ import currentTaxPayment from './components/currentTaxPayment.vue'
 import lastPeriodPayment from './components/lastPeriodPayment.vue'
 import increaseRatio from './components/increaseRatio.vue'
 import currentIncomeRatio from './components/currentIncomeRatio.vue'
+import yiBiaoPan from './components/yiBiaoPan.vue'
+import yiBiaoPan2 from './components/yiBiaoPan2.vue'
+
 const columns = [
   {
     title: '增值税税负率',
@@ -274,7 +292,8 @@ export default defineComponent({
   components: {
     StackedEchart, percentBarChart,
     currentTaxPayment, lastPeriodPayment,
-    increaseRatio, currentIncomeRatio
+    increaseRatio, currentIncomeRatio,
+    yiBiaoPan, yiBiaoPan2
   },
 
 

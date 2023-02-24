@@ -34,6 +34,18 @@
         <echartPie5 />
       </a-col>
     </a-row>
+
+
+    <a-row>
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <yiBiaoPan />
+      </a-col>
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <yiBiaoPan2 />
+      </a-col>
+    </a-row>
   </div>
 </template>
 <script>
@@ -43,9 +55,14 @@ import echartPie2 from './components/echartPie2.vue';
 import echartPie3 from './components/echartPie3.vue';
 import echartPie4 from './components/echartPie4.vue';
 import echartPie5 from './components/echartPie5.vue';
+import yiBiaoPan from './components/yiBiaoPan.vue';
+import yiBiaoPan2 from './components/yiBiaoPan2.vue';
 
 export default {
-  components: { echartPie1, echartPie2, echartPie3, echartPie4, echartPie5 },
+  components: {
+    echartPie1, echartPie2, echartPie3, echartPie4, echartPie5,
+    yiBiaoPan, yiBiaoPan2
+  },
   // mounted() {
   //   var app = {};
 
