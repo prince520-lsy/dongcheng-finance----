@@ -25,7 +25,7 @@
       </a-col>
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
-        <percentBarChart />
+        <StackedEchart />
 
 
       </a-col>
@@ -38,7 +38,7 @@ import { getTaskRisk } from '@/api/task';
 
 import StackedEchart from './components/StackedEchart.vue';
 import { defineComponent, defineAsyncComponent } from '@vue/composition-api'
-
+import percentBarChart from './components/percentBarChart.vue'
 
 const columns = [
   {
@@ -245,7 +245,7 @@ const data2 = [
 ]
 
 export default defineComponent({
-
+  components: { StackedEchart, percentBarChart },
 
 
   setup() {

@@ -12,6 +12,10 @@ export default {
       axios.get('form/taxrisk').then(res => {
 
         console.log("res", res);
+        let reality = res.data.list.analysis.reality
+        let actualvat = res.data.list.analysis.actualvat
+        let taxreality = res.data.list.analysis.taxreality
+        let actualtax = res.data.list.analysis.actualtax
         this.char = echarts.init(document.querySelector('#main100'))
         let option = {
           title: {
@@ -48,7 +52,7 @@ export default {
                 }
               }
             },
-            data: [46, 20, 62, 12, 10, 80] //你要展示的数据
+            data: [reality, actualvat, taxreality, actualtax] //你要展示的数据
           }]
 
         };
