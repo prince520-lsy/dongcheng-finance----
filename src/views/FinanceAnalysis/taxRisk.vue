@@ -1,15 +1,21 @@
 <template>
   <div id="app">
-    <a-table :columns="columns" :data-source="data" :pagination='false' bordered="{true}">
-      <template #title><span
-          style="font-size: 18px; font-weight: 800; text-align: center;">税负风险控制表（行业分析）</span></template>
-    </a-table>
-
 
 
     <a-row>
-      <a-col :span="24">
+      <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
+
+        <a-table :columns="columns" :data-source="data" :pagination='false' bordered="{true}" id="Table1">
+
+          <template #title><span
+              style="font-size: 18px; font-weight: 800; text-align: center;">税负风险控制表（行业分析）</span></template>
+        </a-table>
+      </a-col>
+
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+
         <percentBarChart />
       </a-col>
     </a-row>
@@ -87,28 +93,30 @@ import yiBiaoPan2 from './components/yiBiaoPan2.vue'
 const columns = [
   {
     title: '增值税税负率',
-    // dataIndex: 'time',
-    width: 400,
+
+    width: 300,
+    height: 500,
     children: [
       {
         title: '公司实际（%）',
         dataIndex: 'reality',
         key: 'reality',
-        width: 200,
+        width: 100,
+        height: 300,
       },
 
       {
         title: '行业平均（%）',
         dataIndex: 'actualvat',
         key: 'actualvat',
-        width: 200,
+        width: 100,
       },
 
       {
         title: '增值税负率小于同行业的30%预警',
         dataIndex: 'tags',
         key: 'tags',
-        width: 200,
+        width: 100,
       },
 
     ]
@@ -116,28 +124,30 @@ const columns = [
 
   {
     title: '企业所得税贡献率',
-    // dataIndex: 'time',
-    width: 400,
+
+    width: 300,
+    height: 300,
     children: [
       {
         title: '公司实际（%）',
         dataIndex: 'taxreality',
         key: 'taxreality',
-        width: 200,
+        width: 100,
+        height: 100,
       },
 
       {
         title: '行业平均（%）',
         dataIndex: 'actualtax',
         key: 'actualtax',
-        width: 200,
+        width: 100,
       },
 
       {
         title: '所得税贡献率小于同行业的-20%预警',
         dataIndex: 'tag',
         key: 'tag',
-        width: 200,
+        width: 100,
       },
 
     ]
@@ -343,6 +353,13 @@ export default defineComponent({
 
 </script>
 <style lang="less" scoped>
+.Table1 {
+  width: 865px;
+  height: 400px;
+}
+
+
+
 #app {
   background-color: #fff;
   text-align: center;

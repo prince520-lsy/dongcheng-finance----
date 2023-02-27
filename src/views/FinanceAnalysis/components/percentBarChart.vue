@@ -1,5 +1,5 @@
 <template>
-  <div id="main100" style="width: 1729px; height: 400px;">
+  <div id="main100" style="width: 865px; height: 300px;">
 
   </div>
 </template>
@@ -25,10 +25,10 @@ export default {
 
           xAxis: {
             type: 'category',
-            axisLabel: {
-              interval: 0,//代表显示所有x轴标签显示
-              rotate: 30, //代表逆时针旋转45度
-            },
+            // axisLabel: {
+            //   interval: 0,//代表显示所有x轴标签显示
+            //   rotate: 30, //代表逆时针旋转45度
+            // },
             data: ['增值税税负率(%)', '行业增值税税负率(%)', '所得税贡献率(%)', '行业所得税贡献率(%)']
           },
           yAxis: [
