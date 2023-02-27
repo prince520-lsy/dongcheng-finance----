@@ -18,9 +18,10 @@ export default {
           type: 'gauge',
           startAngle: 180,
           endAngle: 0,
-          min: 0,
-          max: 240,
-          splitNumber: 12,
+          min: -100,
+          max: 100,
+          radius: '100%',
+          splitNumber: 8,
           itemStyle: {
             color: '#58D9F9',
             shadowColor: 'rgba(0,138,255,0.45)',
@@ -95,7 +96,7 @@ export default {
           },
           data: [
             {
-              value: 100
+              value: -5
             }
           ]
         }
