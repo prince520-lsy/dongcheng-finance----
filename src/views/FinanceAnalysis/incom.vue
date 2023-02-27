@@ -61,8 +61,45 @@
 
     </div>
 
+    <a-row>
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <echartPie1 />
+      </a-col>
+
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <echartPie2 />
+      </a-col>
+    </a-row>
 
 
+
+    <a-row>
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <echartPie3 />
+      </a-col>
+
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <echartPie4 />
+      </a-col>
+    </a-row>
+
+
+
+    <a-row>
+      <a-col :span="8">col-8
+        <StackedEchart />
+      </a-col>
+      <a-col :span="8">col-8
+        <percentBarChart />
+      </a-col>
+      <a-col :span="8">col-8
+        <fareEcharts />
+      </a-col>
+    </a-row>
 
 
   </div>
@@ -169,10 +206,21 @@ import echartWrap from '@/components/EchartWrap/Index.vue'
 import fareEcharts from './components/fareEcharts.vue';
 import echatLine from './components/echatLine.vue';
 import percentBarChart from './components/percentBarChart.vue'
+import echartPie1 from './components/echartPie1.vue';
+import echartPie2 from './components/echartPie2.vue';
+import echartPie3 from './components/echartPie3.vue';
+import echartPie4 from './components/echartPie4.vue';
+import echartPie5 from './components/echartPie5.vue';
+import StackedEchart from './components/StackedEchart.vue';
 import { getIncomTable, getIncomMonthTable, getecharts1Data, getecharts2Data } from '@/api/incom'
 import { axios } from '@/utils/request';
 export default {
-  components: { echatLine, echartWrap, fareEcharts, percentBarChart },
+  components: {
+    echatLine, echartWrap, fareEcharts, percentBarChart,
+    echartPie1, echartPie2,
+    echartPie3, echartPie4,
+    echartPie5, StackedEchart
+  },
   data() {
     return {
       data,
