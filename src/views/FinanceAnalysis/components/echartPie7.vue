@@ -1,5 +1,5 @@
 <template>
-  <div id="main9" style="width:576px;height: 400px; background-color: #fff;">
+  <div id="main957" style="width:576px;height: 400px; background-color: #fff;">
 
   </div>
 </template>
@@ -8,7 +8,7 @@ import * as echarts from 'echarts';
 
 export default {
   mounted() {
-    var chartDom = document.getElementById('main9');
+    var chartDom = document.getElementById('main957');
     var myChart = echarts.init(chartDom);
     var option;
 

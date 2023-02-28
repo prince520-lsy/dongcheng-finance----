@@ -90,14 +90,14 @@
 
 
     <a-row>
-      <a-col :span="8">col-8
-        <StackedEchart />
+      <a-col :span="8"><span style="visibility: hidden;">col-8</span>
+        <echartPie5 />
       </a-col>
-      <a-col :span="8">col-8
-        <percentBarChart />
+      <a-col :span="8"><span style="visibility: hidden;">col-8</span>
+        <echartPie6 />
       </a-col>
-      <a-col :span="8">col-8
-        <fareEcharts />
+      <a-col :span="8"><span style="visibility: hidden;">col-8</span>
+        <echartPie7 />
       </a-col>
     </a-row>
 
@@ -211,6 +211,8 @@ import echartPie2 from './components/echartPie2.vue';
 import echartPie3 from './components/echartPie3.vue';
 import echartPie4 from './components/echartPie4.vue';
 import echartPie5 from './components/echartPie5.vue';
+import echartPie6 from './components/echartPie6.vue';
+import echartPie7 from './components/echartPie7.vue';
 import StackedEchart from './components/StackedEchart.vue';
 import { getIncomTable, getIncomMonthTable, getecharts1Data, getecharts2Data } from '@/api/incom'
 import { axios } from '@/utils/request';
@@ -219,7 +221,8 @@ export default {
     echatLine, echartWrap, fareEcharts, percentBarChart,
     echartPie1, echartPie2,
     echartPie3, echartPie4,
-    echartPie5, StackedEchart
+    echartPie5, StackedEchart,
+    echartPie6, echartPie7
   },
   data() {
     return {
