@@ -14,7 +14,7 @@ export default {
 
     option = {
       title: {
-        text: '制造费用',
+        text: '制造费用明细',
         // subtext: 'Fake Data',
         left: 'center'
       },
@@ -31,11 +31,11 @@ export default {
           type: 'pie',
           radius: '50%',
           data: [
-            { value: 1048, name: '项目一' },
-            { value: 735, name: '项目二' },
-            { value: 580, name: '项目三' },
-            { value: 484, name: '项目四' },
-            { value: 300, name: '项目五' }
+            // { value: 1048, name: '项目一' },
+            // { value: 735, name: '项目二' },
+            // { value: 580, name: '项目三' },
+            // { value: 484, name: '项目四' },
+            // { value: 300, name: '项目五' }
           ],
           emphasis: {
             itemStyle: {

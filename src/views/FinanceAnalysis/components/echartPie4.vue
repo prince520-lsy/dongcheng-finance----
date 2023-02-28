@@ -44,11 +44,11 @@ export default {
             show: false
           },
           data: [
-            { value: 1048, name: '直接人工' },
-            { value: 735, name: '直接材料' },
+            { value: 0, name: '直接人工' },
+            { value: 0, name: '直接材料' },
 
 
-            { value: 300, name: '制造费用' }
+            { value: 0, name: '制造费用' }
           ]
         }
       ]
