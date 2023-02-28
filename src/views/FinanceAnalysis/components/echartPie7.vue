@@ -14,7 +14,7 @@ export default {
 
     option = {
       title: {
-        text: '费用明细占比图',
+        text: '制造费用',
         // subtext: 'Fake Data',
         left: 'center'
       },
