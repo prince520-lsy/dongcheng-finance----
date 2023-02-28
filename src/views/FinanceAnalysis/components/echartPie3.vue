@@ -31,11 +31,11 @@ export default {
           type: 'pie',
           radius: '50%',
           data: [
-            { value: 1048, name: '服务费用' },
+            { value: 1048, name: '账务费用' },
             { value: 735, name: '管理费用' },
-            { value: 580, name: '营收费用' },
-            // { value: 484, name: 'Union Ads' },
-            { value: 300, name: '经营费用' }
+            { value: 580, name: '销售费用' },
+
+            { value: 300, name: '制造费用' }
           ],
           emphasis: {
             itemStyle: {

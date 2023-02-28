@@ -44,10 +44,10 @@ export default {
             show: false
           },
           data: [
-            { value: 1048, name: '人工' },
-            { value: 735, name: '管理材料费用' },
-            // { value: 580, name: 'Email' },
-            // { value: 484, name: 'Union Ads' },
+            { value: 1048, name: '直接人工' },
+            { value: 735, name: '直接材料' },
+
+
             { value: 300, name: '制造费用' }
           ]
         }
