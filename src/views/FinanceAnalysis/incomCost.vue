@@ -1,23 +1,21 @@
 <template>
   <div>
-
-    <a-table :columns="columns" :data-source="data" :pagination="true">
-      <a slot="name" slot-scope="text">{{ text }}</a>
-      <template #title><span style="font-size: 18px; font-weight: 700;">某某公司2023年：财务风险（绩效评价）分析报告：{{ text
-      }}</span></template>
-
-    </a-table>
+    <div class="YearTable">
+      <h2 style="font-weight: 700;">某某公司2023年：财务风险（绩效评价）分析报告：</h2>
+      <p><span>序号</span><span>财务指标</span><span>企业分值</span><span>指标分值</span>
+        <span>优秀值</span>
+        <span>良好值</span><span>临界值</span><span>较低值</span><span>较差值</span>
+        <span>计算公式</span>
+      </p>
+    </div>
 
 
     <div class="singleIndex">
-
-
 
       <h2 style="font-weight: 700;"> 一、单项指标得分规则:</h2>
       <p> 分别从盈力能力、运营能力、偿债能力、成长能力四个维度，每项三个指标，共计有代表性的12个财务指标，当Cx>Ex时,单项指标:得分100:当</p>
       <hr>
       <p> Fx&lt;Cx&lt;Ex时，得分90;当Fx&lt;Cx&lt;Gx时,得分80;当Gx&lt;Cx&lt;Hx时,得分70;当Ix&lt;Cx&lt;Hx时,得分60;当Cx&lt;Ix时,得分0;</p>
-
 
     </div>
     <a-row>
@@ -45,6 +43,7 @@
       <p> 4、成长能力分析;三个指标平均分60分以下为成长能力很低，61分-70分为成长能力较低，71-80分为成长能力一般，81到90分为成长能力较</p>
       <p> 强，91分到100分为成长能力强，100分以上为成长能力高过行业优秀值。</p>
     </div>
+
     <a-row>
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
@@ -99,16 +98,23 @@
     </div>
 
 
-    <a-row>
+    <a-row class="yiBiaoPan3">
+      <h2 class="grade1">较差</h2>
+      <h2 class="grade2">较低</h2>
+      <h2 class="grade3">平均</h2>
+      <h2 class="grade4">良好</h2>
+      <h2 class="grade5">优秀</h2>
       <a-col :span="24">
         <span style="visibility: hidden;">col-12</span>
         <yiBiaoPan3 />
+
       </a-col>
     </a-row>
   </div>
 </template>
 <script>
 import * as echarts from 'echarts';
+import { axios } from '@/utils/request';
 import echartPie1 from './components/echartPie1.vue';
 import echartPie2 from './components/echartPie2.vue';
 import echartPie3 from './components/echartPie3.vue';
@@ -119,19 +125,8 @@ import yiBiaoPan2 from './components/yiBiaoPan2.vue';
 import singleIndexBar from './components/singleIndexBar.vue';
 import fourAbilityBar from './components/fourAbilityBar.vue'
 import yiBiaoPan3 from './components/yiBiaoPan3.vue';
-const columns = [
-  {
-    key: 'index',
-    title: '序号',
-    scopedSlots: { customRender: 'index' },
-  },
-]
-const data = [
-  {
-    key: '1',
-    index: 'index'
-  },
-]
+import { initTaxRiskTable } from '@/api/incomeCost'
+
 export default {
   components: {
     echartPie1, echartPie2, echartPie3, echartPie4, echartPie5,
@@ -139,176 +134,144 @@ export default {
     singleIndexBar, fourAbilityBar,
     yiBiaoPan3
   },
-  // mounted() {
-  //   var app = {};
 
-  //   var chartDom = document.getElementById('main');
-  //   var myChart = echarts.init(chartDom);
-  //   var option;
 
-  //   var chartDom = document.getElementById('main');
-  //   var myChart = echarts.init(chartDom);
-  //   var option;
-
-  //   const posList = [
-  //     'left',
-  //     'right',
-  //     'top',
-  //     'bottom',
-  //     'inside',
-  //     'insideTop',
-  //     'insideLeft',
-  //     'insideRight',
-  //     'insideBottom',
-  //     'insideTopLeft',
-  //     'insideTopRight',
-  //     'insideBottomLeft',
-  //     'insideBottomRight'
-  //   ];
-  //   app.configParameters = {
-  //     align: {
-  //       options: {
-  //         left: 'left',
-  //         center: 'center',
-  //         right: 'right'
-  //       }
-  //     },
-  //     verticalAlign: {
-  //       options: {
-  //         top: 'top',
-  //         middle: 'middle',
-  //         bottom: 'bottom'
-  //       }
-  //     },
-  //     position: {
-  //       options: posList.reduce(function (map, pos) {
-  //         map[pos] = pos;
-  //         return map;
-  //       }, {})
-  //     },
-  //     distance: {
-  //       min: 0,
-  //       max: 100
-  //     }
-  //   };
-  //   app.config = {
-  //     rotate: 90,
-  //     align: 'left',
-  //     verticalAlign: 'middle',
-  //     position: 'insideBottom',
-  //     distance: 15,
-  //     onChange: function () {
-  //       const labelOption = {
-  //         rotate: app.config.rotate,
-  //         align: app.config.align,
-  //         verticalAlign: app.config.verticalAlign,
-  //         position: app.config.position,
-  //         distance: app.config.distance
-  //       };
-  //       myChart.setOption({
-  //         series: [
-  //           {
-  //             label: labelOption
-  //           },
-  //           {
-  //             label: labelOption
-  //           },
-  //           {
-  //             label: labelOption
-  //           },
-  //           {
-  //             label: labelOption
-  //           }
-  //         ]
-  //       });
-  //     }
-  //   };
-  //   const labelOption = {
-  //     show: false,
-  //     position: app.config.position,
-  //     distance: app.config.distance,
-  //     align: app.config.align,
-  //     verticalAlign: app.config.verticalAlign,
-  //     rotate: app.config.rotate,
-  //     formatter: '{c}  {name|{a}}',
-  //     fontSize: 16,
-  //     rich: {
-  //       name: {}
-  //     }
-  //   };
-  //   option = {
-  //     tooltip: {
-  //       trigger: 'axis',
-  //       axisPointer: {
-  //         type: 'shadow'
-  //       }
-  //     },
-  //     legend: {
-  //       data: ['Forest', 'Steppe', 'Desert', 'Wetland']
-  //     },
-  //     toolbox: {
-  //       show: false,
-  //       orient: 'vertical',
-  //       left: 'right',
-  //       top: 'center',
-  //       feature: {
-  //         mark: { show: true },
-  //         dataView: { show: true, readOnly: false },
-  //         magicType: { show: true, type: ['line', 'bar', 'stack'] },
-  //         restore: { show: true },
-  //         saveAsImage: { show: true }
-  //       }
-  //     },
-  //     xAxis: [
+  // data() {
+  //   return {
+  //     columns: [
   //       {
-  //         type: 'category',
-  //         axisTick: { show: false },
-  //         data: ['1月', '2月', '3月', '4月', '5月', '6月']
-  //       }
-  //     ],
-  //     yAxis: [
-  //       {
-  //         type: 'value'
-  //       }
-  //     ],
-  //     series: [
-  //       {
-  //         name: '实际',
-  //         type: 'bar',
-  //         barGap: 0,
-  //         label: labelOption,
-  //         emphasis: {
-  //           focus: 'series'
-  //         },
-  //         data: [320, 332, 301, 334, 390, 5000]
+  //         title: '序号',
+  //         dataIndex: 'username',
   //       },
   //       {
-  //         name: '预算',
-  //         type: 'bar',
-  //         label: labelOption,
-  //         emphasis: {
-  //           focus: 'series'
-  //         },
-  //         data: [220, 182, 191, 234, 290, 43]
+  //         title: '财务指标',
+  //         dataIndex: 'name',
   //       },
   //       {
-  //         name: '去年同期',
-  //         type: 'bar',
-  //         label: labelOption,
-  //         emphasis: {
-  //           focus: 'series'
-  //         },
-  //         data: [150, 232, 201, 154, 190, 321]
-  //       }
-  //     ]
-  //   };
-
-  //   option && myChart.setOption(option);
-
+  //         title: '企业分值',
+  //         dataIndex: 'duty',
+  //         scopedSlots: { customRender: 'duty' }
+  //       },
+  //       {
+  //         title: '指标分值',
+  //         dataIndex: 'status',
+  //         scopedSlots: { customRender: 'status' }
+  //       },
+  //       {
+  //         title: '指标分值',
+  //         dataIndex: 'status',
+  //         scopedSlots: { customRender: 'status' }
+  //       },
+  //       {
+  //         title: '指标分值',
+  //         dataIndex: 'status',
+  //         scopedSlots: { customRender: 'status' }
+  //       },
+  //       {
+  //         title: '指标分值',
+  //         dataIndex: 'status',
+  //         scopedSlots: { customRender: 'status' }
+  //       },
+  //       {
+  //         title: '指标分值',
+  //         dataIndex: 'status',
+  //         scopedSlots: { customRender: 'status' }
+  //       },
+  //       {
+  //         title: '指标分值',
+  //         dataIndex: 'status',
+  //         scopedSlots: { customRender: 'status' }
+  //       },
+  //       {
+  //         title: '优秀值',
+  //         dataIndex: 'action',
+  //         scopedSlots: { customRender: 'action' },
+  //       }],
+  //     dataList: [],
+  //     loading: false,
+  //   }
   // },
+  // created() {
+  //   this.getList()
+
+  //   this.initTaxRiskTable()
+  // },
+  // methods: {
+  //   async initTaxRiskTable() {
+  //     let res = await initTaxRiskTable()
+  //     console.log("res", res);
+  //     let Tab1Value = res.data.financial[0].values
+  //     console.log("Tab1Value", Tab1Value);
+  //     this.data = Tab1Value
+  //   },
+
+  //   getList() {
+  //     this.loading = true;
+  //     this.$http.get('/getUsers.do').then(res => {
+  //       if (res) {
+  //         this.dataList = res || []
+  //       }
+  //       this.loading = false;
+  //     }).catch(err => {
+  //       console.log(err)
+  //     })
+  //   },
+  //   editUser(record) {
+  //     this.$refs.addModal.showModal(record)
+  //   },
+  // }
+
+  methods: {
+    async initTaxRiskTable() {
+      let res = await initTaxRiskTable()
+      console.log("res", res);
+      let Tab1Value = res.data.financial[0].values
+      console.log("Tab1Value", Tab1Value);
+      this.data = Tab1Value
+    }
+  },
+
+  created() {
+    this.initTaxRiskTable()
+  },
+
 }
 </script>
 <style lang="less" scoped>
+.yiBiaoPan3 {
+  position: relative;
+}
+
+.grade1 {
+  position: absolute;
+  top: 259px;
+  left: 520px;
+}
+
+.grade2 {
+  position: absolute;
+  top: 130px;
+  left: 564px;
+}
+
+.grade3 {
+  position: absolute;
+  top: 27px;
+  left: 687px;
+}
+
+.grade4 {
+  position: absolute;
+  top: -7px;
+  left: 832px;
+}
+
+.grade5 {
+  position: absolute;
+  top: 132px;
+  left: 1115px;
+}
+
 .singleIndex {
   border: 1px solid black;
 }

@@ -8,10 +8,13 @@ import * as echarts from 'echarts';
 import { axios } from '@/utils/request';
 export default {
   methods: {
-    inityiBiaoPan2() {
-      axios.get('form/taxrisk').then(res => {
-        let rate2 = res.data.list.taxrisk.rateofincome
-        let newrate2 = rate2.replace('%', '')
+    inityiBiaoPan3() {
+      axios.get('form/financialriskreport').then(res => {
+        // let rate2 = res.data.list.taxrisk.rateofincome
+        // let newrate2 = rate2.replace('%', '')
+        let countval = res.data.countval
+        console.log("countval", typeof countval);
+        let newcountval = countval / 100
         this.char = echarts.init(document.querySelector('#main1314'))
         let option = {
           series: [
@@ -101,7 +104,7 @@ export default {
               },
               data: [
                 {
-                  value: 0.81,
+                  value: newcountval,
                   name: '某某企业2023年：财务风险仪表盘'
                 }
               ]
@@ -206,7 +209,7 @@ export default {
     }
   },
   created() {
-    this.inityiBiaoPan2()
+    this.inityiBiaoPan3()
   },
   // mounted() {
   //   var chartDom = document.getElementById('main1314');
