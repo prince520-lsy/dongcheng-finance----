@@ -101,7 +101,7 @@ export default {
               },
               data: [
                 {
-                  value: 0.52,
+                  value: 0.81,
                   name: '某某企业2023年：财务风险仪表盘'
                 }
               ]
