@@ -3,40 +3,46 @@
 
     <a-table :columns="columns" :data-source="data" :pagination="true">
       <a slot="name" slot-scope="text">{{ text }}</a>
-      <template #title><span style="font-size: 18px; font-weight: 700;">收入成本费用表{{ text }}</span></template>
+      <template #title><span style="font-size: 18px; font-weight: 700;">某某公司2023年：财务风险（绩效评价）分析报告：{{ text
+      }}</span></template>
+
     </a-table>
 
     <a-row>
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
-        <echartPie1 />
+        <!-- <echartPie1 /> -->
       </a-col>
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
-        <echartPie2 />
+        <!-- <echartPie2 /> -->
       </a-col>
     </a-row>
 
-    <a-row>
-      <a-col :span="12">
-        <span style="visibility: hidden;">col-12</span>
-        <echartPie3 />
-      </a-col>
-      <a-col :span="12">
-        <span style="visibility: hidden;">col-12</span>
-        <echartPie4 />
-      </a-col>
-    </a-row>
+
 
     <a-row>
       <a-col :span="24">
         <span style="visibility: hidden;">col-12</span>
-        <echartPie5 />
+        <singleIndexBar />
       </a-col>
     </a-row>
 
 
+
+
     <a-row>
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <fourAbilityBar />
+      </a-col>
+      <a-col :span="12">
+        <span style="visibility: hidden;">col-12</span>
+        <!-- <echartPie4 /> -->
+      </a-col>
+    </a-row>
+
+    <!-- <a-row>
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
         <yiBiaoPan />
@@ -44,6 +50,16 @@
       <a-col :span="12">
         <span style="visibility: hidden;">col-12</span>
         <yiBiaoPan2 />
+      </a-col>
+    </a-row> -->
+
+
+
+
+    <a-row>
+      <a-col :span="24">
+        <span style="visibility: hidden;">col-12</span>
+        <yiBiaoPan3 />
       </a-col>
     </a-row>
   </div>
@@ -57,11 +73,15 @@ import echartPie4 from './components/echartPie4.vue';
 import echartPie5 from './components/echartPie5.vue';
 import yiBiaoPan from './components/yiBiaoPan.vue';
 import yiBiaoPan2 from './components/yiBiaoPan2.vue';
-
+import singleIndexBar from './components/singleIndexBar.vue';
+import fourAbilityBar from './components/fourAbilityBar.vue'
+import yiBiaoPan3 from './components/yiBiaoPan3.vue';
 export default {
   components: {
     echartPie1, echartPie2, echartPie3, echartPie4, echartPie5,
-    yiBiaoPan, yiBiaoPan2
+    yiBiaoPan, yiBiaoPan2,
+    singleIndexBar, fourAbilityBar,
+    yiBiaoPan3
   },
   // mounted() {
   //   var app = {};

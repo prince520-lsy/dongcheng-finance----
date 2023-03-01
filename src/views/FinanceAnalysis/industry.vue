@@ -3,13 +3,13 @@
 
     <!-- 盈利分析 -->
     <div class="profit">
-      <a-table :columns="columns" :data-source="data0" :pagination="false"
-        :scroll="{ x: `${columns.length}0%`, y: 400 }" bordered>
+      <a-table :columns="columns" :data-source="data0" :pagination="false" :scroll="{ x: `${columns.length}0%`, y: 400 }"
+        bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>
         <template slot="title" slot-scope="currentPageData">
-          <span class="title">盈利分析 </span>
+          <span class="title">盈利能力状况 </span>
         </template>
 
       </a-table>
@@ -23,7 +23,7 @@
           <a>{{ text }}</a>
         </template>
         <template slot="title" slot-scope="currentPageData" class="title">
-          <span class="title">资产质量分析</span>
+          <span class="title">资产质量状况</span>
         </template>
 
       </a-table>
@@ -31,8 +31,8 @@
 
     <!-- 债务风险 -->
     <div>
-      <a-table :columns="columns" :data-source="data1" :pagination="false"
-        :scroll="{ x: `${columns.length}0%`, y: 400 }" bordered>
+      <a-table :columns="columns" :data-source="data1" :pagination="false" :scroll="{ x: `${columns.length}0%`, y: 400 }"
+        bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>
@@ -45,8 +45,8 @@
 
     <!-- 经营增长 -->
     <div>
-      <a-table :columns="columns" :data-source="data2" :pagination="false"
-        :scroll="{ x: `${columns.length}0%`, y: 400 }" bordered>
+      <a-table :columns="columns" :data-source="data2" :pagination="false" :scroll="{ x: `${columns.length}0%`, y: 400 }"
+        bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>
@@ -59,8 +59,8 @@
 
     <!-- 补充 -->
     <div>
-      <a-table :columns="columns" :data-source="data3" :pagination="false"
-        :scroll="{ x: `${columns.length}0%`, y: 400 }" bordered>
+      <a-table :columns="columns" :data-source="data3" :pagination="false" :scroll="{ x: `${columns.length}0%`, y: 400 }"
+        bordered>
         <template slot="name" slot-scope="text">
           <a>{{ text }}</a>
         </template>

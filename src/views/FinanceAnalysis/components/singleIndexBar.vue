@@ -1,0 +1,141 @@
+<template>
+  <div id="mainId">
+
+  </div>
+</template>
+<script>
+import * as echarts from 'echarts';
+export default {
+  mounted() {
+    var chartDom = document.getElementById('mainId');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+      title: {
+        text: '单项指标分值比较图',
+        x: 'center'
+      },
+      xAxis: {
+        type: 'category',
+        axisLabel: {
+          interval: 0,
+          rotate: 30,//倾斜度 -90 至 90 默认为0
+          margin: 2,
+          textStyle: {
+
+            color: "#000000"
+          }
+        },
+        data: ['净资产收益率（%）', '总资产报酬率（%）', '销售净利率（%）', '应收账款周转率（%）', '存货周转率（%）', '总资产周转率', '资产负债率（%）', '已获利息倍数', '速动比率（%）', '销售收入增长率（%）', '资本保值增值率（%）', '销售利润增长率（%）']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          data: [
+
+            {
+              value: 90.00,
+              itemStyle: {
+                color: '#68bfb8'
+              }
+            },
+            {
+              value: 80.00,
+              itemStyle: {
+                color: '#68bfb8'
+              }
+            },
+            {
+              value: 80,
+              itemStyle: {
+                color: '#68bfb8'
+              }
+            },
+            {
+              value: 80,
+              itemStyle: {
+                color: '#68bfb8'
+              }
+            },
+            {
+              value: 90,
+              itemStyle: {
+                color: '#68bfb8'
+              }
+            },
+            {
+              value: 90,
+              itemStyle: {
+                color: '#68bfb8'
+              }
+            },
+            {
+              value: 70,
+              itemStyle: {
+                color: '#68bfb8'
+              }
+            },
+            {
+              value: 90,
+              itemStyle: {
+                color: '#68bfb8'
+              }
+            },
+            {
+              value: 70,
+              itemStyle: {
+                color: '#68bfb8'
+              }
+            },
+            {
+              value: 80,
+              itemStyle: {
+                color: '#68bfb8'
+              }
+            },
+            {
+              value: 60,
+              itemStyle: {
+                color: '#68bfb8'
+              }
+            },
+            {
+              value: 80,
+              itemStyle: {
+                color: '#68bfb8'
+              }
+            },
+
+          ],
+          itemStyle: {
+            normal: {
+              label: {
+                show: true, //开启显示
+                position: 'top', //在上方显示
+                textStyle: { //数值样式
+                  color: 'black',
+                  fontSize: 16
+                }
+              }
+            }
+          },
+
+
+          type: 'bar'
+        }
+      ]
+    };
+
+    option && myChart.setOption(option);
+  },
+}
+</script>
+<style lang="less" scoped>
+#mainId {
+  width: 1730px;
+  height: 520px;
+}
+</style>
