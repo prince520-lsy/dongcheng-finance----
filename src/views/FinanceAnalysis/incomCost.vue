@@ -7,13 +7,13 @@
         <span>良好值</span><span>临界值</span><span>较低值</span><span>较差值</span>
         <span>计算公式</span>
       </div>
-      <a-table :dataSource="dataSource" :columns="columns" :pagination="false" :scroll="{ x: 1700 }" />
+      <a-table :dataSource="dataSource" :columns="columns" :pagination="false" :scroll="{ x: 1200 }" bordered="true" />
 
-      <a-table :dataSource="dataSource1" :columns="columns1" :pagination="false" :scroll="{ x: 1700 }" />
+      <a-table :dataSource="dataSource1" :columns="columns1" :pagination="false" :scroll="{ x: 1200 }" bordered='true' />
 
-      <a-table :dataSource="dataSource2" :columns="columns2" :pagination="false" :scroll="{ x: 1700 }" />
+      <a-table :dataSource="dataSource2" :columns="columns2" :pagination="false" :scroll="{ x: 1200 }" bordered="true" />
 
-      <a-table :dataSource="dataSource3" :columns="columns3" :pagination="false" :scroll="{ x: 1700 }" />
+      <a-table :dataSource="dataSource3" :columns="columns3" :pagination="false" :scroll="{ x: 1200 }" bordered="true" />
 
 
 
@@ -160,8 +160,8 @@ export default {
         },
         {
           title: '82',
-          dataIndex: 'excellencevalue',
-          key: 'excellencevalue',
+          dataIndex: 'enterprise',
+          key: 'enterprise',
         },
         {
           title: '',
@@ -170,13 +170,13 @@ export default {
         },
         {
           title: '',
-          dataIndex: 'goodvalue',
-          key: 'goodvalue',
+          dataIndex: 'excellencevalue',
+          key: 'excellencevalue',
         },
         {
           title: '',
-          dataIndex: 'enterprise',
-          key: 'enterprise',
+          dataIndex: 'goodvalue',
+          key: 'goodvalue',
         },
         {
           title: '',
@@ -201,14 +201,14 @@ export default {
       ],
       columns1: [
         {
-          title: '运营能力分析',
+          title: '盈利能力分析',
           dataIndex: 'title',
           key: 'title',
         },
         {
-          title: '90',
-          dataIndex: 'excellencevalue',
-          key: 'excellencevalue',
+          title: '82',
+          dataIndex: 'enterprise',
+          key: 'enterprise',
         },
         {
           title: '',
@@ -217,13 +217,13 @@ export default {
         },
         {
           title: '',
-          dataIndex: 'goodvalue',
-          key: 'goodvalue',
+          dataIndex: 'excellencevalue',
+          key: 'excellencevalue',
         },
         {
           title: '',
-          dataIndex: 'enterprise',
-          key: 'enterprise',
+          dataIndex: 'goodvalue',
+          key: 'goodvalue',
         },
         {
           title: '',
@@ -248,14 +248,14 @@ export default {
       ],
       columns2: [
         {
-          title: '偿债能力分析',
+          title: '盈利能力分析',
           dataIndex: 'title',
           key: 'title',
         },
         {
-          title: '75',
-          dataIndex: 'excellencevalue',
-          key: 'excellencevalue',
+          title: '82',
+          dataIndex: 'enterprise',
+          key: 'enterprise',
         },
         {
           title: '',
@@ -264,13 +264,13 @@ export default {
         },
         {
           title: '',
-          dataIndex: 'goodvalue',
-          key: 'goodvalue',
+          dataIndex: 'excellencevalue',
+          key: 'excellencevalue',
         },
         {
           title: '',
-          dataIndex: 'enterprise',
-          key: 'enterprise',
+          dataIndex: 'goodvalue',
+          key: 'goodvalue',
         },
         {
           title: '',
@@ -295,14 +295,14 @@ export default {
       ],
       columns3: [
         {
-          title: '成长能力分析',
+          title: '盈利能力分析',
           dataIndex: 'title',
           key: 'title',
         },
         {
-          title: '78',
-          dataIndex: 'excellencevalue',
-          key: 'excellencevalue',
+          title: '82',
+          dataIndex: 'enterprise',
+          key: 'enterprise',
         },
         {
           title: '',
@@ -311,13 +311,13 @@ export default {
         },
         {
           title: '',
-          dataIndex: 'goodvalue',
-          key: 'goodvalue',
+          dataIndex: 'excellencevalue',
+          key: 'excellencevalue',
         },
         {
           title: '',
-          dataIndex: 'enterprise',
-          key: 'enterprise',
+          dataIndex: 'goodvalue',
+          key: 'goodvalue',
         },
         {
           title: '',
@@ -340,6 +340,147 @@ export default {
           key: 'formula',
         },
       ],
+      // columns1: [
+      //   {
+      //     title: '运营能力分析',
+      //     dataIndex: 'title',
+      //     key: 'title',
+      //   },
+      //   {
+      //     title: '90',
+      //     dataIndex: 'excellencevalue',
+      //     key: 'excellencevalue',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'netscore',
+      //     key: 'netscore',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'goodvalue',
+      //     key: 'goodvalue',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'enterprise',
+      //     key: 'enterprise',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'critical',
+      //     key: 'critical',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'lowervalue',
+      //     key: 'lowervalue',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'poorvalue',
+      //     key: 'poorvalue',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'formula',
+      //     key: 'formula',
+      //   },
+      // ],
+      // columns2: [
+      //   {
+      //     title: '偿债能力分析',
+      //     dataIndex: 'title',
+      //     key: 'title',
+      //   },
+      //   {
+      //     title: '75',
+      //     dataIndex: 'excellencevalue',
+      //     key: 'excellencevalue',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'netscore',
+      //     key: 'netscore',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'goodvalue',
+      //     key: 'goodvalue',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'enterprise',
+      //     key: 'enterprise',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'critical',
+      //     key: 'critical',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'lowervalue',
+      //     key: 'lowervalue',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'poorvalue',
+      //     key: 'poorvalue',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'formula',
+      //     key: 'formula',
+      //   },
+      // ],
+      // columns3: [
+      //   {
+      //     title: '成长能力分析',
+      //     dataIndex: 'title',
+      //     key: 'title',
+      //   },
+      //   {
+      //     title: '78',
+      //     dataIndex: 'excellencevalue',
+      //     key: 'excellencevalue',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'netscore',
+      //     key: 'netscore',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'goodvalue',
+      //     key: 'goodvalue',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'enterprise',
+      //     key: 'enterprise',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'critical',
+      //     key: 'critical',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'lowervalue',
+      //     key: 'lowervalue',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'poorvalue',
+      //     key: 'poorvalue',
+      //   },
+      //   {
+      //     title: '',
+      //     dataIndex: 'formula',
+      //     key: 'formula',
+      //   },
+      // ],
     };
   },
 
