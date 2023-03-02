@@ -399,6 +399,8 @@ export default {
   display: flex;
   justify-content: space-around;
   border: 1px solid #e8e8e8;
+  height: 54px;
+  line-height: 54px;
 
   span {
     margin-left: 16px;
