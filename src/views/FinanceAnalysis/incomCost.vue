@@ -394,35 +394,35 @@ export default {
   }
 
   span:nth-child(2) {
-    margin-left: 123px;
+    margin-left: 106px;
   }
 
   span:nth-child(3) {
-    margin-left: 133px;
+    margin-left: 108px;
   }
 
   span:nth-child(4) {
-    margin-left: 140px;
+    margin-left: 108px;
   }
 
   span:nth-child(5) {
-    margin-left: 155px;
+    margin-left: 128px;
   }
 
   span:nth-child(6) {
-    margin-left: 147px;
+    margin-left: 127px;
   }
 
   span:nth-child(7) {
-    margin-left: 155px;
+    margin-left: 130px;
   }
 
   span:nth-child(8) {
-    margin-left: 152px;
+    margin-left: 129px;
   }
 
   span:nth-child(9) {
-    margin-left: 166px;
+    margin-left: 144px;
   }
 
 }
