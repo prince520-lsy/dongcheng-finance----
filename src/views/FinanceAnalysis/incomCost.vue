@@ -7,6 +7,7 @@
         <span>良好值</span><span>临界值</span><span>较低值</span><span>较差值</span>
         <span>计算公式</span>
       </p>
+      <table></table>
     </div>
 
 
