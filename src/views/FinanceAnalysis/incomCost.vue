@@ -158,6 +158,7 @@ export default {
       dataSource2: [],
       dataSource3: [],
 
+
       columns: [
         {
           title: '盈利能力分析',
@@ -207,7 +208,7 @@ export default {
       ],
       columns1: [
         {
-          title: '盈利能力分析',
+          title: '运营能力分析',
           dataIndex: 'title',
           key: 'title',
         },
@@ -254,7 +255,7 @@ export default {
       ],
       columns2: [
         {
-          title: '盈利能力分析',
+          title: '偿债能力分析',
           dataIndex: 'title',
           key: 'title',
         },
@@ -301,7 +302,7 @@ export default {
       ],
       columns3: [
         {
-          title: '盈利能力分析',
+          title: '成长能力分析',
           dataIndex: 'title',
           key: 'title',
         },
@@ -389,6 +390,10 @@ export default {
 }
 
 .TabBar {
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid #e8e8e8;
+
   span {
     margin-left: 16px;
   }
