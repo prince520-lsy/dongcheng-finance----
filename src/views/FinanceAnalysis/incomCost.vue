@@ -2,12 +2,21 @@
   <div>
     <div class="YearTable">
       <h2 style="font-weight: 700;">某某公司2023年：财务风险（绩效评价）分析报告：</h2>
-      <p><span>序号</span><span>财务指标</span><span>企业分值</span><span>指标分值</span>
+      <div class="TabBar"><span>财务指标</span><span>企业分值</span><span>指标分值</span>
         <span>优秀值</span>
         <span>良好值</span><span>临界值</span><span>较低值</span><span>较差值</span>
         <span>计算公式</span>
-      </p>
-      <table></table>
+      </div>
+      <a-table :dataSource="dataSource" :columns="columns" :pagination="false" />
+
+      <a-table :dataSource="dataSource1" :columns="columns1" :pagination="false" />
+
+      <a-table :dataSource="dataSource2" :columns="columns2" :pagination="false" />
+
+      <a-table :dataSource="dataSource3" :columns="columns3" :pagination="false" />
+
+
+
     </div>
 
 
@@ -129,13 +138,210 @@ import yiBiaoPan3 from './components/yiBiaoPan3.vue';
 import { initTaxRiskTable } from '@/api/incomeCost'
 
 export default {
+
   components: {
     echartPie1, echartPie2, echartPie3, echartPie4, echartPie5,
     yiBiaoPan, yiBiaoPan2,
     singleIndexBar, fourAbilityBar,
     yiBiaoPan3
   },
+  data() {
+    return {
+      dataSource: [],
+      dataSource1: [],
+      dataSource2: [],
+      dataSource3: [],
 
+      columns: [
+        {
+          title: '盈利能力分析',
+          dataIndex: 'title',
+          key: 'title',
+        },
+        {
+          title: '82',
+          dataIndex: 'excellencevalue',
+          key: 'excellencevalue',
+        },
+        {
+          title: '',
+          dataIndex: 'netscore',
+          key: 'netscore',
+        },
+        {
+          title: '',
+          dataIndex: 'goodvalue',
+          key: 'goodvalue',
+        },
+        {
+          title: '',
+          dataIndex: 'enterprise',
+          key: 'enterprise',
+        },
+        {
+          title: '',
+          dataIndex: 'critical',
+          key: 'critical',
+        },
+        {
+          title: '',
+          dataIndex: 'lowervalue',
+          key: 'lowervalue',
+        },
+        {
+          title: '',
+          dataIndex: 'poorvalue',
+          key: 'poorvalue',
+        },
+        {
+          title: '',
+          dataIndex: 'formula',
+          key: 'formula',
+        },
+      ],
+      columns1: [
+        {
+          title: '运营能力分析',
+          dataIndex: 'title',
+          key: 'title',
+        },
+        {
+          title: '90',
+          dataIndex: '',
+          key: 'excellencevalue',
+        },
+        {
+          title: '',
+          dataIndex: 'netscore',
+          key: 'netscore',
+        },
+        {
+          title: '',
+          dataIndex: 'goodvalue',
+          key: 'goodvalue',
+        },
+        {
+          title: '',
+          dataIndex: 'enterprise',
+          key: 'enterprise',
+        },
+        {
+          title: '',
+          dataIndex: 'critical',
+          key: 'critical',
+        },
+        {
+          title: '',
+          dataIndex: 'lowervalue',
+          key: 'lowervalue',
+        },
+        {
+          title: '',
+          dataIndex: 'poorvalue',
+          key: 'poorvalue',
+        },
+        {
+          title: '',
+          dataIndex: 'formula',
+          key: 'formula',
+        },
+      ],
+      columns2: [
+        {
+          title: '偿债能力分析',
+          dataIndex: 'title',
+          key: 'title',
+        },
+        {
+          title: '75',
+          dataIndex: 'excellencevalue',
+          key: 'excellencevalue',
+        },
+        {
+          title: '',
+          dataIndex: 'netscore',
+          key: 'netscore',
+        },
+        {
+          title: '',
+          dataIndex: 'goodvalue',
+          key: 'goodvalue',
+        },
+        {
+          title: '',
+          dataIndex: 'enterprise',
+          key: 'enterprise',
+        },
+        {
+          title: '',
+          dataIndex: 'critical',
+          key: 'critical',
+        },
+        {
+          title: '',
+          dataIndex: 'lowervalue',
+          key: 'lowervalue',
+        },
+        {
+          title: '',
+          dataIndex: 'poorvalue',
+          key: 'poorvalue',
+        },
+        {
+          title: '',
+          dataIndex: 'formula',
+          key: 'formula',
+        },
+      ],
+      columns3: [
+        {
+          title: '成长能力分析',
+          dataIndex: 'title',
+          key: 'title',
+        },
+        {
+          title: '78',
+          dataIndex: 'excellencevalue',
+          key: 'excellencevalue',
+        },
+        {
+          title: '',
+          dataIndex: 'netscore',
+          key: 'netscore',
+        },
+        {
+          title: '',
+          dataIndex: 'goodvalue',
+          key: 'goodvalue',
+        },
+        {
+          title: '',
+          dataIndex: 'enterprise',
+          key: 'enterprise',
+        },
+        {
+          title: '',
+          dataIndex: 'critical',
+          key: 'critical',
+        },
+        {
+          title: '',
+          dataIndex: 'lowervalue',
+          key: 'lowervalue',
+        },
+        {
+          title: '',
+          dataIndex: 'poorvalue',
+          key: 'poorvalue',
+        },
+        {
+          title: '',
+          dataIndex: 'formula',
+          key: 'formula',
+        },
+      ],
+    };
+  },
 
   // data() {
   //   return {
@@ -227,8 +433,24 @@ export default {
       let res = await initTaxRiskTable()
       console.log("res", res);
       let Tab1Value = res.data.financial[0].values
+      let Tab2Value = res.data.financial[1].values
+      let Tab3Value = res.data.financial[2].values
+      let Tab4Value = res.data.financial[3].values
       console.log("Tab1Value", Tab1Value);
-      this.data = Tab1Value
+
+      let financialVal = res.data.financial[0].value
+      let financialVal1 = res.data.financial[1].value
+      let financialVal2 = res.data.financial[2].value
+      let financialVal3 = res.data.financial[3].value
+
+      this.columns[1].title = financialVal
+      this.columns1[1].title = financialVal1
+      this.columns2[1].title = financialVal2
+      this.columns3[1].title = financialVal3
+      this.dataSource = Tab1Value
+      this.dataSource1 = Tab2Value
+      this.dataSource2 = Tab3Value
+      this.dataSource3 = Tab4Value
     }
   },
 
@@ -241,6 +463,11 @@ export default {
 <style lang="less" scoped>
 .yiBiaoPan3 {
   position: relative;
+}
+
+.TabBar {
+  display: flex;
+  align-items: center;
 }
 
 .grade1 {
