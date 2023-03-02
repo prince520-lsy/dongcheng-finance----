@@ -154,17 +154,7 @@ const columns = [
   },
 
 ];
-const data = [
-  // {
-  //   // key: Date.now(),
-  //   reality: '32',
-  //   actualvat: '32',
-  //   tags: '32',
-  //   taxreality: '32',
-  //   actualtax: '32',
-  //   tag: '32',
-  // }
-]
+const data = []
 
 const columns1 = [
   {

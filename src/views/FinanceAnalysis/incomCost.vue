@@ -73,11 +73,15 @@
       <p>1.2该企业总资产报酬率(3.8%)，得分(80)分，该指标与净资产收益率同为重要盈利性指标，华中体理资产运用效率和资金利用效果之间的关系。在企业资产总额一定的</p>
       <p> 情况下，利用总资产收益率指标可以分析企业盈利的稳定性和持久性，确定企业所面临的风险，与同行业比较。属干(一般)。</p>
       <p> 1.3该企业销售利润率(11.6%)，得分(80)分，该指标衡量企业经营效率，反映了企业管理者通过产品经营获取利润的能力。与同行业比较，属于(良好)。</p>
+      <p>1.4该企业成本费用利润率6.5%，得分80分，表明每付出一元成本费用可获得多少利润，体现了经营耗费所带来的经营成果。该项指标越高，利润就越大，反映企业的经济效益越好，与同行
+        业比较，属于良好。</p>
       <hr>
       <p>2、运营能力分析:指企业营运资产的效率与效益能力，这类指标越高越反映企业的资产周转速度快。该企业分值在(87)分，表明该企业运营能力(较强)。</p>
       <p>2.1该企业应收账款周转率(6)次，存货周转率(10)次，营业周期(96)天，营业周期的长短说明企业资本从供应商开始直道最后将产品卖出去并收回货款需要的总时间</p>
       <p> 反映资产流转速度。与同行业比较，属于(优秀)。</p>
       <p> 2.2该企业总资产周转率(1.2)次，超过一年周转一次，反映企业所有资产的运转速度。与同行业比较，属于(优秀)。</p>
+      <p>2.3该企业流动资产周转率3.6次，反映了企业流动资产的周转速度，是从企业全部资产中流动性最强的流动资产角度对企业资产的利用效率进行分析，以进一步揭示影响企业资产质量的主
+        要因素。与同行业比较，属于优秀。</p>
       <hr>
       <p> 3.偿债能力分析:企业有无支付现金的能力和偿还债务能力，是企业能否生存和健康发展的关键，该企业分值在(77)分。表明该企业偿债能力(一般)。</p>
 
@@ -85,11 +89,13 @@
       <p> 3.2该企业已获利息倍数为(4)倍，得分(90)分，比值越高说明偿付利息的能力越强。公司在目前盈利水平下可以支付当下(4)倍的债务利息。</p>
       <p> 3.3该企业的速动比率(78%)，得分(70)分，它表明企业的每1元流动负债就有1元易于变现的速动资产来抵偿，短期偿债能力有可靠的保证。与同行业比较，短期偿债能
         力(一般)</p>
+      <p>3.4该企业的现金流动负债比率4.5%，得分70分，反映本期经营活动所产生的现金净流量足以抵付流动负债的倍数。与同行业比较，偿债能力一般。</p>
       <hr>
       <p> 4、成长能力分析，是指企业未来发展趋势与发展速度，包括企业规模的扩大，利润和所有者权益的增加。该企业分值在(73)分，表明该企业成长能力(一股)。</p>
       <p> 4.1该企业销售收入增长率(15%)，得分(80)分，是分析企业成长状况和发展能力的基本指标，与同行业比较，属于(良好)。</p>
       <p> 4.2该企业销售利润增长率(18%)，得分(80)分，反映企业营业利润的增减变动情况。一般和销售收入增长半成正增长，此处高于它，与同行业比较属于(良好)。</p>
       <p> 4.3该企业资本保值增值率(95%)，得分(60)分，反映了投资者对企业资本投资的安全性和成长性，与同行业比较属于成长能力(很低)。</p>
+      <p>4.4该企业总资产增长率10%，得分90分，总资产增长率越高，表明企业一定时期内资产经营规模扩张的速度越快。与同行业比较属于优秀。</p>
     </div>
 
     <div class="taxRisk">
@@ -340,234 +346,10 @@ export default {
           key: 'formula',
         },
       ],
-      // columns1: [
-      //   {
-      //     title: '运营能力分析',
-      //     dataIndex: 'title',
-      //     key: 'title',
-      //   },
-      //   {
-      //     title: '90',
-      //     dataIndex: 'excellencevalue',
-      //     key: 'excellencevalue',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'netscore',
-      //     key: 'netscore',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'goodvalue',
-      //     key: 'goodvalue',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'enterprise',
-      //     key: 'enterprise',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'critical',
-      //     key: 'critical',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'lowervalue',
-      //     key: 'lowervalue',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'poorvalue',
-      //     key: 'poorvalue',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'formula',
-      //     key: 'formula',
-      //   },
-      // ],
-      // columns2: [
-      //   {
-      //     title: '偿债能力分析',
-      //     dataIndex: 'title',
-      //     key: 'title',
-      //   },
-      //   {
-      //     title: '75',
-      //     dataIndex: 'excellencevalue',
-      //     key: 'excellencevalue',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'netscore',
-      //     key: 'netscore',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'goodvalue',
-      //     key: 'goodvalue',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'enterprise',
-      //     key: 'enterprise',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'critical',
-      //     key: 'critical',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'lowervalue',
-      //     key: 'lowervalue',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'poorvalue',
-      //     key: 'poorvalue',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'formula',
-      //     key: 'formula',
-      //   },
-      // ],
-      // columns3: [
-      //   {
-      //     title: '成长能力分析',
-      //     dataIndex: 'title',
-      //     key: 'title',
-      //   },
-      //   {
-      //     title: '78',
-      //     dataIndex: 'excellencevalue',
-      //     key: 'excellencevalue',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'netscore',
-      //     key: 'netscore',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'goodvalue',
-      //     key: 'goodvalue',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'enterprise',
-      //     key: 'enterprise',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'critical',
-      //     key: 'critical',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'lowervalue',
-      //     key: 'lowervalue',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'poorvalue',
-      //     key: 'poorvalue',
-      //   },
-      //   {
-      //     title: '',
-      //     dataIndex: 'formula',
-      //     key: 'formula',
-      //   },
-      // ],
+
     };
   },
 
-  // data() {
-  //   return {
-  //     columns: [
-  //       {
-  //         title: '序号',
-  //         dataIndex: 'username',
-  //       },
-  //       {
-  //         title: '财务指标',
-  //         dataIndex: 'name',
-  //       },
-  //       {
-  //         title: '企业分值',
-  //         dataIndex: 'duty',
-  //         scopedSlots: { customRender: 'duty' }
-  //       },
-  //       {
-  //         title: '指标分值',
-  //         dataIndex: 'status',
-  //         scopedSlots: { customRender: 'status' }
-  //       },
-  //       {
-  //         title: '指标分值',
-  //         dataIndex: 'status',
-  //         scopedSlots: { customRender: 'status' }
-  //       },
-  //       {
-  //         title: '指标分值',
-  //         dataIndex: 'status',
-  //         scopedSlots: { customRender: 'status' }
-  //       },
-  //       {
-  //         title: '指标分值',
-  //         dataIndex: 'status',
-  //         scopedSlots: { customRender: 'status' }
-  //       },
-  //       {
-  //         title: '指标分值',
-  //         dataIndex: 'status',
-  //         scopedSlots: { customRender: 'status' }
-  //       },
-  //       {
-  //         title: '指标分值',
-  //         dataIndex: 'status',
-  //         scopedSlots: { customRender: 'status' }
-  //       },
-  //       {
-  //         title: '优秀值',
-  //         dataIndex: 'action',
-  //         scopedSlots: { customRender: 'action' },
-  //       }],
-  //     dataList: [],
-  //     loading: false,
-  //   }
-  // },
-  // created() {
-  //   this.getList()
-
-  //   this.initTaxRiskTable()
-  // },
-  // methods: {
-  //   async initTaxRiskTable() {
-  //     let res = await initTaxRiskTable()
-  //     console.log("res", res);
-  //     let Tab1Value = res.data.financial[0].values
-  //     console.log("Tab1Value", Tab1Value);
-  //     this.data = Tab1Value
-  //   },
-
-  //   getList() {
-  //     this.loading = true;
-  //     this.$http.get('/getUsers.do').then(res => {
-  //       if (res) {
-  //         this.dataList = res || []
-  //       }
-  //       this.loading = false;
-  //     }).catch(err => {
-  //       console.log(err)
-  //     })
-  //   },
-  //   editUser(record) {
-  //     this.$refs.addModal.showModal(record)
-  //   },
-  // }
 
   methods: {
     async initTaxRiskTable() {
