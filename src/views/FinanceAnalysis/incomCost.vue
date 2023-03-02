@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="YearTable">
-      <h2 style="font-weight: 700;">某某公司2023年：财务风险（绩效评价）分析报告：</h2>
+      <h2 style="font-weight: 700; margin-left: 16px;">某某公司2023年：财务风险（绩效评价）分析报告：</h2>
       <div class="TabBar"><span>财务指标</span><span>企业分值</span><span>指标分值</span>
         <span>优秀值</span>
         <span>良好值</span><span>临界值</span><span>较低值</span><span>较差值</span>
         <span>计算公式</span>
       </div>
-      <a-table :dataSource="dataSource" :columns="columns" :pagination="false" />
+      <a-table :dataSource="dataSource" :columns="columns" :pagination="false" :scroll="{ x: 1700 }" />
 
-      <a-table :dataSource="dataSource1" :columns="columns1" :pagination="false" />
+      <a-table :dataSource="dataSource1" :columns="columns1" :pagination="false" :scroll="{ x: 1700 }" />
 
-      <a-table :dataSource="dataSource2" :columns="columns2" :pagination="false" />
+      <a-table :dataSource="dataSource2" :columns="columns2" :pagination="false" :scroll="{ x: 1700 }" />
 
-      <a-table :dataSource="dataSource3" :columns="columns3" :pagination="false" />
+      <a-table :dataSource="dataSource3" :columns="columns3" :pagination="false" :scroll="{ x: 1700 }" />
 
 
 
@@ -207,7 +207,7 @@ export default {
         },
         {
           title: '90',
-          dataIndex: '',
+          dataIndex: 'excellencevalue',
           key: 'excellencevalue',
         },
         {
@@ -466,8 +466,42 @@ export default {
 }
 
 .TabBar {
-  display: flex;
-  align-items: center;
+  span {
+    margin-left: 16px;
+  }
+
+  span:nth-child(2) {
+    margin-left: 123px;
+  }
+
+  span:nth-child(3) {
+    margin-left: 133px;
+  }
+
+  span:nth-child(4) {
+    margin-left: 140px;
+  }
+
+  span:nth-child(5) {
+    margin-left: 155px;
+  }
+
+  span:nth-child(6) {
+    margin-left: 147px;
+  }
+
+  span:nth-child(7) {
+    margin-left: 155px;
+  }
+
+  span:nth-child(8) {
+    margin-left: 152px;
+  }
+
+  span:nth-child(9) {
+    margin-left: 166px;
+  }
+
 }
 
 .grade1 {
@@ -502,18 +536,22 @@ export default {
 
 .singleIndex {
   border: 1px solid black;
+  padding-left: 16px;
 }
 
 .taxRisk {
   border: 1px solid black;
+  padding-left: 16px;
 }
 
 .evaluation {
   border: 1px solid black;
+  padding-left: 16px;
 }
 
 .fourIndex {
   border: 1px solid black;
+  padding-left: 16px;
 }
 
 #main {
