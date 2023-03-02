@@ -397,7 +397,7 @@ export default {
 
 .TabBar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   border: 1px solid #e8e8e8;
 
   span {
