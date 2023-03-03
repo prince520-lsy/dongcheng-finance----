@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="YearTable">
-      <h2 style="font-weight: 700; margin-left: 16px;">某某公司2023年：财务风险（绩效评价）分析报告：</h2>
+      <h2 style="font-weight: 700; margin-left: 16px;">{{ companyname }}公司{{ day }}年：财务风险（绩效评价）分析报告：</h2>
       <!-- <div class="TabBar">
         <table border="1px solid #e8e8e8" cellspacing=10>
           <tr>
@@ -82,36 +82,43 @@
     <div class="evaluation">
 
       <h2>评价:</h2>
-      <p>1、盈利能力分析:指企业赚取利润的能力，这类指标的值越高越积极，该企业分值在(83)分，表明该企业盈利能力(较强)。</p>
-      <p> 1.1该企业净资产收益率(8.5%)，得分(90)分，该指标是综合性最强盈利能力表征指标:判断其优劣的依据与同行业比较，属于(优秀)。</p>
+      <p>{{ profitability }}</p>
+      <p> {{ profitability1 }}</p>
       <p>
-        1.2该企业总资产报酬率(3.8%)，得分(80)分，该指标与净资产收益率同为重要盈利性指标，华中体理资产运用效率和资金利用效果之间的关系。在企业资产总额一定的情况下，利用总资产收益率指标可以分析企业盈利的稳定性和持久性，确定企业所面临的风险，与同行业比较。属干(一般)。
+        {{ profitability2 }}
+      </p>
+      <p>
+        {{ profitability3 }}
+      </p>
+      <p>
+        {{ profitability4 }}
+      </p>
+      <p>
+        {{ profitability5 }}
       </p>
 
-      <p> 1.3该企业销售利润率(11.6%)，得分(80)分，该指标衡量企业经营效率，反映了企业管理者通过产品经营获取利润的能力。与同行业比较，属于(良好)。</p>
-      <p>1.4该企业成本费用利润率6.5%，得分80分，表明每付出一元成本费用可获得多少利润，体现了经营耗费所带来的经营成果。该项指标越高，利润就越大，反映企业的经济效益越好，与同行
-        业比较，属于良好。</p>
       <hr>
-      <p>2、运营能力分析:指企业营运资产的效率与效益能力，这类指标越高越反映企业的资产周转速度快。该企业分值在(87)分，表明该企业运营能力(较强)。</p>
-      <p>2.1该企业应收账款周转率(6)次，存货周转率(10)次，营业周期(96)天，营业周期的长短说明企业资本从供应商开始直道最后将产品卖出去并收回货款需要的总时间反映资产流转速度。与同行业比较，属于(优秀)。</p>
+      <p>{{ operational }}</p>
+      <p>{{ operational1 }}</p>
+      <p>{{ operational2 }}</p>
+      <p>{{ operational3 }}</p>
 
-      <p> 2.2该企业总资产周转率(1.2)次，超过一年周转一次，反映企业所有资产的运转速度。与同行业比较，属于(优秀)。</p>
-      <p>2.3该企业流动资产周转率3.6次，反映了企业流动资产的周转速度，是从企业全部资产中流动性最强的流动资产角度对企业资产的利用效率进行分析，以进一步揭示影响企业资产质量的主
-        要因素。与同行业比较，属于优秀。</p>
       <hr>
-      <p> 3.偿债能力分析:企业有无支付现金的能力和偿还债务能力，是企业能否生存和健康发展的关键，该企业分值在(77)分。表明该企业偿债能力(一般)。</p>
 
-      <p> 3.1该企业资产负债率(65%)，得分(70)分，负债占总资产的比重，反映债权人利益保护程度，比值越小，债权人保障程度越高;和同行业比，偿债能力(较低)</p>
-      <p> 3.2该企业已获利息倍数为(4)倍，得分(90)分，比值越高说明偿付利息的能力越强。公司在目前盈利水平下可以支付当下(4)倍的债务利息。</p>
-      <p> 3.3该企业的速动比率(78%)，得分(70)分，它表明企业的每1元流动负债就有1元易于变现的速动资产来抵偿，短期偿债能力有可靠的保证。与同行业比较，短期偿债能
-        力(一般)</p>
-      <p>3.4该企业的现金流动负债比率4.5%，得分70分，反映本期经营活动所产生的现金净流量足以抵付流动负债的倍数。与同行业比较，偿债能力一般。</p>
+      <p>{{ solvency }}</p>
+      <p>{{ solvency1 }}</p>
+      <p>{{ solvency2 }}</p>
+      <p>{{ solvency3 }}</p>
+      <p>{{ solvency4 }}</p>
+
       <hr>
-      <p> 4、成长能力分析，是指企业未来发展趋势与发展速度，包括企业规模的扩大，利润和所有者权益的增加。该企业分值在(73)分，表明该企业成长能力(一股)。</p>
-      <p> 4.1该企业销售收入增长率(15%)，得分(80)分，是分析企业成长状况和发展能力的基本指标，与同行业比较，属于(良好)。</p>
-      <p> 4.2该企业销售利润增长率(18%)，得分(80)分，反映企业营业利润的增减变动情况。一般和销售收入增长半成正增长，此处高于它，与同行业比较属于(良好)。</p>
-      <p> 4.3该企业资本保值增值率(95%)，得分(60)分，反映了投资者对企业资本投资的安全性和成长性，与同行业比较属于成长能力(很低)。</p>
-      <p>4.4该企业总资产增长率10%，得分90分，总资产增长率越高，表明企业一定时期内资产经营规模扩张的速度越快。与同行业比较属于优秀。</p>
+
+      <p>{{ ability }}</p>
+      <p>{{ ability1 }}</p>
+      <p>{{ ability2 }}</p>
+      <p>{{ ability3 }}</p>
+      <p>{{ ability4 }}</p>
+
     </div>
 
     <div class="taxRisk">
@@ -177,6 +184,32 @@ export default {
       dataSource3: [],
 
       conclusion: '',
+      companyname: '',
+      day: '',
+      profitability: '',
+      profitability1: '',
+      profitability2: '',
+      profitability3: '',
+      profitability4: '',
+      profitability5: 'null',
+
+      ability: '',
+      ability1: '',
+      ability2: '',
+      ability3: '',
+      ability4: '',
+
+      operational: '',
+      operational1: '',
+      operational2: '',
+      operational3: '',
+
+      solvency: '',
+      solvency1: '',
+      solvency2: '',
+      solvency3: '',
+      solvency4: '',
+
       columns0: [
 
         {
@@ -424,11 +457,58 @@ export default {
       let conclusion = res.data.conclusion
       console.log("conclusion", conclusion);
       this.conclusion = conclusion
+
+      let companyname = res.data.companyname
+      this.companyname = companyname
+      let day = res.data.day
+      this.day = day
       let financialVal = res.data.financial[0].value
       let financialVal1 = res.data.financial[1].value
       let financialVal2 = res.data.financial[2].value
       let financialVal3 = res.data.financial[3].value
+      let profitability = res.data.profitability[0]
+      let profitability1 = res.data.profitability[1]
+      let profitability2 = res.data.profitability[2]
+      let profitability3 = res.data.profitability[3]
+      let profitability4 = res.data.profitability[4]
+      let profitability5 = res.data.profitability[5]
+      console.log("profitability5", profitability5);
+      this.profitability5 = profitability5
 
+      this.profitability = profitability
+      this.profitability1 = profitability1
+      this.profitability2 = profitability2
+      this.profitability3 = profitability3
+      this.profitability4 = profitability4
+      let operational = res.data.operational[0]
+      let operational1 = res.data.operational[1]
+      let operational2 = res.data.operational[2]
+      let operational3 = res.data.operational[3]
+      this.operational = operational
+      this.operational1 = operational1
+      this.operational2 = operational2
+      this.operational3 = operational3
+      let solvency = res.data.solvency[0]
+      let solvency1 = res.data.solvency[1]
+      let solvency2 = res.data.solvency[2]
+      let solvency3 = res.data.solvency[3]
+      let solvency4 = res.data.solvency[4]
+      this.solvency = solvency
+      this.solvency1 = solvency1
+      this.solvency2 = solvency2
+      this.solvency3 = solvency3
+      this.solvency4 = solvency4
+      let ability = res.data.ability[0]
+      let ability1 = res.data.ability[1]
+      let ability2 = res.data.ability[2]
+      let ability3 = res.data.ability[3]
+      let ability4 = res.data.ability[4]
+
+      this.ability = ability
+      this.ability1 = ability1
+      this.ability2 = ability2
+      this.ability3 = ability3
+      this.ability4 = ability4
       this.columns[1].title = financialVal
       this.columns1[1].title = financialVal1
       this.columns2[1].title = financialVal2
