@@ -2,11 +2,24 @@
   <div>
     <div class="YearTable">
       <h2 style="font-weight: 700; margin-left: 16px;">某某公司2023年：财务风险（绩效评价）分析报告：</h2>
-      <div class="TabBar"><span>财务指标</span><span>企业分值</span><span>指标分值</span>
-        <span>优秀值</span>
-        <span>良好值</span><span>临界值</span><span>较低值</span><span>较差值</span>
-        <span>计算公式</span>
-      </div>
+      <!-- <div class="TabBar">
+        <table border="1px solid #e8e8e8" cellspacing=10>
+          <tr>
+            <td>财务指标</td>
+            <td>企业分值</td>
+            <td>指标分值</td>
+            <td>优秀值</td>
+            <td>良好值</td>
+            <td>临界值</td>
+            <td>较低值</td>
+            <td>较差值</td>
+            <td>计算公式</td>
+          </tr>
+        </table>
+
+      </div> -->
+
+      <a-table :columns="columns0" :pagination="false" :scroll="{ x: 1200 }" bordered="true" />
       <a-table :dataSource="dataSource" :columns="columns" :pagination="false" :scroll="{ x: 1200 }" bordered="true" />
 
       <a-table :dataSource="dataSource1" :columns="columns1" :pagination="false" :scroll="{ x: 1200 }" bordered='true' />
@@ -157,13 +170,55 @@ export default {
   },
   data() {
     return {
+      // dataSource0: [],
       dataSource: [],
       dataSource1: [],
       dataSource2: [],
       dataSource3: [],
 
       conclusion: '',
+      columns0: [
+
+        {
+          title: '财务指标',
+
+
+        },
+        {
+          title: '企业分值',
+
+        },
+        {
+          title: '指标分值',
+
+        },
+        {
+          title: '优秀值',
+
+        },
+        {
+          title: '良好值',
+
+        },
+        {
+          title: '临界值',
+
+        },
+        {
+          title: '较低值',
+
+        },
+        {
+          title: '较差值',
+
+        },
+        {
+          title: '计算公式',
+
+        },
+      ],
       columns: [
+
         {
           title: '盈利能力分析',
           dataIndex: 'title',
@@ -407,41 +462,30 @@ export default {
   height: 54px;
   line-height: 54px;
 
-  span {
-    margin-left: 16px;
+  table tr td {
+    border-spacing: 15px 10px;
   }
 
-  span:nth-child(2) {
-    margin-left: 106px;
-  }
 
-  span:nth-child(3) {
+  div {}
+
+  div:nth-child(2) {}
+
+  div:nth-child(3) {}
+
+  div:nth-child(4) {
     margin-left: 108px;
   }
 
-  span:nth-child(4) {
-    margin-left: 108px;
-  }
+  div:nth-child(5) {}
 
-  span:nth-child(5) {
-    margin-left: 128px;
-  }
+  div:nth-child(6) {}
 
-  span:nth-child(6) {
-    margin-left: 127px;
-  }
+  div:nth-child(7) {}
 
-  span:nth-child(7) {
-    margin-left: 130px;
-  }
+  div:nth-child(8) {}
 
-  span:nth-child(8) {
-    margin-left: 129px;
-  }
-
-  span:nth-child(9) {
-    margin-left: 144px;
-  }
+  div:nth-child(9) {}
 
 }
 
@@ -499,5 +543,14 @@ export default {
   width: 700px;
   height: 400px;
 
+}
+
+/deep/ .ant-table-placeholder {
+  height: 100px;
+  display: none;
+}
+
+/deep/ .ant-empty {
+  display: none;
 }
 </style>
