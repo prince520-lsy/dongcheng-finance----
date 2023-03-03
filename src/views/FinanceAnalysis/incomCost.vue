@@ -168,6 +168,7 @@ export default {
           title: '盈利能力分析',
           dataIndex: 'title',
           key: 'title',
+
         },
         {
           title: '82',
@@ -393,6 +394,10 @@ export default {
 <style lang="less" scoped>
 .yiBiaoPan3 {
   position: relative;
+}
+
+.ant-table-tbody>tr>td {
+  text-align: center;
 }
 
 .TabBar {
