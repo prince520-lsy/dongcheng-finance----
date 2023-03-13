@@ -247,6 +247,13 @@ export const constantRouterMap = [
             component: () => import(/* webpackChunkName: "user" */ '@/views/FinanceAnalysis/incomCost.vue'),
             meta: { title: '财务风险报告'}
           },
+
+          {
+            path: '/taxRiskReport',
+            name: 'taxRiskReport',
+            component: () => import(/* webpackChunkName: "user" */ '@/views/FinanceAnalysis/taxRiskReport.vue'),
+            meta: { title: '税务风险报告'}
+          },
         ]
       },
       {
