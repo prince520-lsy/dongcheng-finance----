@@ -64,7 +64,7 @@ export default {
         {
           title: '风险等级',
 
-          dataIndex: 'riskGrade',
+          dataIndex: 'title',
           customRender: (value, row, index) => {
             const obj = {
               children: value,
@@ -111,7 +111,7 @@ export default {
         {
           title: '增值税',
 
-          dataIndex: 'riskGrade',
+          dataIndex: 'taxrisk1',
           customRender: (value, row, index) => {
             const obj = {
               children: value,
@@ -143,7 +143,7 @@ export default {
         {
           title: '所得税',
 
-          dataIndex: 'riskGrade',
+          dataIndex: 'incometax1',
           customRender: (value, row, index) => {
             const obj = {
               children: value,
@@ -319,15 +319,16 @@ export default {
       console.log(97, res);
       let height = res.data.list.risktable[0].height
 
-      let center = res.data.list.risktable[1].center
+      // let center = res.data.list.risktable[1].center
 
-      let low = res.data.list.risktable[2].low
+      // let low = res.data.list.risktable[2].low
 
       let riskdescription = res.data.list.riskdescription
-      console.log("height", height);
+      // console.log("height", height);
       this.data = height
-      this.data1 = center
-      this.data2 = low
+      // this.data1 = center
+      // this.data2 = low
+      console.log("riskdescription", riskdescription);
       this.data3 = riskdescription
 
 

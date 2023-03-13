@@ -13,17 +13,17 @@ export default {
       axios.get('form/taxmanagement').then(res => {
         console.log("res2", res);
 
-        let incometax0 = res.data.list.risktable[0].incometax
+        let incometax0 = res.data.list.warningchart[0].taxrisk
 
-        let incometax1 = res.data.list.risktable[1].incometax
+        let incometax1 = res.data.list.warningchart[1].taxrisk
 
-        let incometax2 = res.data.list.risktable[2].incometax
+        let incometax2 = res.data.list.warningchart[2].taxrisk
 
-        let taxrisk0 = res.data.list.risktable[0].taxrisk
+        let taxrisk0 = res.data.list.warningchart[0].incometax
 
-        let taxrisk1 = res.data.list.risktable[1].taxrisk
+        let taxrisk1 = res.data.list.warningchart[1].incometax
 
-        let taxrisk2 = res.data.list.risktable[2].taxrisk
+        let taxrisk2 = res.data.list.warningchart[2].incometax
         this.char = echarts.init(document.querySelector('#mainId66'))
 
         let option = {
