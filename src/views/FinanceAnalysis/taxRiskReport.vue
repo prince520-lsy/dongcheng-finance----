@@ -26,13 +26,13 @@
 
 
 
-    <a-table :data-source="data1" :columns="columns1" bordered :pagination="false">
+    <!-- <a-table :data-source="data1" :columns="columns1" bordered :pagination="false">
 
     </a-table>
 
     <a-table :data-source="data2" :columns="columns2" bordered :pagination="false">
 
-    </a-table>
+    </a-table> -->
 
     <h3 style="font-weight: 700;">三、企业税务风险说明：</h3>
 
@@ -70,14 +70,23 @@ export default {
               children: value,
               attrs: {},
             };
-            if (index === 2) {
-              obj.attrs.rowSpan = 2;
+            if (index === 0) {
+              obj.attrs.rowSpan = 6;
             }
             // These two are merged into above cell
-            if (index === 3) {
+            if (index === 1) {
               obj.attrs.rowSpan = 0;
             }
+            if (index === 2) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 3) {
+              obj.attrs.colSpan = 0;
+            }
             if (index === 4) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 5) {
               obj.attrs.colSpan = 0;
             }
             return obj;
@@ -97,6 +106,70 @@ export default {
           title: '企业风险指标',
           dataIndex: 'incometax',
 
+        },
+
+        {
+          title: '增值税',
+
+          dataIndex: 'riskGrade',
+          customRender: (value, row, index) => {
+            const obj = {
+              children: value,
+              attrs: {},
+            };
+            if (index === 0) {
+              obj.attrs.rowSpan = 6;
+            }
+            // These two are merged into above cell
+            if (index === 1) {
+              obj.attrs.rowSpan = 0;
+            }
+            if (index === 2) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 3) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 4) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 5) {
+              obj.attrs.colSpan = 0;
+            }
+            return obj;
+          },
+        },
+
+        {
+          title: '所得税',
+
+          dataIndex: 'riskGrade',
+          customRender: (value, row, index) => {
+            const obj = {
+              children: value,
+              attrs: {},
+            };
+            if (index === 0) {
+              obj.attrs.rowSpan = 6;
+            }
+            // These two are merged into above cell
+            if (index === 1) {
+              obj.attrs.rowSpan = 0;
+            }
+            if (index === 2) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 3) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 4) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 5) {
+              obj.attrs.colSpan = 0;
+            }
+            return obj;
+          },
         },
         // {
         //   title: '增值税',
