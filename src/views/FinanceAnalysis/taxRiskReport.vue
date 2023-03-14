@@ -497,7 +497,7 @@ export default {
     async getTaxRiskReport() {
       let res = await getTaxRiskReport()
       console.log(97, res);
-      let height = res.data.list.risktable[0]
+      let height = res.data.list.risktable
 
       // let center = res.data.list.risktable[1].center
 
