@@ -26,13 +26,13 @@
 
 
 
-    <a-table :data-source="data1" :columns="columns1" bordered :pagination="false">
+    <!-- <a-table :data-source="data1" :columns="columns1" bordered :pagination="false">
 
-    </a-table>
+    </a-table> -->
 
-    <a-table :data-source="data2" :columns="columns2" bordered :pagination="false">
+    <!-- <a-table :data-source="data2" :columns="columns2" bordered :pagination="false">
 
-    </a-table>
+    </a-table> -->
 
     <h3 style="font-weight: 700;">三、企业税务风险说明：</h3>
 
@@ -67,6 +67,7 @@ export default {
             if (index === 0) {
               obj.attrs.rowSpan = 6;
             }
+
             // These two are merged into above cell
             if (index === 1) {
               obj.attrs.rowSpan = 0;
@@ -81,6 +82,42 @@ export default {
               obj.attrs.colSpan = 0;
             }
             if (index === 5) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 6) {
+              obj.attrs.rowSpan = 6;
+            }
+            if (index === 7) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 8) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 9) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 10) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 11) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 12) {
+              obj.attrs.rowSpan = 12;
+            }
+            if (index === 13) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 14) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 15) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 16) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 17) {
               obj.attrs.colSpan = 0;
             }
             return obj;
@@ -105,38 +142,6 @@ export default {
         {
           title: '增值税',
 
-          dataIndex: 'taxrisk1',
-          customRender: (value, row, index) => {
-            const obj = {
-              children: value,
-              attrs: {},
-            };
-            if (index === 0) {
-              obj.attrs.rowSpan = 6;
-            }
-            // These two are merged into above cell
-            if (index === 1) {
-              obj.attrs.rowSpan = 0;
-            }
-            if (index === 2) {
-              obj.attrs.colSpan = 0;
-            }
-            if (index === 3) {
-              obj.attrs.colSpan = 0;
-            }
-            if (index === 4) {
-              obj.attrs.colSpan = 0;
-            }
-            if (index === 5) {
-              obj.attrs.colSpan = 0;
-            }
-            return obj;
-          },
-        },
-
-        {
-          title: '所得税',
-
           dataIndex: 'incometax1',
           customRender: (value, row, index) => {
             const obj = {
@@ -146,6 +151,7 @@ export default {
             if (index === 0) {
               obj.attrs.rowSpan = 6;
             }
+
             // These two are merged into above cell
             if (index === 1) {
               obj.attrs.rowSpan = 0;
@@ -162,19 +168,146 @@ export default {
             if (index === 5) {
               obj.attrs.colSpan = 0;
             }
+            if (index === 6) {
+              obj.attrs.rowSpan = 6;
+            }
+            if (index === 7) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 8) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 9) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 10) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 11) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 12) {
+              obj.attrs.rowSpan = 12;
+            }
+            if (index === 13) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 14) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 15) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 16) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 17) {
+              obj.attrs.colSpan = 0;
+            }
             return obj;
           },
         },
-        // {
-        //   title: '增值税',
-        //   dataIndex: 'incometax',
+        {
+          title: '所得税',
 
-        // },
+          dataIndex: 'taxrisk1',
+          customRender: (value, row, index) => {
+            const obj = {
+              children: value,
+              attrs: {},
+            };
+            if (index === 0) {
+              obj.attrs.rowSpan = 6;
+            }
+
+            // These two are merged into above cell
+            if (index === 1) {
+              obj.attrs.rowSpan = 0;
+            }
+            if (index === 2) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 3) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 4) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 5) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 6) {
+              obj.attrs.rowSpan = 6;
+            }
+            if (index === 7) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 8) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 9) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 10) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 11) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 12) {
+              obj.attrs.rowSpan = 12;
+            }
+            if (index === 13) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 14) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 15) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 16) {
+              obj.attrs.colSpan = 0;
+            }
+            if (index === 17) {
+              obj.attrs.colSpan = 0;
+            }
+            return obj;
+          },
+        },
+
         // {
         //   title: '所得税',
-        //   dataIndex: 'taxrisk'
 
+        //   dataIndex: 'incometax1',
+        //   customRender: (value, row, index) => {
+        //     const obj = {
+        //       children: value,
+        //       attrs: {},
+        //     };
+        //     if (index === 0) {
+        //       obj.attrs.rowSpan = 6;
+        //     }
+        //     // These two are merged into above cell
+        //     if (index === 1) {
+        //       obj.attrs.rowSpan = 0;
+        //     }
+        //     if (index === 2) {
+        //       obj.attrs.colSpan = 0;
+        //     }
+        //     if (index === 3) {
+        //       obj.attrs.colSpan = 0;
+        //     }
+        //     if (index === 4) {
+        //       obj.attrs.colSpan = 0;
+        //     }
+        //     if (index === 5) {
+        //       obj.attrs.colSpan = 0;
+        //     }
+        //     return obj;
+        //   },
         // },
+
 
       ],
       columns1: [
@@ -290,16 +423,7 @@ export default {
             return obj;
           },
         },
-        // {
-        //   title: '增值税',
-        //   dataIndex: 'incometax',
 
-        // },
-        // {
-        //   title: '所得税',
-        //   dataIndex: 'taxrisk'
-
-        // },
 
       ],
       columns2: [
@@ -430,132 +554,7 @@ export default {
 
 
 
-      // columns2: [
 
-
-      //   {
-      //     title: '风险等级',
-
-      //     dataIndex: 'title',
-      //     customRender: (value, row, index) => {
-      //       const obj = {
-      //         children: value,
-      //         attrs: {},
-      //       };
-      //       if (index === 0) {
-      //         obj.attrs.rowSpan = 6;
-      //       }
-      //       // These two are merged into above cell
-      //       if (index === 1) {
-      //         obj.attrs.rowSpan = 0;
-      //       }
-      //       if (index === 2) {
-      //         obj.attrs.colSpan = 0;
-      //       }
-      //       if (index === 3) {
-      //         obj.attrs.colSpan = 0;
-      //       }
-      //       if (index === 4) {
-      //         obj.attrs.colSpan = 0;
-      //       }
-      //       if (index === 5) {
-      //         obj.attrs.colSpan = 0;
-      //       }
-
-      //       return obj;
-      //     },
-      //   },
-      //   {
-      //     title: '风险类型',
-      //     dataIndex: 'name',
-      //     // rowSpan: 6,
-      //   },
-      //   {
-      //     title: '税务风险指标',
-      //     dataIndex: 'taxrisk',
-
-      //   },
-      //   {
-      //     title: '企业风险指标',
-      //     dataIndex: 'incometax',
-
-      //   },
-
-      //   {
-      //     title: '增值税1',
-
-      //     dataIndex: 'taxrisk1',
-      //     customRender: (value, row, index) => {
-      //       const obj = {
-      //         children: value,
-      //         attrs: {},
-      //       };
-      //       if (index === 0) {
-      //         obj.attrs.rowSpan = 6;
-      //       }
-      //       // These two are merged into above cell
-      //       if (index === 1) {
-      //         obj.attrs.rowSpan = 0;
-      //       }
-      //       if (index === 2) {
-      //         obj.attrs.colSpan = 0;
-      //       }
-      //       if (index === 3) {
-      //         obj.attrs.colSpan = 0;
-      //       }
-      //       if (index === 4) {
-      //         obj.attrs.colSpan = 0;
-      //       }
-      //       if (index === 5) {
-      //         obj.attrs.colSpan = 0;
-      //       }
-      //       return obj;
-      //     },
-      //   },
-
-      //   {
-      //     title: '所得税',
-
-      //     dataIndex: 'incometax',
-      //     customRender: (value, row, index) => {
-      //       const obj = {
-      //         children: value,
-      //         attrs: {},
-      //       };
-      //       if (index === 0) {
-      //         obj.attrs.rowSpan = 6;
-      //       }
-      //       // These two are merged into above cell
-      //       if (index === 1) {
-      //         obj.attrs.rowSpan = 0;
-      //       }
-      //       if (index === 2) {
-      //         obj.attrs.colSpan = 0;
-      //       }
-      //       if (index === 3) {
-      //         obj.attrs.colSpan = 0;
-      //       }
-      //       if (index === 4) {
-      //         obj.attrs.colSpan = 0;
-      //       }
-      //       if (index === 5) {
-      //         obj.attrs.colSpan = 0;
-      //       }
-      //       return obj;
-      //     },
-      //   },
-      //   // {
-      //   //   title: '增值税',
-      //   //   dataIndex: 'incometax',
-
-      //   // },
-      //   // {
-      //   //   title: '所得税',
-      //   //   dataIndex: 'taxrisk'
-
-      //   // },
-
-      // ],
       columns3: [
 
         {
@@ -586,6 +585,115 @@ export default {
         {
           key: '1',
           title: '高风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '2',
+          title: '高风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '3',
+          title: '高风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '4',
+          title: '高风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '5',
+          title: '高风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '6',
+          title: '高风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+
+        {
+          key: '1',
+          title: '中风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '2',
+          title: '中风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '3',
+          title: '中风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '4',
+          title: '中风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '5',
+          title: '中风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '6',
+          title: '中风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '1',
+          title: '低风险',
           name: '3',
           taxrisk: '2',
           incometax: '0',
@@ -637,81 +745,7 @@ export default {
           taxrisk1: '1',
           incometax1: '3',
         },
-        // {
-        //   key: '7',
-        //   title: '低风险',
-        //   name: '3',
-        //   taxrisk: '2',
-        //   incometax: '0',
-        //   taxrisk1: '1',
-        //   incometax1: '3',
-        // },
-        // {
-        //   key: '8',
-        //   title: '低风险',
-        //   name: '3',
-        //   taxrisk: '2',
-        //   incometax: '0',
-        //   taxrisk1: '1',
-        //   incometax1: '3',
-        // },
-        // {
-        //   key: '9',
-        //   title: '低风险',
-        //   name: '3',
-        //   taxrisk: '2',
-        //   incometax: '0',
-        //   taxrisk1: '1',
-        //   incometax1: '3',
-        // },
-        // {
-        //   key: '10',
-        //   title: '低风险',
-        //   name: '3',
-        //   taxrisk: '2',
-        //   incometax: '0',
-        //   taxrisk1: '1',
-        //   incometax1: '3',
-        // },
-        // {
-        //   key: '11',
-        //   title: '低风险',
-        //   name: '3',
-        //   taxrisk: '2',
-        //   incometax: '0',
-        //   taxrisk1: '1',
-        //   incometax1: '3',
-        // },
-        // {
-        //   key: '12',
-        //   title: '低风险',
-        //   name: '3',
-        //   taxrisk: '2',
-        //   incometax: '0',
-        //   taxrisk1: '1',
-        //   incometax1: '3',
-        // },
 
-        // {
-        //   key: '2',
-        //   riskGrade: '中风险',
-        //   name: '4',
-        // },
-
-        // {
-        //   key: '3',
-        //   riskGrade: '低风险',
-        //   name: '1'
-        // },
-        // {
-        //   name: '9',
-        // },
-        // {
-        //   name: '9',
-        // },
-        // {
-        //   name: '9',
-        // },
       ],
       data1: [
         {
@@ -761,6 +795,61 @@ export default {
         },
         {
           key: '6',
+          title: '低风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+
+        {
+          key: '7',
+          title: '低风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '8',
+          title: '低风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '9',
+          title: '低风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '10',
+          title: '低风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '11',
+          title: '低风险',
+          name: '3',
+          taxrisk: '2',
+          incometax: '0',
+          taxrisk1: '1',
+          incometax1: '3',
+        },
+        {
+          key: '12',
           title: '低风险',
           name: '3',
           taxrisk: '2',
