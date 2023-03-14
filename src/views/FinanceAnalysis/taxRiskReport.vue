@@ -22,7 +22,7 @@
 
     <h3 style="font-weight: 700;">三、企业税务风险说明：</h3>
 
-    <a-table :data-source="data3" :columns="columns3" bordered>
+    <a-table :data-source="data3" :columns="columns3" bordered :pagination="false">
 
     </a-table>
 

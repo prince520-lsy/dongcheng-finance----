@@ -56,12 +56,13 @@ export default {
             {
               name: '增值税',
               type: 'bar',
-              data: [incometax0, incometax1, incometax2]
+
+              data: [taxrisk2, taxrisk1, taxrisk0,]
             },
             {
               name: '所得税',
               type: 'bar',
-              data: [taxrisk0, taxrisk1, taxrisk2,]
+              data: [incometax2, incometax1, incometax0]
             }
           ]
         };
